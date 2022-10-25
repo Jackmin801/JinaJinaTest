@@ -34,11 +34,12 @@ function clean_build {
 
 function pub_pypi {
     # publish to pypi
-    clean_build
-    cp extra-requirements.txt jina/resources/
-    python setup.py sdist
-    twine upload dist/*
-    clean_build
+    #clean_build
+    #cp extra-requirements.txt jina/resources/
+    #python setup.py sdist
+    #twine upload dist/*
+    #clean_build
+    echo pub_pypi
 }
 
 function git_commit {
@@ -50,7 +51,8 @@ function git_commit {
 }
 
 function slack_notif {
-    envsubst < ./.github/slack-pypi.json | curl -X POST -H 'Content-type: application/json' --data "@-" $JINA_SLACK_WEBHOOK
+    #envsubst < ./.github/slack-pypi.json | curl -X POST -H 'Content-type: application/json' --data "@-" $JINA_SLACK_WEBHOOK
+    echo slack
 }
 
 
