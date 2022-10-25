@@ -17,11 +17,11 @@ on:
       package:
         description: The name of the repo to build documentation for.
         type: string
-        default: jina
+        default: JinaJinaTest
       repo_owner:
         description: The owner of the repo to build documentation for. Defaults to 'jina-ai'.
         type: string
-        default: jina-ai
+        default: Jackmin801
       pages_branch:
         description: Branch that Github Pages observes
         type: string
