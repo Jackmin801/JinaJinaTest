@@ -1,5 +1,5 @@
-jina
-====
+JinaJinaTest
+============
 
 .. toctree::
    :maxdepth: 4
