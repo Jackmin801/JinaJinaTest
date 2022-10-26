@@ -7,3 +7,4 @@ JinaJinaTest
    fastentrypoints
    jina
    jina_cli
+   pin_requirements
