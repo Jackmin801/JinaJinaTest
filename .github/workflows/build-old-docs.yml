@@ -74,6 +74,7 @@ jobs:
           mv ./brand.html ./docs/_templates/sidebar/brand.html
       - name: Install dependencies
         run: |
+          python docs/pin_requirements.py extra-requirements.txt
           pip install .[devel]
           cd docs
           pip install -r requirements.txt
