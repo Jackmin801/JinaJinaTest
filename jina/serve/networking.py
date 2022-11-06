@@ -65,7 +65,6 @@ class _NetworkingHistograms:
     histogram_metric_labels: Dict[str, str] = None
 
     def get_labels(self, additional_labels: Optional[Dict[str, str]] = None):
-        # TODO: This is quite ugly. Surely there's a better way
         if self.histogram_metric_labels is None:
             return None
         if additional_labels is None:

@@ -147,6 +147,9 @@ class MonitoringRequestMixin:
         self._metric_labels = {'runtime_name': runtime_name}
 
     def _update_start_request_metrics(self, request: 'Request'):
+        #print(request)
+        #print(request.header)
+        #print(request.parameters)
         if self._request_size_metrics:
             self._request_size_metrics.observe(request.nbytes)
         if self._request_size_histogram:
@@ -167,6 +170,7 @@ class MonitoringRequestMixin:
             )
 
     def _update_end_successful_requests_metrics(self, result: 'Request'):
+        #print(result)        
         if (
             self._receiving_request_metrics
         ):  # this one should only be observed when the metrics is succesful
