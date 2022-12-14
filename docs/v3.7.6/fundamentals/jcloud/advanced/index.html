@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Advanced" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/fundamentals/jcloud/advanced/" />
-  
 <meta property="og:site_name" content="Jina 3.7.6 Documentation" />
-  
 <meta property="og:description" content="Environment variables: A single YAML: A project folder: You can include your environment variables in the.env file in the local project and JCloud will take care of managing them., You can optionally pass a custom.env.. jina version: To manage jina version while deploying a Flow to jcloud, you ca..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_images/external-executor.png" />
-  
 <meta property="og:image:alt" content="Jina 3.7.6 Documentation" />
-  
+<meta name="description" content="Environment variables: A single YAML: A project folder: You can include your environment variables in the.env file in the local project and JCloud will take care of managing them., You can optionally pass a custom.env.. jina version: To manage jina version while deploying a Flow to jcloud, you ca..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -35,13 +28,14 @@
 </script>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="FAQ" href="../faq/" /><link rel="prev" title="Autoscaling" href="../autoscale/" />
+    
+<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="FAQ" href="../faq/" /><link rel="prev" title="Autoscaling" href="../autoscale/" />
         <link rel="canonical" href="https://docs.jina.ai/fundamentals/jcloud/advanced.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Advanced - Jina 3.7.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -243,7 +237,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -408,17 +402,17 @@
                 </div>
                 <article role="main">
                     <section class="tex2jax_ignore mathjax_ignore" id="advanced">
-<h1>Advanced<a class="headerlink" href="#advanced" title="Permalink to this headline">#</a></h1>
+<h1>Advanced<a class="headerlink" href="#advanced" title="Permalink to this heading">#</a></h1>
 <section id="environment-variables">
-<h2>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">#</a></h2>
+<h2>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this heading">#</a></h2>
 <section id="a-single-yaml">
-<h3>A single YAML<a class="headerlink" href="#a-single-yaml" title="Permalink to this headline">#</a></h3>
+<h3>A single YAML<a class="headerlink" href="#a-single-yaml" title="Permalink to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jc deploy flow.yml --env-file flow.env
 </pre></div>
 </div>
 </section>
 <section id="a-project-folder">
-<h3>A project folder<a class="headerlink" href="#a-project-folder" title="Permalink to this headline">#</a></h3>
+<h3>A project folder<a class="headerlink" href="#a-project-folder" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>You can include your environment variables in the <code class="docutils literal notranslate"><span class="pre">.env</span></code> file in the local project and JCloud will take care of managing them.</p></li>
 <li><p>You can optionally pass a <code class="docutils literal notranslate"><span class="pre">custom.env</span></code>.</p>
@@ -430,7 +424,7 @@
 </section>
 </section>
 <section id="jina-version">
-<h2>jina version<a class="headerlink" href="#jina-version" title="Permalink to this headline">#</a></h2>
+<h2>jina version<a class="headerlink" href="#jina-version" title="Permalink to this heading">#</a></h2>
 <p>To manage <code class="docutils literal notranslate"><span class="pre">jina</span></code> version while deploying a Flow to <code class="docutils literal notranslate"><span class="pre">jcloud</span></code>, you can pass <code class="docutils literal notranslate"><span class="pre">version</span></code> arg in the Flow yaml.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">jtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Flow</span><span class="w"></span>
 <span class="nt">jcloud</span><span class="p">:</span><span class="w"></span>
@@ -442,7 +436,7 @@
 </div>
 </section>
 <section id="capacity-spot-vs-on-demand">
-<h2>Capacity (<code class="docutils literal notranslate"><span class="pre">spot</span></code> vs <code class="docutils literal notranslate"><span class="pre">on-demand</span></code>)<a class="headerlink" href="#capacity-spot-vs-on-demand" title="Permalink to this headline">#</a></h2>
+<h2>Capacity (<code class="docutils literal notranslate"><span class="pre">spot</span></code> vs <code class="docutils literal notranslate"><span class="pre">on-demand</span></code>)<a class="headerlink" href="#capacity-spot-vs-on-demand" title="Permalink to this heading">#</a></h2>
 <p>For cost optimization, <code class="docutils literal notranslate"><span class="pre">jcloud</span></code> tries to deploy all Executors on <code class="docutils literal notranslate"><span class="pre">spot</span></code> capacity. These are ideal for stateless Executors, which can withstand interruptions &amp; restarts. It is recommended to use <code class="docutils literal notranslate"><span class="pre">on-demand</span></code> capacity for stateful Executors (e.g.- indexers) though.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">jtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Flow</span><span class="w"></span>
 <span class="nt">executors</span><span class="p">:</span><span class="w"></span>
@@ -454,7 +448,7 @@
 </div>
 </section>
 <section id="external-executors">
-<span id="id1"></span><h2>External executors<a class="headerlink" href="#external-executors" title="Permalink to this headline">#</a></h2>
+<span id="id1"></span><h2>External executors<a class="headerlink" href="#external-executors" title="Permalink to this heading">#</a></h2>
 <p>You can also expose only the Executors by setting <code class="docutils literal notranslate"><span class="pre">expose_gateway</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code>. Read more about <a class="reference internal" href="#external-executors"><span class="std std-ref">External Executors</span></a></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">jtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Flow</span><span class="w"></span>
 <span class="nt">jcloud</span><span class="p">:</span><span class="w"></span>
@@ -483,18 +477,18 @@
 </figure>
 </section>
 <section id="internet-exposure-tls">
-<h2>Internet Exposure &amp; TLS<a class="headerlink" href="#internet-exposure-tls" title="Permalink to this headline">#</a></h2>
+<h2>Internet Exposure &amp; TLS<a class="headerlink" href="#internet-exposure-tls" title="Permalink to this heading">#</a></h2>
 <p>To expose users’ Flows to the internet with TLS, JCloud provides support for 2 Gateways <a class="reference external" href="https://aws.amazon.com/elasticloadbalancing/application-load-balancer/">ALB</a> &amp; <a class="reference external" href="https://konghq.com/products/api-gateway-platform">Kong API Gateway</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The JCloud gateway is different from Jina’s Gateway. In JCloud, a gateway works as a proxy to distribute internet traffic between Flows, each of which has a Jina Gateway (which is responsible to manage external gRPC/HTTP/Websocket traffic to your Executors)</p>
 </div>
 <section id="alb">
-<h3>ALB<a class="headerlink" href="#alb" title="Permalink to this headline">#</a></h3>
+<h3>ALB<a class="headerlink" href="#alb" title="Permalink to this heading">#</a></h3>
 <p>Currently ALB is the default gateway for backward compatibility. We use AWS provided public certificates for TLS with the ALB.</p>
 </section>
 <section id="kong">
-<h3>Kong<a class="headerlink" href="#kong" title="Permalink to this headline">#</a></h3>
+<h3>Kong<a class="headerlink" href="#kong" title="Permalink to this heading">#</a></h3>
 <p>Kong is the recommended gateway in JCloud. We use <a class="reference external" href="https://letsencrypt.org/">Let’s Encrypt</a> for TLS with Kong. To enable Kong Gateway instead of ALB, specify the gateway kind as <code class="docutils literal notranslate"><span class="pre">kong</span></code> in your JCloud YAML:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">jtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Flow</span><span class="w"></span>
 <span class="nt">jcloud</span><span class="p">:</span><span class="w"></span>
@@ -508,7 +502,7 @@
 </section>
 </section>
 <section id="retention-days">
-<span id="id2"></span><h2>Retention days<a class="headerlink" href="#retention-days" title="Permalink to this headline">#</a></h2>
+<span id="id2"></span><h2>Retention days<a class="headerlink" href="#retention-days" title="Permalink to this heading">#</a></h2>
 <p>In JCloud, we have a default life-cycle of 24hrs for Flows, after which they’re removed if idle. You can manage the same yourself by passing the right parameter for <code class="docutils literal notranslate"><span class="pre">retention-days</span></code> under <code class="docutils literal notranslate"><span class="pre">jcloud</span></code>. <code class="docutils literal notranslate"><span class="pre">0</span></code> is to use the default life-cycle, <code class="docutils literal notranslate"><span class="pre">X</span></code> (0&lt;X&lt;365), which is meant to keep the Flow alive until X days, and <code class="docutils literal notranslate"><span class="pre">-1</span></code> is for never expired,</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">jtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Flow</span><span class="w"></span>
 <span class="nt">jcloud</span><span class="p">:</span><span class="w"></span>
@@ -556,7 +550,7 @@
                         <div class="copyright">
                             Copyright &#169; Jina AI Limited. All rights reserved.
                         </div><div class="last-updated">
-                            Last updated on Oct 26, 2022</div>
+                            Last updated on Dec 14, 2022</div>
                     </div>
                     <div class="right-details">
                         <div class="social-btns">
@@ -632,7 +626,9 @@
      src="https://static.scarf.sh/a.png?x-pxid=2823e771-0e1e-4320-8fde-48bc48e53262"/><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>

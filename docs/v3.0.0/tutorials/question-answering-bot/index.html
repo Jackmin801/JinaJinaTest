@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Open-Domain Question-Answering on Long Document" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/tutorials/question-answering-bot/" />
-  
 <meta property="og:site_name" content="Jina 3.0.0 Documentation" />
-  
 <meta property="og:description" content="The following tutorial will take you through a solution of to question-answering on long documents. This is an inherently difficult task, due to the fuzziness of human language and the infinite number of questions one could ask. One way to solve this is by predicting answers using a neural networ..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_static/banner.png" />
-  
 <meta property="og:image:alt" content="Jina 3.0.0 Documentation" />
-  
+<meta name="description" content="The following tutorial will take you through a solution of to question-answering on long documents. This is an inherently difficult task, due to the fuzziness of human language and the infinite number of questions one could ask. One way to solve this is by predicting answers using a neural networ..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -36,13 +29,14 @@
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script async defer src="https://cdn.jsdelivr.net/npm/qabot@0.3"></script>
-    <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" />
+    
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" />
         <link rel="canonical" href="https://docs.jina.ai/tutorials/question-answering-bot.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Open-Domain Question-Answering on Long Document - Jina 3.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -239,7 +233,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -646,20 +640,20 @@
                     </label>
                 </div>
                 <section class="tex2jax_ignore mathjax_ignore" id="open-domain-question-answering-on-long-document">
-<h1>Open-Domain Question-Answering on Long Document<a class="headerlink" href="#open-domain-question-answering-on-long-document" title="Permalink to this headline">#</a></h1>
+<h1>Open-Domain Question-Answering on Long Document<a class="headerlink" href="#open-domain-question-answering-on-long-document" title="Permalink to this heading">#</a></h1>
 <p>The following tutorial will take you through a solution of to question-answering on long documents.
 This is an inherently difficult task, due to the fuzziness of human language and the infinite number of questions one could ask.</p>
 <p>One way to solve this is by predicting answers using a neural network that was trained on pairs of questions and their corresponding answers. In many cases such a dataset is not available, like in the case of most software documentation. Let’s say we want to build a chatbot to answer questions about the Jina documentation. What if I told you that there is a way to reframe this task as a search problem and that this would alleviate the need for a large dataset of matching questions and answers?</p>
 <p>How, you ask? <em>Let me explain!</em></p>
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>Our approach to the problem leverages the <a class="reference external" href="https://arxiv.org/pdf/1904.08375.pdf">Doc2query method</a>, which, form a piece of text, predicts different questions the text could potentially answer. For example, given a sentence such as <code class="docutils literal notranslate"><span class="pre">Jina</span> <span class="pre">is</span> <span class="pre">an</span> <span class="pre">open</span> <span class="pre">source</span> <span class="pre">framework</span> <span class="pre">for</span> <span class="pre">neural</span> <span class="pre">search.</span></code>, the model predicts questions such as <code class="docutils literal notranslate"><span class="pre">What</span> <span class="pre">is</span> <span class="pre">Jina?</span></code> or <code class="docutils literal notranslate"><span class="pre">Is</span> <span class="pre">Jina</span> <span class="pre">open</span> <span class="pre">source?</span></code>.</p>
 <p>The idea here is to predict several questions for every part of the original text document, in our case the Jina documentation. Then we use an encoder to create a vector representation for each of the predicted questions. These representations are stored and provide the index for our body of text. When a user prompts the bot with a question, we encode it in the same way we encoded our generated questions. Now we can run a similarity search on the encodings. The encoding of the user’s query is compared with the encodings of generated questions, in our index to find the closes match.</p>
 <p>Once the matching answer is found, we can return it to the user.</p>
 <p>Now that you have a general idea of what we will be doing, the following section will show you how to define our <code class="docutils literal notranslate"><span class="pre">Flow</span></code>s in Jina. Then we will take a look at how to implement the necessary <code class="docutils literal notranslate"><span class="pre">Executor</span></code>s for our search-based question-answering system.</p>
 </section>
 <section id="indexing-the-text-document">
-<h2>Indexing the text document<a class="headerlink" href="#indexing-the-text-document" title="Permalink to this headline">#</a></h2>
+<h2>Indexing the text document<a class="headerlink" href="#indexing-the-text-document" title="Permalink to this heading">#</a></h2>
 <p>Let’s imagine we extracted a bunch of sentences from Jina’s documentation and stored them in a <code class="docutils literal notranslate"><span class="pre">DocumentArray</span></code>, as shown below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jina</span> <span class="kn">import</span> <span class="n">DocumentArray</span><span class="p">,</span> <span class="n">Executor</span><span class="p">,</span> <span class="n">requests</span><span class="p">,</span> <span class="n">Document</span><span class="p">,</span> <span class="n">Flow</span>
 
@@ -703,7 +697,7 @@ This is an inherently difficult task, due to the fuzziness of human language and
 </div>
 </section>
 <section id="searching-of-the-user-s-query-against-the-index">
-<h2>Searching of the user’s query against the index<a class="headerlink" href="#searching-of-the-user-s-query-against-the-index" title="Permalink to this headline">#</a></h2>
+<h2>Searching of the user’s query against the index<a class="headerlink" href="#searching-of-the-user-s-query-against-the-index" title="Permalink to this heading">#</a></h2>
 <p>After having defined the <code class="docutils literal notranslate"><span class="pre">Flow</span></code> for indexing our document, we are now ready to work on answering user queries. Incoming queries also need to be encoded. For that, we use the same encoder that we used for encoding our generated questions. Then we need <code class="docutils literal notranslate"><span class="pre">SimpleIndexer</span></code> to perform similarity search, in order to retrieve generated questions and eventually answers the query.</p>
 <p>The flow for searching is much simpler than the one for indexing and looks like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">query_flow</span> <span class="o">=</span> <span class="p">(</span>
@@ -730,7 +724,7 @@ This is an inherently difficult task, due to the fuzziness of human language and
 <p>Now that we have seen the overall structure of the approach and have defined our <code class="docutils literal notranslate"><span class="pre">Flows</span></code>, we can code up the <code class="docutils literal notranslate"><span class="pre">Executor</span></code>s.</p>
 </section>
 <section id="building-the-executor-to-generate-potential-questions">
-<h2>Building the Executor to Generate Potential Questions<a class="headerlink" href="#building-the-executor-to-generate-potential-questions" title="Permalink to this headline">#</a></h2>
+<h2>Building the Executor to Generate Potential Questions<a class="headerlink" href="#building-the-executor-to-generate-potential-questions" title="Permalink to this heading">#</a></h2>
 <p>The first <code class="docutils literal notranslate"><span class="pre">Executor</span></code>, that we implement, is the <code class="docutils literal notranslate"><span class="pre">QuestionGenerator</span></code>. It is a wrapper around the model that predicts potential questions, which a given piece of text can answer.</p>
 <p>Apart from that, it just loops over all provided parts of input text. After potential questions are predicted for each of the inputs, they are stored as <code class="docutils literal notranslate"><span class="pre">chunks</span></code> alongside the original text.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">T5Tokenizer</span><span class="p">,</span> <span class="n">T5ForConditionalGeneration</span>
@@ -768,7 +762,7 @@ This is an inherently difficult task, due to the fuzziness of human language and
 <p>We try to give credit where credit is due and want to mention the paper, that introduced the doc2query approach <a class="reference external" href="https://arxiv.org/pdf/1904.08375.pdf">here</a>.</p>
 </section>
 <section id="building-the-encoder">
-<h2>Building the Encoder<a class="headerlink" href="#building-the-encoder" title="Permalink to this headline">#</a></h2>
+<h2>Building the Encoder<a class="headerlink" href="#building-the-encoder" title="Permalink to this heading">#</a></h2>
 <p>The next step is to build the <code class="docutils literal notranslate"><span class="pre">Executor</span></code>, which we will use to create vector representations from human-readable text.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">from</span> <span class="nn">sentence_transformers</span> <span class="kn">import</span> <span class="n">SentenceTransformer</span>
@@ -796,7 +790,7 @@ This is an inherently difficult task, due to the fuzziness of human language and
 <p>Now let’s move on to the last part and create the indexer.</p>
 </section>
 <section id="putting-it-together-with-the-indexer">
-<h2>Putting it Together with the Indexer<a class="headerlink" href="#putting-it-together-with-the-indexer" title="Permalink to this headline">#</a></h2>
+<h2>Putting it Together with the Indexer<a class="headerlink" href="#putting-it-together-with-the-indexer" title="Permalink to this heading">#</a></h2>
 <p>The indexer is the only one of our <code class="docutils literal notranslate"><span class="pre">Executor</span></code>s that can handle more than one task.
 Namely, the indexing and the search.</p>
 <p>When it is used to perform indexing, <code class="docutils literal notranslate"><span class="pre">index()</span></code> is called. This stores all provided documents, together with their embeddings, as a <code class="docutils literal notranslate"><span class="pre">DocumentArrayMemmap</span></code>.</p>
@@ -872,7 +866,7 @@ Namely, the indexing and the search.</p>
 
                 <div class="related-information sd-d-inline-flex">
                     <a href="https://jina.ai">Copyright &#169; Jina AI Limited. All rights reserved.</a>
-                    Last updated on Oct 26, 2022.
+                    Last updated on Dec 14, 2022.
                     <div class="social-btns">
                     <a class='social-btn' href="https://github.com/jina-ai/jina/" aria-label="GitHub" target="_blank" rel="noreferrer"> <i class="fab fa-github"></i></a>
                     <a class='social-btn' href="https://slack.jina.ai" aria-label="Slack" target="_blank" rel="noreferrer"> <i class="fab fa-slack"></i></a>
@@ -930,7 +924,9 @@ Namely, the indexing and the search.</p>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>

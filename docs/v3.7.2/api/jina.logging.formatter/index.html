@@ -3,19 +3,12 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="jina.logging.formatter module" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/api/jina.logging.formatter/" />
-  
 <meta property="og:site_name" content="Jina 3.7.2 Documentation" />
-  
 <meta property="og:image" content="https://docs.jina.ai/_static/banner.png" />
-  
 <meta property="og:image:alt" content="Jina 3.7.2 Documentation" />
-  
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -33,13 +26,14 @@
 </script>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" />
+    
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" />
         <link rel="canonical" href="https://docs.jina.ai/api/jina.logging.formatter.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>jina.logging.formatter module - Jina 3.7.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -195,7 +189,7 @@
                     </svg>
                 </button>
             </div>
-            <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+            <label class="toc-overlay-icon toc-header-icon" for="__toc">
                 <div class="visually-hidden">Toggle table of contents sidebar</div>
                 <i class="icon">
                     <svg>
@@ -247,7 +241,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -397,7 +391,7 @@
                             </svg>
                         </button>
                     </div>
-                    <label class="toc-overlay-icon toc-content-icon no-toc"
+                    <label class="toc-overlay-icon toc-content-icon"
                            for="__toc">
                         <div class="visually-hidden">Toggle table of contents sidebar</div>
                         <i class="icon">
@@ -409,11 +403,11 @@
                 </div>
                 <article role="main">
                     <section id="module-jina.logging.formatter">
-<span id="jina-logging-formatter-module"></span><h1>jina.logging.formatter module<a class="headerlink" href="#module-jina.logging.formatter" title="Permalink to this headline">#</a></h1>
+<span id="jina-logging-formatter-module"></span><h1>jina.logging.formatter module<a class="headerlink" href="#module-jina.logging.formatter" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="jina.logging.formatter.PlainFormatter">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jina.logging.formatter.</span></span><span class="sig-name descname"><span class="pre">PlainFormatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datefmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'%'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jina/logging/formatter/#PlainFormatter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jina.logging.formatter.PlainFormatter" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">logging.Formatter</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Formatter</span></code></p>
 <p>Remove all control chars from the log and format it as plain text, also restrict the max-length of msg to 512.</p>
 <p>Initialize the formatter with specified format strings.</p>
 <p>Initialize the formatter either with the specified format string, or a
@@ -515,7 +509,7 @@ set the ‘converter’ attribute in the Formatter class.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="jina.logging.formatter.JsonFormatter">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jina.logging.formatter.</span></span><span class="sig-name descname"><span class="pre">JsonFormatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datefmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'%'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jina/logging/formatter/#JsonFormatter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jina.logging.formatter.JsonFormatter" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">logging.Formatter</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Formatter</span></code></p>
 <p>Format the log message as a JSON object so that it can be later used/parsed in browser with javascript.</p>
 <p>Initialize the formatter with specified format strings.</p>
 <p>Initialize the formatter either with the specified format string, or a
@@ -623,7 +617,7 @@ set the ‘converter’ attribute in the Formatter class.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="jina.logging.formatter.ProfileFormatter">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">jina.logging.formatter.</span></span><span class="sig-name descname"><span class="pre">ProfileFormatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datefmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'%'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/jina/logging/formatter/#ProfileFormatter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#jina.logging.formatter.ProfileFormatter" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">logging.Formatter</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Formatter</span></code></p>
 <p>Format the log message as JSON object and add the current used memory into it.</p>
 <p>Initialize the formatter with specified format strings.</p>
 <p>Initialize the formatter either with the specified format string, or a
@@ -737,7 +731,7 @@ set the ‘converter’ attribute in the Formatter class.</p>
                         <div class="copyright">
                             Copyright &#169; Jina AI Limited. All rights reserved.
                         </div><div class="last-updated">
-                            Last updated on Oct 26, 2022</div>
+                            Last updated on Dec 14, 2022</div>
                     </div>
                     <div class="right-details">
                         <div class="social-btns">
@@ -757,8 +751,63 @@ set the ‘converter’ attribute in the Formatter class.</p>
                 
             </footer>
         </div>
-        <aside class="toc-drawer no-toc">
+        <aside class="toc-drawer">
             
+            
+            <div class="toc-sticky toc-scroll">
+                <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+                </div>
+                <div class="toc-tree-container">
+                    <div class="toc-tree">
+                        <ul>
+<li><a class="reference internal" href="#">jina.logging.formatter module</a><ul>
+<li><a class="reference internal" href="#jina.logging.formatter.PlainFormatter"><code class="docutils literal notranslate"><span class="pre">PlainFormatter</span></code></a><ul>
+<li><a class="reference internal" href="#jina.logging.formatter.PlainFormatter.format"><code class="docutils literal notranslate"><span class="pre">PlainFormatter.format()</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.PlainFormatter.converter"><code class="docutils literal notranslate"><span class="pre">PlainFormatter.converter()</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.PlainFormatter.default_msec_format"><code class="docutils literal notranslate"><span class="pre">PlainFormatter.default_msec_format</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.PlainFormatter.default_time_format"><code class="docutils literal notranslate"><span class="pre">PlainFormatter.default_time_format</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.PlainFormatter.formatException"><code class="docutils literal notranslate"><span class="pre">PlainFormatter.formatException()</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.PlainFormatter.formatMessage"><code class="docutils literal notranslate"><span class="pre">PlainFormatter.formatMessage()</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.PlainFormatter.formatStack"><code class="docutils literal notranslate"><span class="pre">PlainFormatter.formatStack()</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.PlainFormatter.formatTime"><code class="docutils literal notranslate"><span class="pre">PlainFormatter.formatTime()</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.PlainFormatter.usesTime"><code class="docutils literal notranslate"><span class="pre">PlainFormatter.usesTime()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jina.logging.formatter.JsonFormatter"><code class="docutils literal notranslate"><span class="pre">JsonFormatter</span></code></a><ul>
+<li><a class="reference internal" href="#jina.logging.formatter.JsonFormatter.KEYS"><code class="docutils literal notranslate"><span class="pre">JsonFormatter.KEYS</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.JsonFormatter.format"><code class="docutils literal notranslate"><span class="pre">JsonFormatter.format()</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.JsonFormatter.converter"><code class="docutils literal notranslate"><span class="pre">JsonFormatter.converter()</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.JsonFormatter.default_msec_format"><code class="docutils literal notranslate"><span class="pre">JsonFormatter.default_msec_format</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.JsonFormatter.default_time_format"><code class="docutils literal notranslate"><span class="pre">JsonFormatter.default_time_format</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.JsonFormatter.formatException"><code class="docutils literal notranslate"><span class="pre">JsonFormatter.formatException()</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.JsonFormatter.formatMessage"><code class="docutils literal notranslate"><span class="pre">JsonFormatter.formatMessage()</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.JsonFormatter.formatStack"><code class="docutils literal notranslate"><span class="pre">JsonFormatter.formatStack()</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.JsonFormatter.formatTime"><code class="docutils literal notranslate"><span class="pre">JsonFormatter.formatTime()</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.JsonFormatter.usesTime"><code class="docutils literal notranslate"><span class="pre">JsonFormatter.usesTime()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#jina.logging.formatter.ProfileFormatter"><code class="docutils literal notranslate"><span class="pre">ProfileFormatter</span></code></a><ul>
+<li><a class="reference internal" href="#jina.logging.formatter.ProfileFormatter.format"><code class="docutils literal notranslate"><span class="pre">ProfileFormatter.format()</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.ProfileFormatter.converter"><code class="docutils literal notranslate"><span class="pre">ProfileFormatter.converter()</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.ProfileFormatter.default_msec_format"><code class="docutils literal notranslate"><span class="pre">ProfileFormatter.default_msec_format</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.ProfileFormatter.default_time_format"><code class="docutils literal notranslate"><span class="pre">ProfileFormatter.default_time_format</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.ProfileFormatter.formatException"><code class="docutils literal notranslate"><span class="pre">ProfileFormatter.formatException()</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.ProfileFormatter.formatMessage"><code class="docutils literal notranslate"><span class="pre">ProfileFormatter.formatMessage()</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.ProfileFormatter.formatStack"><code class="docutils literal notranslate"><span class="pre">ProfileFormatter.formatStack()</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.ProfileFormatter.formatTime"><code class="docutils literal notranslate"><span class="pre">ProfileFormatter.formatTime()</span></code></a></li>
+<li><a class="reference internal" href="#jina.logging.formatter.ProfileFormatter.usesTime"><code class="docutils literal notranslate"><span class="pre">ProfileFormatter.usesTime()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                    </div>
+                </div>
+            </div>
             
             
         </aside>
@@ -781,7 +830,9 @@ set the ‘converter’ attribute in the Formatter class.</p>
      src="https://static.scarf.sh/a.png?x-pxid=2823e771-0e1e-4320-8fde-48bc48e53262"/><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>

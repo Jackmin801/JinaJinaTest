@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Master Executor: from Zero to Hub" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/tutorials/master-executor/" />
-  
 <meta property="og:site_name" content="Jina 3.0.0 Documentation" />
-  
 <meta property="og:description" content="Cristian @ Jina AI Sept. 10, 2021 This is a step-by-step walkthrough on how to create your Executors or use existing ones. We will create a simple logging Executor. It will log the Documents’ information as they reach it, and save these to a file. We will also see how to push our Executor to Jina..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_images/cristian.jpg" />
-  
 <meta property="og:image:alt" content="" />
-  
+<meta name="description" content="Cristian @ Jina AI Sept. 10, 2021 This is a step-by-step walkthrough on how to create your Executors or use existing ones. We will create a simple logging Executor. It will log the Documents’ information as they reach it, and save these to a file. We will also see how to push our Executor to Jina..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -36,13 +29,14 @@
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script async defer src="https://cdn.jsdelivr.net/npm/qabot@0.3"></script>
-    <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" />
+    
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" />
         <link rel="canonical" href="https://docs.jina.ai/tutorials/master-executor.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Master Executor: from Zero to Hub - Jina 3.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -239,7 +233,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -646,7 +640,7 @@
                     </label>
                 </div>
                 <section class="tex2jax_ignore mathjax_ignore" id="master-executor-from-zero-to-hub">
-<h1>Master Executor: from Zero to Hub<a class="headerlink" href="#master-executor-from-zero-to-hub" title="Permalink to this headline">#</a></h1>
+<h1>Master Executor: from Zero to Hub<a class="headerlink" href="#master-executor-from-zero-to-hub" title="Permalink to this heading">#</a></h1>
 <div class="sd-container-fluid sd-sphinx-override sd-p-0 sd-mt-2 sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-2 sd-gx-2 sd-gy-1 docutils">
 <div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
@@ -669,7 +663,7 @@
 <p>This is a step-by-step walkthrough on how to create your Executors or use existing ones.</p>
 <p>We will create a simple logging Executor. It will log the Documents’ information as they reach it, and save these to a file. We will also see how to push our Executor to Jina Hub to use it later.</p>
 <section id="set-up-overview">
-<h2>Set-up &amp; overview<a class="headerlink" href="#set-up-overview" title="Permalink to this headline">#</a></h2>
+<h2>Set-up &amp; overview<a class="headerlink" href="#set-up-overview" title="Permalink to this heading">#</a></h2>
 <p>We recommend creating a <a class="reference external" href="https://docs.python.org/3/tutorial/venv.html">new python virtual environment</a> to have a clean installation of Jina and prevent dependency clashing.</p>
 <p>We can start by installing Jina:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install jina
@@ -678,7 +672,7 @@
 <p>For more information on installing Jina, refer to <a class="reference internal" href="../../get-started/install/#install"><span class="std std-ref">this page</span></a>.</p>
 </section>
 <section id="create-your-executor">
-<h2>Create your Executor<a class="headerlink" href="#create-your-executor" title="Permalink to this headline">#</a></h2>
+<h2>Create your Executor<a class="headerlink" href="#create-your-executor" title="Permalink to this heading">#</a></h2>
 <p>To create your Executor, you just need to run this command in your terminal:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>jina hub new
 </pre></div>
@@ -690,7 +684,7 @@
 </ul>
 <p>For this tutorial, we will call ours <strong>RequestLogger</strong>. And you can save it wherever you want to have your project. The wizard will ask if you want to have a more advanced configuration, but it is unnecessary for this tutorial.</p>
 <section id="logger-executor">
-<h3>Logger Executor<a class="headerlink" href="#logger-executor" title="Permalink to this headline">#</a></h3>
+<h3>Logger Executor<a class="headerlink" href="#logger-executor" title="Permalink to this heading">#</a></h3>
 <p>Once we followed the wizard, we have our folder structure ready. We can start working with the <code class="docutils literal notranslate"><span class="pre">executor.py</span></code>. Open that file, and let’s import the following</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">time</span>
@@ -846,7 +840,7 @@
 <p>Ok, and what now? How can you use this in your app?</p>
 </section>
 <section id="push-your-executor-to-hub">
-<h3>Push your Executor to Hub<a class="headerlink" href="#push-your-executor-to-hub" title="Permalink to this headline">#</a></h3>
+<h3>Push your Executor to Hub<a class="headerlink" href="#push-your-executor-to-hub" title="Permalink to this heading">#</a></h3>
 <p>We could use our Executor directly in our app, but here we will see how to push it to Jina Hub so we can share it with more people, or use it later.</p>
 <p>First step is to actually make sure the <code class="docutils literal notranslate"><span class="pre">manifest.yml</span></code> and <code class="docutils literal notranslate"><span class="pre">config.yml</span></code> files are still relevant. Check that the data in there still represent you Executor’s purpose.</p>
 <p>For this, you need to open a terminal in the folder of your <code class="docutils literal notranslate"><span class="pre">executor.py</span></code>, so in this case, open a terminal inside the <code class="docutils literal notranslate"><span class="pre">RequestLogger</span></code> folder. And there you just need to type:</p>
@@ -863,7 +857,7 @@
 </div>
 </section>
 <section id="use-your-executor">
-<h3>Use your Executor<a class="headerlink" href="#use-your-executor" title="Permalink to this headline">#</a></h3>
+<h3>Use your Executor<a class="headerlink" href="#use-your-executor" title="Permalink to this heading">#</a></h3>
 <p>Let’s create a Jina Flow that can use the Executor we just wrote.
 Create an <code class="docutils literal notranslate"><span class="pre">app.py</span></code> in the same folder as <code class="docutils literal notranslate"><span class="pre">RequestLogger</span></code>. Now open it and import <code class="docutils literal notranslate"><span class="pre">Flow</span></code>, <code class="docutils literal notranslate"><span class="pre">DocumentArray</span></code>, <code class="docutils literal notranslate"><span class="pre">Document</span></code> before we create our `main function:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jina</span> <span class="kn">import</span> <span class="n">Flow</span><span class="p">,</span> <span class="n">DocumentArray</span><span class="p">,</span> <span class="n">Document</span>
@@ -977,7 +971,7 @@ Create an <code class="docutils literal notranslate"><span class="pre">app.py</s
 
                 <div class="related-information sd-d-inline-flex">
                     <a href="https://jina.ai">Copyright &#169; Jina AI Limited. All rights reserved.</a>
-                    Last updated on Oct 26, 2022.
+                    Last updated on Dec 14, 2022.
                     <div class="social-btns">
                     <a class='social-btn' href="https://github.com/jina-ai/jina/" aria-label="GitHub" target="_blank" rel="noreferrer"> <i class="fab fa-github"></i></a>
                     <a class='social-btn' href="https://slack.jina.ai" aria-label="Slack" target="_blank" rel="noreferrer"> <i class="fab fa-slack"></i></a>
@@ -1036,7 +1030,9 @@ Create an <code class="docutils literal notranslate"><span class="pre">app.py</s
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>

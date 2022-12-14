@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Configure a Flow from YAML" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/fundamentals/flow/flow-yaml/" />
-  
 <meta property="og:site_name" content="Jina 3.3.1 Documentation" />
-  
 <meta property="og:description" content="Instead of constructing a Flow in Python source codes, using a YAML file is the recommended way to configure Flows because it is independent of the Python source codes,, easy to edit, maintain and extend,, human-readable.. Load and Save a Flow configuration: load_config() is used to load the Flow..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_static/banner.png" />
-  
 <meta property="og:image:alt" content="Jina 3.3.1 Documentation" />
-  
+<meta name="description" content="Instead of constructing a Flow in Python source codes, using a YAML file is the recommended way to configure Flows because it is independent of the Python source codes,, easy to edit, maintain and extend,, human-readable.. Load and Save a Flow configuration: load_config() is used to load the Flow..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -35,13 +28,14 @@
 </script>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Configure Flow" href="../flow-api/" /><link rel="prev" title="Create a Flow" href="../create-flow/" />
+    
+<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Configure Flow" href="../flow-api/" /><link rel="prev" title="Create a Flow" href="../create-flow/" />
         <link rel="canonical" href="https://docs.jina.ai/fundamentals/flow/flow-yaml.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Configure a Flow from YAML - Jina 3.3.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -244,7 +238,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -604,7 +598,7 @@
                     </label>
                 </div>
                 <section class="tex2jax_ignore mathjax_ignore" id="configure-a-flow-from-yaml">
-<h1>Configure a Flow from YAML<a class="headerlink" href="#configure-a-flow-from-yaml" title="Permalink to this headline">#</a></h1>
+<h1>Configure a Flow from YAML<a class="headerlink" href="#configure-a-flow-from-yaml" title="Permalink to this heading">#</a></h1>
 <p>Instead of constructing a Flow in Python source codes, using a YAML file is the recommended way to configure Flows
 because it is</p>
 <ul class="simple">
@@ -613,7 +607,7 @@ because it is</p>
 <li><p>human-readable.</p></li>
 </ul>
 <section id="load-and-save-a-flow-configuration">
-<h2>Load and Save a Flow configuration<a class="headerlink" href="#load-and-save-a-flow-configuration" title="Permalink to this headline">#</a></h2>
+<h2>Load and Save a Flow configuration<a class="headerlink" href="#load-and-save-a-flow-configuration" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">load_config()</span></code> is used to load the Flow configuration from a YAML file. Correspondingly, one uses <code class="docutils literal notranslate"><span class="pre">save_config()</span></code>  to
 save the Flow configuration. In the following example, <code class="docutils literal notranslate"><span class="pre">jtype:</span> <span class="pre">Flow</span></code> in the YAML file tells the parser to construct a
 <code class="docutils literal notranslate"><span class="pre">Flow</span></code> using this YAML file.</p>
@@ -630,7 +624,7 @@ save the Flow configuration. In the following example, <code class="docutils lit
 </div>
 </section>
 <section id="configure-executors">
-<h2>Configure Executors<a class="headerlink" href="#configure-executors" title="Permalink to this headline">#</a></h2>
+<h2>Configure Executors<a class="headerlink" href="#configure-executors" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">executors</span></code> field in the YAML file is for adding Executors to the Flow. It accepts a list of dictionaries, each of
 which specifies a configuration of one executor. The dictionary accepts all the arguments from the <code class="docutils literal notranslate"><span class="pre">add()</span></code> method of the
 Flow.
@@ -668,7 +662,7 @@ assign strings directly, for example <code class="docutils literal notranslate">
 </div>
 </section>
 <section id="configure-flow-apis">
-<h2>Configure Flow APIs<a class="headerlink" href="#configure-flow-apis" title="Permalink to this headline">#</a></h2>
+<h2>Configure Flow APIs<a class="headerlink" href="#configure-flow-apis" title="Permalink to this heading">#</a></h2>
 <p>Use <code class="docutils literal notranslate"><span class="pre">with</span></code> field to configure the Flow APIs. It accepts all the arguments in Flow constructor. In the example below, we
 set the Flow to serve <code class="docutils literal notranslate"><span class="pre">http</span></code> at the port <code class="docutils literal notranslate"><span class="pre">45678</span></code> with CORS being enabled.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">jtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Flow</span><span class="w"></span>
@@ -680,7 +674,7 @@ set the Flow to serve <code class="docutils literal notranslate"><span class="pr
 </div>
 </section>
 <section id="configure-flow-meta-information">
-<h2>Configure Flow Meta Information<a class="headerlink" href="#configure-flow-meta-information" title="Permalink to this headline">#</a></h2>
+<h2>Configure Flow Meta Information<a class="headerlink" href="#configure-flow-meta-information" title="Permalink to this heading">#</a></h2>
 <p>In the case that you want to set the same value for the <code class="docutils literal notranslate"><span class="pre">metas</span></code> attributes in <strong>all</strong> the executors, <code class="docutils literal notranslate"><span class="pre">metas</span></code> field can
 help. This is very helpful when you use the executors with local source codes and have all of them in one Python module.
 In the following example, the two executors are defined in the same module.</p>
@@ -748,7 +742,7 @@ In the following example, the two executors are defined in the same module.</p>
 
                 <div class="related-information sd-d-inline-flex">
                     <a href="https://jina.ai">Copyright &#169; Jina AI Limited. All rights reserved.</a>
-                    Last updated on Oct 26, 2022.
+                    Last updated on Dec 14, 2022.
                     <div class="social-btns">
                     <a class='social-btn' href="https://github.com/jina-ai/jina/" aria-label="GitHub" target="_blank" rel="noreferrer"> <i class="fab fa-github"></i></a>
                     <a class='social-btn' href="https://slack.jina.ai" aria-label="Slack" target="_blank" rel="noreferrer"> <i class="fab fa-slack"></i></a>
@@ -807,7 +801,9 @@ In the following example, the two executors are defined in the same module.</p>
 <img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=1b470c1d-3b55-4d38-baa8-989bfba2a218" /><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>

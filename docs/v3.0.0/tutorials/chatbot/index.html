@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Question-Answering Chatbot via Transformer" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/tutorials/chatbot/" />
-  
 <meta property="og:site_name" content="Jina 3.0.0 Documentation" />
-  
 <meta property="og:description" content="Susana @ Jina AI June 15, 2021 We will use the hello world chatbot for this tutorial. You can find the complete code here and we will go step by step. At the end of this tutorial, you will have your own chatbot. You will use text as an input and get a text result as output. For this example, we w..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_images/susana.jpg" />
-  
 <meta property="og:image:alt" content="" />
-  
+<meta name="description" content="Susana @ Jina AI June 15, 2021 We will use the hello world chatbot for this tutorial. You can find the complete code here and we will go step by step. At the end of this tutorial, you will have your own chatbot. You will use text as an input and get a text result as output. For this example, we w..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -36,13 +29,14 @@
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script async defer src="https://cdn.jsdelivr.net/npm/qabot@0.3"></script>
-    <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" />
+    
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" />
         <link rel="canonical" href="https://docs.jina.ai/tutorials/chatbot.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Question-Answering Chatbot via Transformer - Jina 3.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -239,7 +233,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -646,7 +640,7 @@
                     </label>
                 </div>
                 <section class="tex2jax_ignore mathjax_ignore" id="question-answering-chatbot-via-transformer">
-<h1>Question-Answering Chatbot via Transformer<a class="headerlink" href="#question-answering-chatbot-via-transformer" title="Permalink to this headline">#</a></h1>
+<h1>Question-Answering Chatbot via Transformer<a class="headerlink" href="#question-answering-chatbot-via-transformer" title="Permalink to this heading">#</a></h1>
 <div class="sd-container-fluid sd-sphinx-override sd-p-0 sd-mt-2 sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-2 sd-gx-2 sd-gy-1 docutils">
 <div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
@@ -672,7 +666,7 @@ code <a class="reference external" href="https://github.com/jina-ai/jina/tree/ma
 output. For this example, we will use a <a class="reference external" href="https://www.kaggle.com/xhlulu/covidqa">covid dataset</a>. You will understand how
 every part of this example works and how you can create new apps with different datasets on your own.</p>
 <section id="define-data-and-work-directories">
-<h2>Define data and work directories<a class="headerlink" href="#define-data-and-work-directories" title="Permalink to this headline">#</a></h2>
+<h2>Define data and work directories<a class="headerlink" href="#define-data-and-work-directories" title="Permalink to this heading">#</a></h2>
 <p>We can start by creating an empty folder, I’ll call mine <code class="docutils literal notranslate"><span class="pre">tutorial</span></code> and that’s the name you’ll see through the tutorial
 but feel free to use whatever you wish.</p>
 <p>We will display our results in our browser, so download the static folder from
@@ -685,7 +679,7 @@ the <a class="reference external" href="https://www.kaggle.com/xhlulu/covidqa">C
 </div>
 </section>
 <section id="create-documents-from-a-csv-file">
-<h2>Create Documents from a csv file<a class="headerlink" href="#create-documents-from-a-csv-file" title="Permalink to this headline">#</a></h2>
+<h2>Create Documents from a csv file<a class="headerlink" href="#create-documents-from-a-csv-file" title="Permalink to this heading">#</a></h2>
 <p>To create a Document in Jina, we do it like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">doc</span> <span class="o">=</span> <span class="n">Document</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="s1">&#39;hello, world!&#39;</span><span class="p">)</span>
 </pre></div>
@@ -735,7 +729,7 @@ have logic to index data. Later, we will modify Executors so that calling <code 
 </div>
 </section>
 <section id="create-flow">
-<h2>Create Flow<a class="headerlink" href="#create-flow" title="Permalink to this headline">#</a></h2>
+<h2>Create Flow<a class="headerlink" href="#create-flow" title="Permalink to this heading">#</a></h2>
 <p>Let’s put the Executors and the Flow together and re-organize our code a little bit. First, we should import everything
 we need:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -834,10 +828,10 @@ any results. This is because we are using dummy Executors. Our <code class="docu
 anything. So far they only print a line when they are called. So we need real Executors.</p>
 </section>
 <section id="create-executors">
-<h2>Create Executors<a class="headerlink" href="#create-executors" title="Permalink to this headline">#</a></h2>
+<h2>Create Executors<a class="headerlink" href="#create-executors" title="Permalink to this heading">#</a></h2>
 <p>We will be creating our Executors in a separate file: <code class="docutils literal notranslate"><span class="pre">my_executors.py</span></code>.</p>
 <section id="sentence-transformer">
-<h3>Sentence Transformer<a class="headerlink" href="#sentence-transformer" title="Permalink to this headline">#</a></h3>
+<h3>Sentence Transformer<a class="headerlink" href="#sentence-transformer" title="Permalink to this heading">#</a></h3>
 <p>First, let’s import the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
 
@@ -883,7 +877,7 @@ get the closed matches.</p>
 attributes of docs in batch and then compute embeddings. Later, we set the embedding attribute of each Document.</p>
 </section>
 <section id="simple-indexer">
-<h3>Simple Indexer<a class="headerlink" href="#simple-indexer" title="Permalink to this headline">#</a></h3>
+<h3>Simple Indexer<a class="headerlink" href="#simple-indexer" title="Permalink to this heading">#</a></h3>
 <p>Now, let’s implement our indexer (<code class="docutils literal notranslate"><span class="pre">MyIndexer</span></code>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyIndexer</span><span class="p">(</span><span class="n">Executor</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Simple indexer class &quot;&quot;&quot;</span>
@@ -926,7 +920,7 @@ the cosine similarity.</p>
 </section>
 </section>
 <section id="put-all-together">
-<h2>Put all together<a class="headerlink" href="#put-all-together" title="Permalink to this headline">#</a></h2>
+<h2>Put all together<a class="headerlink" href="#put-all-together" title="Permalink to this heading">#</a></h2>
 <p>Your <code class="docutils literal notranslate"><span class="pre">app.py</span></code> should now look like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">webbrowser</span>
@@ -997,7 +991,7 @@ the cosine similarity.</p>
 
                 <div class="related-information sd-d-inline-flex">
                     <a href="https://jina.ai">Copyright &#169; Jina AI Limited. All rights reserved.</a>
-                    Last updated on Oct 26, 2022.
+                    Last updated on Dec 14, 2022.
                     <div class="social-btns">
                     <a class='social-btn' href="https://github.com/jina-ai/jina/" aria-label="GitHub" target="_blank" rel="noreferrer"> <i class="fab fa-github"></i></a>
                     <a class='social-btn' href="https://slack.jina.ai" aria-label="Slack" target="_blank" rel="noreferrer"> <i class="fab fa-slack"></i></a>
@@ -1058,7 +1052,9 @@ the cosine similarity.</p>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>

@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Monitor Flow" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/fundamentals/flow/monitoring-flow/" />
-  
 <meta property="og:site_name" content="Jina 3.4.2 Documentation" />
-  
 <meta property="og:description" content="A Jina Flow exposes several core metrics that allow you to have a deeper look at what is happening inside it. Metrics allow you to, for example, monitor the overall performance of your Flow, detect bottlenecks, or alert your team when some component of your Flow is down. Jina Flows expose metrics..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_static/banner.png" />
-  
 <meta property="og:image:alt" content="Jina 3.4.2 Documentation" />
-  
+<meta name="description" content="A Jina Flow exposes several core metrics that allow you to have a deeper look at what is happening inside it. Metrics allow you to, for example, monitor the overall performance of your Flow, detect bottlenecks, or alert your team when some component of your Flow is down. Jina Flows expose metrics..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -35,13 +28,14 @@
 </script>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Remarks" href="../remarks/" /><link rel="prev" title="Python Client" href="../client/" />
+    
+<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Remarks" href="../remarks/" /><link rel="prev" title="Python Client" href="../client/" />
         <link rel="canonical" href="https://docs.jina.ai/fundamentals/flow/monitoring-flow.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Monitor Flow - Jina 3.4.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -238,7 +232,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -609,7 +603,7 @@
                     </label>
                 </div>
                 <section class="tex2jax_ignore mathjax_ignore" id="monitor-flow">
-<span id="monitoring-flow"></span><h1>Monitor Flow<a class="headerlink" href="#monitor-flow" title="Permalink to this headline">#</a></h1>
+<span id="monitoring-flow"></span><h1>Monitor Flow<a class="headerlink" href="#monitor-flow" title="Permalink to this heading">#</a></h1>
 <p>A Jina <a class="reference internal" href="../#flow-cookbook"><span class="std std-ref">Flow</span></a> exposes several core metrics that allow you to have a deeper look
 at what is happening inside it. Metrics allow you to, for example, monitor the overall performance
 of your Flow, detect bottlenecks, or alert your team when some component of your Flow is down.</p>
@@ -617,7 +611,7 @@ of your Flow, detect bottlenecks, or alert your team when some component of your
 <a class="reference external" href="https://prometheus.io/">Prometheus</a>, an industry-standard tool for collecting and monitoring metrics.</p>
 <p>To visualize your metrics through a dashboard, we recommend <a class="reference external" href="https://grafana.com/">Grafana</a></p>
 <section id="enable-the-monitoring-in-a-flow">
-<h2>Enable the monitoring in a Flow<a class="headerlink" href="#enable-the-monitoring-in-a-flow" title="Permalink to this headline">#</a></h2>
+<h2>Enable the monitoring in a Flow<a class="headerlink" href="#enable-the-monitoring-in-a-flow" title="Permalink to this heading">#</a></h2>
 <p>A <a class="reference internal" href="../#flow-cookbook"><span class="std std-ref">Flow</span></a> is composed of several Pods, namely the Gateway, the Executors, and potentially a Head (see the <a class="reference internal" href="../../architecture-overview/#architecture-overview"><span class="std std-ref">architecture overview</span></a> for more details). Each of these Pods is its own microservice. These services expose their own metrics using the <a class="reference external" href="https://prometheus.io/docs/instrumenting/clientlibs/">Prometheus client</a>.
 This means that they are as many metrics endpoints as there are Pods in your Flow.</p>
 <p>Let’s give an example to illustrate it :</p>
@@ -683,11 +677,11 @@ interested in monitoring a single Executor. Note that by default the monitoring 
 </div>
 </section>
 <section id="available-metrics">
-<h2>Available metrics<a class="headerlink" href="#available-metrics" title="Permalink to this headline">#</a></h2>
+<h2>Available metrics<a class="headerlink" href="#available-metrics" title="Permalink to this heading">#</a></h2>
 <p>Flows support different metrics out of the box, in addition to allowing the user to define their own custom metrics.</p>
 <p>Because not all Pods have the same role, they expose different kinds of metrics:</p>
 <section id="gateway-pods">
-<h3>Gateway Pods<a class="headerlink" href="#gateway-pods" title="Permalink to this headline">#</a></h3>
+<h3>Gateway Pods<a class="headerlink" href="#gateway-pods" title="Permalink to this heading">#</a></h3>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -715,7 +709,7 @@ interested in monitoring a single Executor. Note that by default the monitoring 
 </div>
 </section>
 <section id="head-pods">
-<h3>Head Pods<a class="headerlink" href="#head-pods" title="Permalink to this headline">#</a></h3>
+<h3>Head Pods<a class="headerlink" href="#head-pods" title="Permalink to this heading">#</a></h3>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -739,7 +733,7 @@ interested in monitoring a single Executor. Note that by default the monitoring 
 </table>
 </section>
 <section id="executor-pods">
-<h3>Executor Pods<a class="headerlink" href="#executor-pods" title="Permalink to this headline">#</a></h3>
+<h3>Executor Pods<a class="headerlink" href="#executor-pods" title="Permalink to this heading">#</a></h3>
 <table border="1" class="docutils">
 <thead>
 <tr>
@@ -778,7 +772,7 @@ Executor.</p>
 </section>
 </section>
 <section id="see-further">
-<h2>See further<a class="headerlink" href="#see-further" title="Permalink to this headline">#</a></h2>
+<h2>See further<a class="headerlink" href="#see-further" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../../executor/monitoring-executor/#monitoring-executor"><span class="std std-ref">Defining custom metrics in an Executor</span></a></p></li>
 <li><p><a class="reference internal" href="../../../how-to/monitoring/#monitoring"><span class="std std-ref">How to deploy and use the monitoring with Jina</span></a></p></li>
@@ -819,7 +813,7 @@ Executor.</p>
 
                 <div class="related-information sd-d-inline-flex">
                     <a href="https://jina.ai">Copyright &#169; Jina AI Limited. All rights reserved.</a>
-                    Last updated on Oct 26, 2022.
+                    Last updated on Dec 14, 2022.
                     <div class="social-btns">
                     <a class='social-btn' href="https://github.com/jina-ai/jina/" aria-label="GitHub" target="_blank" rel="noreferrer"> <i class="fab fa-github"></i></a>
                     <a class='social-btn' href="https://slack.jina.ai" aria-label="Slack" target="_blank" rel="noreferrer"> <i class="fab fa-slack"></i></a>
@@ -882,7 +876,9 @@ Executor.</p>
 <img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=1b470c1d-3b55-4d38-baa8-989bfba2a218" /><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>

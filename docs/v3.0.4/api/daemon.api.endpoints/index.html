@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="daemon.api.endpoints package" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/api/daemon.api.endpoints/" />
-  
 <meta property="og:site_name" content="Jina 3.0.4 Documentation" />
-  
-<meta property="og:description" content="Subpackages: daemon.api.endpoints.partial package- Submodules- daemon.api.endpoints.partial.deployment module, daemon.api.endpoints.partial.flow module, daemon.api.endpoints.partial.pod module., Module contents.. Submodules: daemon.api.endpoints.deployments module, daemon.api.endpoints.flows modu..." />
-  
+<meta property="og:description" content="Subpackages: daemon.api.endpoints.partial package- Submodules- daemon.api.endpoints.partial.deployment module- rolling_update(), scale()., daemon.api.endpoints.partial.flow module- rolling_update(), scale()., daemon.api.endpoints.partial.pod module., Module contents.. Submodules: daemon.api.endpo..." />
 <meta property="og:image" content="https://docs.jina.ai/_static/banner.png" />
-  
 <meta property="og:image:alt" content="Jina 3.0.4 Documentation" />
-  
+<meta name="description" content="Subpackages: daemon.api.endpoints.partial package- Submodules- daemon.api.endpoints.partial.deployment module- rolling_update(), scale()., daemon.api.endpoints.partial.flow module- rolling_update(), scale()., daemon.api.endpoints.partial.pod module., Module contents.. Submodules: daemon.api.endpo..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -36,13 +29,14 @@
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script async defer src="https://cdn.jsdelivr.net/npm/qabot@0.4"></script>
-    <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="daemon.api.endpoints.partial package" href="../daemon.api.endpoints.partial/" /><link rel="prev" title="daemon.api package" href="../daemon.api/" />
+    
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="daemon.api.endpoints.partial package" href="../daemon.api.endpoints.partial/" /><link rel="prev" title="daemon.api package" href="../daemon.api/" />
         <link rel="canonical" href="https://docs.jina.ai/api/daemon.api.endpoints.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>daemon.api.endpoints package - Jina 3.0.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -239,7 +233,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -648,15 +642,23 @@
                     </label>
                 </div>
                 <section id="daemon-api-endpoints-package">
-<h1>daemon.api.endpoints package<a class="headerlink" href="#daemon-api-endpoints-package" title="Permalink to this headline">#</a></h1>
+<h1>daemon.api.endpoints package<a class="headerlink" href="#daemon-api-endpoints-package" title="Permalink to this heading">#</a></h1>
 <section id="subpackages">
-<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">#</a></h2>
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../daemon.api.endpoints.partial/">daemon.api.endpoints.partial package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../daemon.api.endpoints.partial/#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../daemon.api.endpoints.partial.deployment/">daemon.api.endpoints.partial.deployment module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../daemon.api.endpoints.partial.flow/">daemon.api.endpoints.partial.flow module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.api.endpoints.partial.deployment/">daemon.api.endpoints.partial.deployment module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../daemon.api.endpoints.partial.deployment/#daemon.api.endpoints.partial.deployment.rolling_update"><code class="docutils literal notranslate"><span class="pre">rolling_update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../daemon.api.endpoints.partial.deployment/#daemon.api.endpoints.partial.deployment.scale"><code class="docutils literal notranslate"><span class="pre">scale()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.api.endpoints.partial.flow/">daemon.api.endpoints.partial.flow module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../daemon.api.endpoints.partial.flow/#daemon.api.endpoints.partial.flow.rolling_update"><code class="docutils literal notranslate"><span class="pre">rolling_update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../daemon.api.endpoints.partial.flow/#daemon.api.endpoints.partial.flow.scale"><code class="docutils literal notranslate"><span class="pre">scale()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../daemon.api.endpoints.partial.pod/">daemon.api.endpoints.partial.pod module</a></li>
 </ul>
 </li>
@@ -667,19 +669,27 @@
 </div>
 </section>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../daemon.api.endpoints.deployments/">daemon.api.endpoints.deployments module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../daemon.api.endpoints.flows/">daemon.api.endpoints.flows module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../daemon.api.endpoints.logs/">daemon.api.endpoints.logs module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../daemon.api.endpoints.logs/">daemon.api.endpoints.logs module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../daemon.api.endpoints.logs/#daemon.api.endpoints.logs.ConnectionManager"><code class="docutils literal notranslate"><span class="pre">ConnectionManager</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.api.endpoints.logs/#daemon.api.endpoints.logs.ConnectionManager.connect"><code class="docutils literal notranslate"><span class="pre">ConnectionManager.connect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.api.endpoints.logs/#daemon.api.endpoints.logs.ConnectionManager.disconnect"><code class="docutils literal notranslate"><span class="pre">ConnectionManager.disconnect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.api.endpoints.logs/#daemon.api.endpoints.logs.ConnectionManager.broadcast"><code class="docutils literal notranslate"><span class="pre">ConnectionManager.broadcast()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../daemon.api.endpoints.pods/">daemon.api.endpoints.pods module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../daemon.api.endpoints.workspaces/">daemon.api.endpoints.workspaces module</a></li>
 </ul>
 </div>
 </section>
 <section id="module-daemon.api.endpoints">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-daemon.api.endpoints" title="Permalink to this headline">#</a></h2>
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-daemon.api.endpoints" title="Permalink to this heading">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="daemon.api.endpoints.startup">
 <em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">daemon.api.endpoints.</span></span><span class="sig-name descname"><span class="pre">startup</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/daemon/api/endpoints/#startup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#daemon.api.endpoints.startup" title="Permalink to this definition">#</a></dt>
@@ -721,7 +731,7 @@
 
                 <div class="related-information sd-d-inline-flex">
                     <a href="https://jina.ai">Copyright &#169; Jina AI Limited. All rights reserved.</a>
-                    Last updated on Oct 26, 2022.
+                    Last updated on Dec 14, 2022.
                     <div class="social-btns">
                     <a class='social-btn' href="https://github.com/jina-ai/jina/" aria-label="GitHub" target="_blank" rel="noreferrer"> <i class="fab fa-github"></i></a>
                     <a class='social-btn' href="https://slack.jina.ai" aria-label="Slack" target="_blank" rel="noreferrer"> <i class="fab fa-slack"></i></a>
@@ -749,7 +759,10 @@
 <li><a class="reference internal" href="#">daemon.api.endpoints package</a><ul>
 <li><a class="reference internal" href="#subpackages">Subpackages</a></li>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-daemon.api.endpoints">Module contents</a></li>
+<li><a class="reference internal" href="#module-daemon.api.endpoints">Module contents</a><ul>
+<li><a class="reference internal" href="#daemon.api.endpoints.startup"><code class="docutils literal notranslate"><span class="pre">startup()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -778,7 +791,9 @@
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>

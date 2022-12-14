@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Filter Table Rows by Attributes" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/datatype/tabular/filter-via-neural-search/" />
-  
 <meta property="og:site_name" content="Jina 3.0.0 Documentation" />
-  
 <meta property="og:description" content="Big news, one can use Jina to filter table rows by their attributes! Such an amazing feature that only exists since… 47 years ago, aka SQL! Jina as a neural search framework surely won’t implement a SQL database from scratch. The question here is: is it possible to leverage what we learned about ..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_images/film-dataset.png" />
-  
 <meta property="og:image:alt" content="Jina 3.0.0 Documentation" />
-  
+<meta name="description" content="Big news, one can use Jina to filter table rows by their attributes! Such an amazing feature that only exists since… 47 years ago, aka SQL! Jina as a neural search framework surely won’t implement a SQL database from scratch. The question here is: is it possible to leverage what we learned about ..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -36,13 +29,14 @@
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script async defer src="https://cdn.jsdelivr.net/npm/qabot@0.3"></script>
-    <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" />
+    
+<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" />
         <link rel="canonical" href="https://docs.jina.ai/datatype/tabular/filter-via-neural-search.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Filter Table Rows by Attributes - Jina 3.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -239,7 +233,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -646,7 +640,7 @@
                     </label>
                 </div>
                 <section class="tex2jax_ignore mathjax_ignore" id="filter-table-rows-by-attributes">
-<span id="filter-row"></span><h1>Filter Table Rows by Attributes<a class="headerlink" href="#filter-table-rows-by-attributes" title="Permalink to this headline">#</a></h1>
+<span id="filter-row"></span><h1>Filter Table Rows by Attributes<a class="headerlink" href="#filter-table-rows-by-attributes" title="Permalink to this heading">#</a></h1>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Find the full source code and run <a class="reference external" href="https://hub.jina.ai/executor/683nxytg/">TagsHasher</a> on Jina Hub.</p>
@@ -654,12 +648,12 @@
 <p>Big news, one can use Jina to filter table rows by their attributes! Such an amazing feature that only exists since… 47 years ago, aka SQL! Jina as a neural search framework surely won’t implement a SQL database from scratch. The question here is: is it possible to leverage what we learned about neural search: embedding, indexing, nearest-neighbour matching to enable similar feature like SQL, e.g. filter, select?</p>
 <p>Yes! Jina can do this. In this article, I will give you a walkthrough on how to filter the tabular data using Jina and without SQL (also no GPT-3). Let’s call this mini-project as the neuretro-SQL.</p>
 <section id="feature-hashing">
-<h2>Feature hashing<a class="headerlink" href="#feature-hashing" title="Permalink to this headline">#</a></h2>
+<h2>Feature hashing<a class="headerlink" href="#feature-hashing" title="Permalink to this heading">#</a></h2>
 <p>The first thing you want to learn is feature hashing. I already gave a tutorial <span class="xref std std-ref">at here</span>. I strongly recommend you to read that first before continue.</p>
 <p>In general, feature hashing is a great way to embed <strong>unbounded</strong> number of features into fixed-size vectors. We will leverage the same idea here to embed the columns of the tabular data into fixed-size vectors.</p>
 </section>
 <section id="load-csv-as-documentarray">
-<h2>Load CSV as DocumentArray<a class="headerlink" href="#load-csv-as-documentarray" title="Permalink to this headline">#</a></h2>
+<h2>Load CSV as DocumentArray<a class="headerlink" href="#load-csv-as-documentarray" title="Permalink to this heading">#</a></h2>
 <p>Let’s look at an example CSV file. Here I use a <a class="reference external" href="https://perso.telecom-paristech.fr/eagan/class/igr204/data/film.csv">film dataset</a> that looks like the following:</p>
 <figure class="align-default">
 <img alt="../../../_images/film-dataset.png" src="../../../_images/film-dataset.png" />
@@ -705,7 +699,7 @@
 <p>It looks like this Document has two non-empty attributes <code class="docutils literal notranslate"><span class="pre">id</span></code> and <code class="docutils literal notranslate"><span class="pre">tags</span></code>, and all values in <code class="docutils literal notranslate"><span class="pre">tags</span></code> correspond to the column value we have in the CSV data. Now our task is clear: we want to filter Documents from this DocumentArray according to their values in <code class="docutils literal notranslate"><span class="pre">.tags</span></code>, but no SQL, pure Jina, pure neural search.</p>
 </section>
 <section id="embed-columns-as-vectors">
-<h2>Embed columns as vectors<a class="headerlink" href="#embed-columns-as-vectors" title="Permalink to this headline">#</a></h2>
+<h2>Embed columns as vectors<a class="headerlink" href="#embed-columns-as-vectors" title="Permalink to this heading">#</a></h2>
 <p>To embed columns into vectors, we first notice that each “column-item” in <code class="docutils literal notranslate"><span class="pre">.tags</span></code> is actually a <code class="docutils literal notranslate"><span class="pre">Tuple[str,</span> <span class="pre">Any]</span></code> pair. The first part, a string, represents the column title, e.g. “Actor”, “Actress”, “Director”. We can simply reuse our <a class="reference internal" href="../../text/full-text-search/#str-hash"><span class="std std-ref">previous hash function</span></a>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hashlib</span>
 
@@ -790,7 +784,7 @@
 </div>
 </section>
 <section id="put-all-together">
-<h2>Put all together<a class="headerlink" href="#put-all-together" title="Permalink to this headline">#</a></h2>
+<h2>Put all together<a class="headerlink" href="#put-all-together" title="Permalink to this heading">#</a></h2>
 <p>Let’s encode our loaded DocumentArray:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jina</span> <span class="kn">import</span> <span class="n">Executor</span>
 
@@ -1033,7 +1027,7 @@
 
                 <div class="related-information sd-d-inline-flex">
                     <a href="https://jina.ai">Copyright &#169; Jina AI Limited. All rights reserved.</a>
-                    Last updated on Oct 26, 2022.
+                    Last updated on Dec 14, 2022.
                     <div class="social-btns">
                     <a class='social-btn' href="https://github.com/jina-ai/jina/" aria-label="GitHub" target="_blank" rel="noreferrer"> <i class="fab fa-github"></i></a>
                     <a class='social-btn' href="https://slack.jina.ai" aria-label="Slack" target="_blank" rel="noreferrer"> <i class="fab fa-slack"></i></a>
@@ -1089,7 +1083,9 @@
 </div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>

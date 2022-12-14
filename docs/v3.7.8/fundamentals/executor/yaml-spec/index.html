@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="YAML specification" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/fundamentals/executor/yaml-spec/" />
-  
 <meta property="og:site_name" content="Jina 3.7.8 Documentation" />
-  
 <meta property="og:description" content="This page outlines the specification for valid Executor YAML files. Such YAML configurations can be used in a Flow via Flow().add(uses='exec.yml'), or loaded directly via Executor.load_config('exec.yml'). Note that Executor YAML configurations always refer back to an Executor defined in a Python ..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_static/banner.png" />
-  
 <meta property="og:image:alt" content="Jina 3.7.8 Documentation" />
-  
+<meta name="description" content="This page outlines the specification for valid Executor YAML files. Such YAML configurations can be used in a Flow via Flow().add(uses='exec.yml'), or loaded directly via Executor.load_config('exec.yml'). Note that Executor YAML configurations always refer back to an Executor defined in a Python ..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -35,13 +28,14 @@
 </script>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="File structure" href="../executor-files/" /><link rel="prev" title="Serve" href="../executor-serve/" />
+    
+<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="File structure" href="../executor-files/" /><link rel="prev" title="Serve" href="../executor-serve/" />
         <link rel="canonical" href="https://docs.jina.ai/fundamentals/executor/yaml-spec.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>YAML specification - Jina 3.7.8 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -249,7 +243,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -414,12 +408,12 @@
                 </div>
                 <article role="main">
                     <section class="tex2jax_ignore mathjax_ignore" id="yaml-specification">
-<span id="executor-yaml-spec"></span><h1>YAML specification<a class="headerlink" href="#yaml-specification" title="Permalink to this headline">#</a></h1>
+<span id="executor-yaml-spec"></span><h1>YAML specification<a class="headerlink" href="#yaml-specification" title="Permalink to this heading">#</a></h1>
 <p>This page outlines the specification for valid Executor YAML files.</p>
 <p>Such YAML configurations can be used in a Flow via <code class="docutils literal notranslate"><span class="pre">Flow().add(uses='exec.yml')</span></code>, or loaded directly via <code class="docutils literal notranslate"><span class="pre">Executor.load_config('exec.yml')</span></code>.</p>
 <p>Note that Executor YAML configurations always refer back to an Executor defined in a Python file.</p>
 <section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
 <p>The following constitutes an example <a class="reference internal" href="../../../api/jina/#jina.Executor" title="jina.Executor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Executor</span></code></a> configuration:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">jtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MyExecutor</span><span class="w"></span>
 <span class="nt">with</span><span class="p">:</span><span class="w"></span>
@@ -433,21 +427,21 @@
 </div>
 </section>
 <section id="keywords">
-<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">#</a></h2>
+<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this heading">#</a></h2>
 <section id="jtype">
-<h3><code class="docutils literal notranslate"><span class="pre">jtype</span></code><a class="headerlink" href="#jtype" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">jtype</span></code><a class="headerlink" href="#jtype" title="Permalink to this heading">#</a></h3>
 <p>String specifying the Python type of the Executor. Used to locate the correct class in the Python files given by <code class="docutils literal notranslate"><span class="pre">py_modules</span></code>.</p>
 </section>
 <section id="with">
-<h3><code class="docutils literal notranslate"><span class="pre">with</span></code><a class="headerlink" href="#with" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">with</span></code><a class="headerlink" href="#with" title="Permalink to this heading">#</a></h3>
 <p>Collection containing keyword arguments passed to the Executor’s <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method. Valid values depend on the Executor.</p>
 </section>
 <section id="py-modules">
-<h3><code class="docutils literal notranslate"><span class="pre">py_modules</span></code><a class="headerlink" href="#py-modules" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">py_modules</span></code><a class="headerlink" href="#py-modules" title="Permalink to this heading">#</a></h3>
 <p>List of strings defining the Python dependencies of the Executor. Most notably this must include the Python file that contains the Executor definition itself, as well as any other files imported by this.</p>
 </section>
 <section id="metas">
-<h3><code class="docutils literal notranslate"><span class="pre">metas</span></code><a class="headerlink" href="#metas" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">metas</span></code><a class="headerlink" href="#metas" title="Permalink to this heading">#</a></h3>
 <p>Collection containing meta information about the Executor.</p>
 <ul class="simple">
 <li><p><strong><code class="docutils literal notranslate"><span class="pre">name</span></code></strong>: String that defines the name of the Executor.</p></li>
@@ -492,7 +486,7 @@
                         <div class="copyright">
                             Copyright &#169; Jina AI Limited. All rights reserved.
                         </div><div class="last-updated">
-                            Last updated on Oct 26, 2022</div>
+                            Last updated on Dec 14, 2022</div>
                     </div>
                     <div class="right-details">
                         <div class="social-btns">
@@ -562,7 +556,9 @@
      src="https://static.scarf.sh/a.png?x-pxid=2823e771-0e1e-4320-8fde-48bc48e53262"/><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>

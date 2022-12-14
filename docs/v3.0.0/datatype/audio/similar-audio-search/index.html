@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Search Similar Audios" />
-  
 <meta property="og:type" content="website" />
-  
-<meta property="og:url" content="https://docs.jina.ai/datatype/audio/similar-audio-search/index/" />
-  
+<meta property="og:url" content="https://docs.jina.ai/datatype/audio/similar-audio-search/" />
 <meta property="og:site_name" content="Jina 3.0.0 Documentation" />
-  
 <meta property="og:description" content="Do you want to find similar songs from your music library? Do you want to search all the meeting records that your leader has given a comment? Do you want to find the timestamp from your videos when your baby is laughing? In all these cases, searching similar audios will be helpful. As an importa..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_static/banner.png" />
-  
 <meta property="og:image:alt" content="Jina 3.0.0 Documentation" />
-  
+<meta name="description" content="Do you want to find similar songs from your music library? Do you want to search all the meeting records that your leader has given a comment? Do you want to find the timestamp from your videos when your baby is laughing? In all these cases, searching similar audios will be helpful. As an importa..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -36,13 +29,14 @@
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script async defer src="https://cdn.jsdelivr.net/npm/qabot@0.3"></script>
-    <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" />
+    
+<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" />
         <link rel="canonical" href="https://docs.jina.ai/datatype/audio/similar-audio-search/index.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Search Similar Audios - Jina 3.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -239,7 +233,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -646,14 +640,14 @@
                     </label>
                 </div>
                 <section class="tex2jax_ignore mathjax_ignore" id="search-similar-audios">
-<h1>Search Similar Audios<a class="headerlink" href="#search-similar-audios" title="Permalink to this headline">#</a></h1>
+<h1>Search Similar Audios<a class="headerlink" href="#search-similar-audios" title="Permalink to this heading">#</a></h1>
 <p>Do you want to find similar songs from your music library? Do you want to search all the meeting records that your leader has given a comment? Do you want to find the timestamp from your videos when your baby is laughing? In all these cases, searching similar audios will be helpful. As an important format of storing information, searching audios is an essential part for managing multimedial data. In this tutorial, we will build an example using the <a class="reference external" href="https://github.com/tensorflow/models/tree/master/research/audioset/vggish">VGGish</a> model.</p>
 <section id="build-the-flow">
-<h2>Build the Flow<a class="headerlink" href="#build-the-flow" title="Permalink to this headline">#</a></h2>
+<h2>Build the Flow<a class="headerlink" href="#build-the-flow" title="Permalink to this heading">#</a></h2>
 <figure class="align-center">
 <img alt="../../../_images/similar-audio-search-flow.svg" src="../../../_images/similar-audio-search-flow.svg" /></figure>
 <section id="segment-the-audio-clips">
-<h3>Segment the Audio Clips<a class="headerlink" href="#segment-the-audio-clips" title="Permalink to this headline">#</a></h3>
+<h3>Segment the Audio Clips<a class="headerlink" href="#segment-the-audio-clips" title="Permalink to this heading">#</a></h3>
 <p>In this example, we use the <a class="reference external" href="https://research.google.com/audioset/">AudioSet</a> dataset.
 The dataset contains millions of annotated audios events extracted from YouTube videos. Each audio event is 10-second long and labeled to 632 audio event classes.
 One major challenges is that some audio events contains other events. This makes it difficult and noisy to express the whole clip with a single vector. For example, the audio clip below is labeled as <code class="docutils literal notranslate"><span class="pre">Applause</span></code> but contains a long part of music. To overcome this issue, we use the <a class="reference external" href="https://docs.jina.ai/fundamentals/document/document-api/#recursive-nested-document">recursive structure</a> of Jina Document and split the events into smaller chunks. Each chunk contains an audio clip of 4-second.</p>
@@ -716,7 +710,7 @@ Your browser does not support the audio element.
 </div>
 </section>
 <section id="encode-the-audios">
-<h3>Encode the Audios<a class="headerlink" href="#encode-the-audios" title="Permalink to this headline">#</a></h3>
+<h3>Encode the Audios<a class="headerlink" href="#encode-the-audios" title="Permalink to this heading">#</a></h3>
 <p>To encode the sound clips into vectors, we choose VGGish model from Google Research. By default, the VGGish model needs the audios to be sampled at 16kHz and converted to examples of log mel spectrogram. The returning embeddings for each sound clip is a matrix of the size <code class="docutils literal notranslate"><span class="pre">K</span> <span class="pre">x</span> <span class="pre">128</span></code>, where <code class="docutils literal notranslate"><span class="pre">K</span></code> is the number of examples in log mel spectrogram and roughly correspond to the length of audio in seconds. Therefore, each 4-second audio clip in the chunks is represented by four 128-dimensional vectors.</p>
 <p>Since the sequence of the sounds matters, we further concatenate these four vectors and consider the resulted 512-dimensional vector as the final representation for each audio clip. After encoding indexing and querying audios into 512-dimensional vectors, we can find the similar audios to the querying ones by looking for nearest neighbors in the vector space.</p>
 <p><a class="reference external" href="https://hub.jina.ai/executor/jypyr28o">VGGishAudioEncoder</a> is available at Jina Hub. It accepts three types of inputs</p>
@@ -744,7 +738,7 @@ Your browser does not support the audio element.
 </div>
 </section>
 <section id="storage">
-<h3>Storage<a class="headerlink" href="#storage" title="Permalink to this headline">#</a></h3>
+<h3>Storage<a class="headerlink" href="#storage" title="Permalink to this heading">#</a></h3>
 <p>We choose the <a class="reference external" href="https://hub.jina.ai/executor/zb38xlt4">SimpleIndexer</a> from Jina Hub for building a simple index storing both embedding vectors and meta information. During querying, we need to split the querying audios in the same way as indexing and generating chunks. Therefore, we need to set both <code class="docutils literal notranslate"><span class="pre">traversal_rdarray</span></code> and <code class="docutils literal notranslate"><span class="pre">traversal_ldarray</span></code> to <code class="docutils literal notranslate"><span class="pre">['c',]</span></code> to ask the SimpleIndexer to use the embeddings of the chunks for the querying and the indexed Documents correspondingly.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"></span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">- name</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&#39;indexer&#39;</span><span class="w"></span>
@@ -759,7 +753,7 @@ Your browser does not support the audio element.
 </div>
 </section>
 <section id="merge-the-matches">
-<h3>Merge the Matches<a class="headerlink" href="#merge-the-matches" title="Permalink to this headline">#</a></h3>
+<h3>Merge the Matches<a class="headerlink" href="#merge-the-matches" title="Permalink to this heading">#</a></h3>
 <p>Since we use audio chunks to retrieve the matches, we need to merge the retrieved matches into the matches for each query audio. We write <code class="docutils literal notranslate"><span class="pre">MyRanker</span></code> as below to collect the original 10-second audio event for each retrieved 4-second short clips. Since one audio event might be retrieved for multiple times base on different parts of its short clips, we use the score of the most matched short clip as the score of the audio event. Afterwards, the retrieved audio events are sorted by their scores.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyRanker</span><span class="p">(</span><span class="n">Executor</span><span class="p">):</span>
     <span class="nd">@requests</span><span class="p">(</span><span class="n">on</span><span class="o">=</span><span class="s1">&#39;/search&#39;</span><span class="p">)</span>
@@ -788,7 +782,7 @@ Your browser does not support the audio element.
 </section>
 </section>
 <section id="run-the-flow">
-<h2>Run the Flow<a class="headerlink" href="#run-the-flow" title="Permalink to this headline">#</a></h2>
+<h2>Run the Flow<a class="headerlink" href="#run-the-flow" title="Permalink to this heading">#</a></h2>
 <p>As we defined the flow in the YAML file, we use the <code class="docutils literal notranslate"><span class="pre">load_config</span></code> function to create the Flow and index the data.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jina</span> <span class="kn">import</span> <span class="n">DocumentArray</span><span class="p">,</span> <span class="n">Flow</span>
 <span class="kn">from</span> <span class="nn">jina.types.document.generators</span> <span class="kn">import</span> <span class="n">from_files</span>
@@ -804,7 +798,7 @@ Your browser does not support the audio element.
 </pre></div>
 </div>
 <section id="query-from-python">
-<h3>Query from Python<a class="headerlink" href="#query-from-python" title="Permalink to this headline">#</a></h3>
+<h3>Query from Python<a class="headerlink" href="#query-from-python" title="Permalink to this heading">#</a></h3>
 <p>With the Flow running as a http service, we can use the Jina swagger UI tool to query.
 Open the browser at <code class="docutils literal notranslate"><span class="pre">localhost:45678/docs</span></code>, send query via the Swagger UI,</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
@@ -819,7 +813,7 @@ Open the browser at <code class="docutils literal notranslate"><span class="pre"
 </section>
 </section>
 <section id="show-results">
-<h2>Show Results<a class="headerlink" href="#show-results" title="Permalink to this headline">#</a></h2>
+<h2>Show Results<a class="headerlink" href="#show-results" title="Permalink to this heading">#</a></h2>
 <table>
   <tr>
     <th>Query</th>
@@ -849,7 +843,7 @@ Open the browser at <code class="docutils literal notranslate"><span class="pre"
 </table>
 </section>
 <section id="get-the-source-code">
-<h2>Get the Source Code<a class="headerlink" href="#get-the-source-code" title="Permalink to this headline">#</a></h2>
+<h2>Get the Source Code<a class="headerlink" href="#get-the-source-code" title="Permalink to this heading">#</a></h2>
 <p>The code is available at <a class="reference external" href="https://github.com/jina-ai/example-audio-search">example-audio-search</a></p>
 </section>
 </section>
@@ -864,7 +858,7 @@ Open the browser at <code class="docutils literal notranslate"><span class="pre"
 
                 <div class="related-information sd-d-inline-flex">
                     <a href="https://jina.ai">Copyright &#169; Jina AI Limited. All rights reserved.</a>
-                    Last updated on Oct 26, 2022.
+                    Last updated on Dec 14, 2022.
                     <div class="social-btns">
                     <a class='social-btn' href="https://github.com/jina-ai/jina/" aria-label="GitHub" target="_blank" rel="noreferrer"> <i class="fab fa-github"></i></a>
                     <a class='social-btn' href="https://slack.jina.ai" aria-label="Slack" target="_blank" rel="noreferrer"> <i class="fab fa-slack"></i></a>
@@ -929,7 +923,9 @@ Open the browser at <code class="docutils literal notranslate"><span class="pre"
 </div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>

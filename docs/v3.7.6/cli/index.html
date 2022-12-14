@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content=" Command-Line Interface" />
-  
 <meta property="og:type" content="website" />
-  
-<meta property="og:url" content="https://docs.jina.ai/cli/index/" />
-  
+<meta property="og:url" content="https://docs.jina.ai/cli/" />
 <meta property="og:site_name" content="Jina 3.7.6 Documentation" />
-  
 <meta property="og:description" content="Command-Line Interface: Positional Arguments: cli,, Possible choices: executor, flow, ping, dryrun, export, new, gateway, hub, help, pod, deployment, client,. Named Arguments:-v, --version,, Show Jina version,,-vf, --version-full,, Show Jina and all dependencies’ versions,. Sub-commands:: executo..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_static/banner.png" />
-  
 <meta property="og:image:alt" content="Jina 3.7.6 Documentation" />
-  
+<meta name="description" content="Command-Line Interface: Positional Arguments: cli,, Possible choices: executor, flow, ping, dryrun, export, new, gateway, hub, help, pod, deployment, client,. Named Arguments:-v, --version,, Show Jina version,,-vf, --version-full,, Show Jina and all dependencies’ versions,. Sub-commands:: executo..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -35,13 +28,14 @@
 </script>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="index" title="Index" href="../genindex/" /><link rel="search" title="Search" href="../search/" /><link rel="next" title="Protocol Documentation" href="../proto/docs/" /><link rel="prev" title="Python API" href="../api-rst/" />
+    
+<link rel="index" title="Index" href="../genindex/" /><link rel="search" title="Search" href="../search/" /><link rel="next" title="Protocol Documentation" href="../proto/docs/" /><link rel="prev" title="Python API" href="../api-rst/" />
         <link rel="canonical" href="https://docs.jina.ai/cli/index.html" />
 
-    <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Command-Line Interface - Jina 3.7.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -243,7 +237,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -408,13 +402,13 @@
                 </div>
                 <article role="main">
                     <section id="svg-version-1-1-width-1-0em-height-1-0em-class-sd-octicon-sd-octicon-terminal-viewbox-0-0-16-16-aria-hidden-true-path-fill-rule-evenodd-d-m0-2-75c0-1-784-784-1-1-75-1h12-5c-966-0-1-75-784-1-75-1-75v10-5a1-75-1-75-0-0114-25-15h1-75a1-75-1-75-0-010-13-25v2-75zm1-75-25a-25-25-0-00-25-25v10-5c0-138-112-25-25-25h12-5a-25-25-0-00-25-25v2-75a-25-25-0-00-25-25h1-75zm7-25-8a-75-75-0-01-22-53l-2-25-2-25a-75-75-0-11-1-06-1-06l5-44-8-3-72-6-28a-75-75-0-111-06-1-06l2-25-2-25c-141-14-22-331-22-53zm1-5-1-5a-75-75-0-000-1-5h3a-75-75-0-000-1-5h-3z-path-svg-command-line-interface">
-<h1><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-terminal" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V2.75a.25.25 0 00-.25-.25H1.75zM7.25 8a.75.75 0 01-.22.53l-2.25 2.25a.75.75 0 11-1.06-1.06L5.44 8 3.72 6.28a.75.75 0 111.06-1.06l2.25 2.25c.141.14.22.331.22.53zm1.5 1.5a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z"></path></svg> Command-Line Interface<a class="headerlink" href="#svg-version-1-1-width-1-0em-height-1-0em-class-sd-octicon-sd-octicon-terminal-viewbox-0-0-16-16-aria-hidden-true-path-fill-rule-evenodd-d-m0-2-75c0-1-784-784-1-1-75-1h12-5c-966-0-1-75-784-1-75-1-75v10-5a1-75-1-75-0-0114-25-15h1-75a1-75-1-75-0-010-13-25v2-75zm1-75-25a-25-25-0-00-25-25v10-5c0-138-112-25-25-25h12-5a-25-25-0-00-25-25v2-75a-25-25-0-00-25-25h1-75zm7-25-8a-75-75-0-01-22-53l-2-25-2-25a-75-75-0-11-1-06-1-06l5-44-8-3-72-6-28a-75-75-0-111-06-1-06l2-25-2-25c-141-14-22-331-22-53zm1-5-1-5a-75-75-0-000-1-5h3a-75-75-0-000-1-5h-3z-path-svg-command-line-interface" title="Permalink to this headline">#</a></h1>
+<h1><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-terminal" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V2.75a.25.25 0 00-.25-.25H1.75zM7.25 8a.75.75 0 01-.22.53l-2.25 2.25a.75.75 0 11-1.06-1.06L5.44 8 3.72 6.28a.75.75 0 111.06-1.06l2.25 2.25c.141.14.22.331.22.53zm1.5 1.5a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z"></path></svg> Command-Line Interface<a class="headerlink" href="#svg-version-1-1-width-1-0em-height-1-0em-class-sd-octicon-sd-octicon-terminal-viewbox-0-0-16-16-aria-hidden-true-path-fill-rule-evenodd-d-m0-2-75c0-1-784-784-1-1-75-1h12-5c-966-0-1-75-784-1-75-1-75v10-5a1-75-1-75-0-0114-25-15h1-75a1-75-1-75-0-010-13-25v2-75zm1-75-25a-25-25-0-00-25-25v10-5c0-138-112-25-25-25h12-5a-25-25-0-00-25-25v2-75a-25-25-0-00-25-25h1-75zm7-25-8a-75-75-0-01-22-53l-2-25-2-25a-75-75-0-11-1-06-1-06l5-44-8-3-72-6-28a-75-75-0-111-06-1-06l2-25-2-25c-141-14-22-331-22-53zm1-5-1-5a-75-75-0-000-1-5h3a-75-75-0-000-1-5h-3z-path-svg-command-line-interface" title="Permalink to this heading">#</a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">jina</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">vf</span><span class="p">]</span>
             <span class="p">{</span><span class="n">executor</span><span class="p">,</span> <span class="n">flow</span><span class="p">,</span> <span class="n">ping</span><span class="p">,</span> <span class="n">dryrun</span> <span class="o">...</span> <span class="mi">8</span> <span class="n">more</span> <span class="n">choices</span><span class="p">}</span> <span class="o">...</span>
 </pre></div>
 </div>
 <section id="Positional Arguments">
-<h2>Positional Arguments<a class="headerlink" href="#Positional Arguments" title="Permalink to this headline">#</a></h2>
+<h2>Positional Arguments<a class="headerlink" href="#Positional Arguments" title="Permalink to this heading">#</a></h2>
 <dl class="option-list">
 <dt><kbd>cli</kbd></dt>
 <dd><p>Possible choices: executor, flow, ping, dryrun, export, new, gateway, hub, help, pod, deployment, client</p>
@@ -422,7 +416,7 @@
 </dl>
 </section>
 <section id="Named Arguments">
-<h2>Named Arguments<a class="headerlink" href="#Named Arguments" title="Permalink to this headline">#</a></h2>
+<h2>Named Arguments<a class="headerlink" href="#Named Arguments" title="Permalink to this heading">#</a></h2>
 <dl class="option-list">
 <dt><kbd>-v, --version</kbd></dt>
 <dd><p>Show Jina version</p>
@@ -433,9 +427,9 @@
 </dl>
 </section>
 <section id="Sub-commands:">
-<h2>Sub-commands:<a class="headerlink" href="#Sub-commands:" title="Permalink to this headline">#</a></h2>
+<h2>Sub-commands:<a class="headerlink" href="#Sub-commands:" title="Permalink to this heading">#</a></h2>
 <section id="executor">
-<h3>executor<a class="headerlink" href="#executor" title="Permalink to this headline">#</a></h3>
+<h3>executor<a class="headerlink" href="#executor" title="Permalink to this heading">#</a></h3>
 <p>Start an Executor. Executor is how Jina processes Document.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jina</span> <span class="n">executor</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">name</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">workspace</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">config</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">quiet</span><span class="p">]</span>
               <span class="p">[</span><span class="o">--</span><span class="n">quiet</span><span class="o">-</span><span class="n">error</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">optout</span><span class="o">-</span><span class="n">telemetry</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">timeout</span><span class="o">-</span><span class="n">ctrl</span><span class="p">]</span>
@@ -458,7 +452,7 @@
 </pre></div>
 </div>
 <section id="Essential arguments">
-<h4>Essential arguments<a class="headerlink" href="#Essential arguments" title="Permalink to this headline">#</a></h4>
+<h4>Essential arguments<a class="headerlink" href="#Essential arguments" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--name</kbd></dt>
 <dd><blockquote>
@@ -493,7 +487,7 @@
 </dl>
 </section>
 <section id="Base Deployment arguments">
-<h4>Base Deployment arguments<a class="headerlink" href="#Base Deployment arguments" title="Permalink to this headline">#</a></h4>
+<h4>Base Deployment arguments<a class="headerlink" href="#Base Deployment arguments" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--timeout-ctrl</kbd></dt>
 <dd><p>The timeout in milliseconds of the control request, -1 for waiting forever</p>
@@ -515,7 +509,7 @@ JSON dict, {endpoint: PollingType}
 </dl>
 </section>
 <section id="WorkerRuntime arguments">
-<h4>WorkerRuntime arguments<a class="headerlink" href="#WorkerRuntime arguments" title="Permalink to this headline">#</a></h4>
+<h4>WorkerRuntime arguments<a class="headerlink" href="#WorkerRuntime arguments" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--uses</kbd></dt>
 <dd><blockquote>
@@ -555,7 +549,7 @@ which should be structured as a python package. For more details, please see the
 </dd>
 <dt><kbd>--port-in</kbd></dt>
 <dd><p>The port for input data to bind to, default a random port between [49152, 65535]</p>
-<p>Default: 58485</p>
+<p>Default: 59622</p>
 </dd>
 <dt><kbd>--host-in</kbd></dt>
 <dd><p>The host address for binding to, by default it is 0.0.0.0</p>
@@ -574,7 +568,7 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </dl>
 </section>
 <section id="ContainerRuntime arguments">
-<h4>ContainerRuntime arguments<a class="headerlink" href="#ContainerRuntime arguments" title="Permalink to this headline">#</a></h4>
+<h4>ContainerRuntime arguments<a class="headerlink" href="#ContainerRuntime arguments" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--entrypoint</kbd></dt>
 <dd><p>The entrypoint command overrides the ENTRYPOINT in Docker image. when not set then the Docker image ENTRYPOINT takes effective.</p>
@@ -609,7 +603,7 @@ container.</p>
 </dl>
 </section>
 <section id="RemoteRuntime arguments">
-<h4>RemoteRuntime arguments<a class="headerlink" href="#RemoteRuntime arguments" title="Permalink to this headline">#</a></h4>
+<h4>RemoteRuntime arguments<a class="headerlink" href="#RemoteRuntime arguments" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--host</kbd></dt>
 <dd><p>The host address of the runtime, by default it is 0.0.0.0.</p>
@@ -618,7 +612,7 @@ container.</p>
 </dl>
 </section>
 <section id="Distributed arguments">
-<h4>Distributed arguments<a class="headerlink" href="#Distributed arguments" title="Permalink to this headline">#</a></h4>
+<h4>Distributed arguments<a class="headerlink" href="#Distributed arguments" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--quiet-remote-logs</kbd></dt>
 <dd><p>Do not display the streaming of remote logs on local console</p>
@@ -637,7 +631,7 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="Pod arguments">
-<h4>Pod arguments<a class="headerlink" href="#Pod arguments" title="Permalink to this headline">#</a></h4>
+<h4>Pod arguments<a class="headerlink" href="#Pod arguments" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--runtime-cls</kbd></dt>
 <dd><p>The runtime class to run inside the Pod</p>
@@ -660,7 +654,7 @@ Python files, data files.</p>
 </dd>
 <dt><kbd>--port</kbd></dt>
 <dd><p>The port for input data to bind to, default is a random port between [49152, 65535]</p>
-<p>Default: 57736</p>
+<p>Default: 59265</p>
 </dd>
 <dt><kbd>--monitoring</kbd></dt>
 <dd><p>If set, spawn an http server with a prometheus endpoint to expose metrics</p>
@@ -668,7 +662,7 @@ Python files, data files.</p>
 </dd>
 <dt><kbd>--port-monitoring</kbd></dt>
 <dd><p>The port on which the prometheus server is exposed, default is a random port between [49152, 65535]</p>
-<p>Default: 52404</p>
+<p>Default: 60487</p>
 </dd>
 <dt><kbd>--retries</kbd></dt>
 <dd><p>Number of retries per gRPC call. If &lt;0 it defaults to max(3, num_replicas)</p>
@@ -681,7 +675,7 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="Pull arguments">
-<h4>Pull arguments<a class="headerlink" href="#Pull arguments" title="Permalink to this headline">#</a></h4>
+<h4>Pull arguments<a class="headerlink" href="#Pull arguments" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--install-requirements</kbd></dt>
 <dd><p>If set, install <cite>requirements.txt</cite> in the Hub Executor bundle to local</p>
@@ -694,7 +688,7 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="Head arguments">
-<h4>Head arguments<a class="headerlink" href="#Head arguments" title="Permalink to this headline">#</a></h4>
+<h4>Head arguments<a class="headerlink" href="#Head arguments" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--compression</kbd></dt>
 <dd><p>Possible choices: NoCompression, Deflate, Gzip</p>
@@ -720,7 +714,7 @@ Python files, data files.</p>
 </section>
 </section>
 <section id="flow">
-<h3>flow<a class="headerlink" href="#flow" title="Permalink to this headline">#</a></h3>
+<h3>flow<a class="headerlink" href="#flow" title="Permalink to this heading">#</a></h3>
 <p>Start a Flow. Flow is how Jina streamlines and distributes Executors.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jina</span> <span class="n">flow</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">name</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">workspace</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">config</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">quiet</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">quiet</span><span class="o">-</span><span class="n">error</span><span class="p">]</span>
           <span class="p">[</span><span class="o">--</span><span class="n">optout</span><span class="o">-</span><span class="n">telemetry</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">uses</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">env</span> <span class="p">[</span><span class="n">KEY</span><span class="p">:</span> <span class="n">VALUE</span> <span class="p">[</span><span class="n">KEY</span><span class="p">:</span> <span class="n">VALUE</span> <span class="o">...</span><span class="p">]]]</span>
@@ -728,7 +722,7 @@ Python files, data files.</p>
 </pre></div>
 </div>
 <section id="Essential arguments_repeat1">
-<h4>Essential arguments<a class="headerlink" href="#Essential arguments_repeat1" title="Permalink to this headline">#</a></h4>
+<h4>Essential arguments<a class="headerlink" href="#Essential arguments_repeat1" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--name</kbd></dt>
 <dd><blockquote>
@@ -763,7 +757,7 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="Flow Feature arguments">
-<h4>Flow Feature arguments<a class="headerlink" href="#Flow Feature arguments" title="Permalink to this headline">#</a></h4>
+<h4>Flow Feature arguments<a class="headerlink" href="#Flow Feature arguments" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--uses</kbd></dt>
 <dd><p>The YAML path represents a flow. It can be either a local file path or a URL.</p>
@@ -783,13 +777,13 @@ Python files, data files.</p>
 </section>
 </section>
 <section id="ping">
-<h3>ping<a class="headerlink" href="#ping" title="Permalink to this headline">#</a></h3>
+<h3>ping<a class="headerlink" href="#ping" title="Permalink to this heading">#</a></h3>
 <p>Ping a Deployment and check its network connectivity.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jina</span> <span class="n">ping</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">timeout</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">retries</span><span class="p">]</span> <span class="n">host</span> <span class="n">port</span>
 </pre></div>
 </div>
 <section id="Positional Arguments_repeat1">
-<h4>Positional Arguments<a class="headerlink" href="#Positional Arguments_repeat1" title="Permalink to this headline">#</a></h4>
+<h4>Positional Arguments<a class="headerlink" href="#Positional Arguments_repeat1" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>host</kbd></dt>
 <dd><p>The host address of the target Pod, e.g. 0.0.0.0</p>
@@ -800,7 +794,7 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="Named Arguments_repeat1">
-<h4>Named Arguments<a class="headerlink" href="#Named Arguments_repeat1" title="Permalink to this headline">#</a></h4>
+<h4>Named Arguments<a class="headerlink" href="#Named Arguments_repeat1" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--timeout</kbd></dt>
 <dd><p>Timeout in millisecond of one check
@@ -815,13 +809,13 @@ Python files, data files.</p>
 </section>
 </section>
 <section id="dryrun">
-<h3>dryrun<a class="headerlink" href="#dryrun" title="Permalink to this headline">#</a></h3>
+<h3>dryrun<a class="headerlink" href="#dryrun" title="Permalink to this heading">#</a></h3>
 <p>send a dryrun request to a Flow to check if it is working</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jina</span> <span class="n">dryrun</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">timeout</span><span class="p">]</span> <span class="n">host</span>
 </pre></div>
 </div>
 <section id="Positional Arguments_repeat2">
-<h4>Positional Arguments<a class="headerlink" href="#Positional Arguments_repeat2" title="Permalink to this headline">#</a></h4>
+<h4>Positional Arguments<a class="headerlink" href="#Positional Arguments_repeat2" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>host</kbd></dt>
 <dd><p>The full host address of the Gateway, e.g. grpc://localhost:12345</p>
@@ -829,7 +823,7 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="Named Arguments_repeat2">
-<h4>Named Arguments<a class="headerlink" href="#Named Arguments_repeat2" title="Permalink to this headline">#</a></h4>
+<h4>Named Arguments<a class="headerlink" href="#Named Arguments_repeat2" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--timeout</kbd></dt>
 <dd><p>Timeout in millisecond of one check
@@ -840,13 +834,13 @@ Python files, data files.</p>
 </section>
 </section>
 <section id="export">
-<h3>export<a class="headerlink" href="#export" title="Permalink to this headline">#</a></h3>
+<h3>export<a class="headerlink" href="#export" title="Permalink to this heading">#</a></h3>
 <p>Export Jina API and Flow to JSONSchema, Kubernetes YAML, or SVG flowchart.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jina</span> <span class="n">export</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">{</span><span class="n">flowchart</span><span class="p">,</span> <span class="n">kubernetes</span><span class="p">,</span> <span class="n">docker</span><span class="o">-</span><span class="n">compose</span><span class="p">,</span> <span class="n">schema</span><span class="p">}</span> <span class="o">...</span>
 </pre></div>
 </div>
 <section id="subcommands">
-<h4>subcommands<a class="headerlink" href="#subcommands" title="Permalink to this headline">#</a></h4>
+<h4>subcommands<a class="headerlink" href="#subcommands" title="Permalink to this heading">#</a></h4>
 <p>use <cite>%(prog)-8s [sub-command] –help</cite> to get detailed information about each sub-command</p>
 <dl class="option-list">
 <dt><kbd>export</kbd></dt>
@@ -855,15 +849,15 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="Sub-commands:_repeat1">
-<h4>Sub-commands:<a class="headerlink" href="#Sub-commands:_repeat1" title="Permalink to this headline">#</a></h4>
+<h4>Sub-commands:<a class="headerlink" href="#Sub-commands:_repeat1" title="Permalink to this heading">#</a></h4>
 <section id="flowchart">
-<h5>flowchart<a class="headerlink" href="#flowchart" title="Permalink to this headline">#</a></h5>
+<h5>flowchart<a class="headerlink" href="#flowchart" title="Permalink to this heading">#</a></h5>
 <p>Export a Flow YAML file to a flowchart</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jina</span> <span class="n">export</span> <span class="n">flowchart</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">vertical</span><span class="o">-</span><span class="n">layout</span><span class="p">]</span> <span class="n">INPUT</span> <span class="n">OUTPUT</span>
 </pre></div>
 </div>
 <section id="Positional Arguments_repeat3">
-<h6>Positional Arguments<a class="headerlink" href="#Positional Arguments_repeat3" title="Permalink to this headline">#</a></h6>
+<h6>Positional Arguments<a class="headerlink" href="#Positional Arguments_repeat3" title="Permalink to this heading">#</a></h6>
 <dl class="option-list">
 <dt><kbd>INPUT</kbd></dt>
 <dd><p>The input file path of a Flow YAML</p>
@@ -874,7 +868,7 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="Named Arguments_repeat3">
-<h6>Named Arguments<a class="headerlink" href="#Named Arguments_repeat3" title="Permalink to this headline">#</a></h6>
+<h6>Named Arguments<a class="headerlink" href="#Named Arguments_repeat3" title="Permalink to this heading">#</a></h6>
 <dl class="option-list">
 <dt><kbd>--vertical-layout</kbd></dt>
 <dd><p>If set, then the flowchart is rendered vertically from top to down.</p>
@@ -884,13 +878,13 @@ Python files, data files.</p>
 </section>
 </section>
 <section id="kubernetes">
-<h5>kubernetes<a class="headerlink" href="#kubernetes" title="Permalink to this headline">#</a></h5>
+<h5>kubernetes<a class="headerlink" href="#kubernetes" title="Permalink to this heading">#</a></h5>
 <p>Export a Flow YAML file to a Kubernetes YAML bundle</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jina</span> <span class="n">export</span> <span class="n">kubernetes</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">k8s</span><span class="o">-</span><span class="n">namespace</span><span class="p">]</span> <span class="n">INPUT</span> <span class="n">OUTPUT</span>
 </pre></div>
 </div>
 <section id="Positional Arguments_repeat4">
-<h6>Positional Arguments<a class="headerlink" href="#Positional Arguments_repeat4" title="Permalink to this headline">#</a></h6>
+<h6>Positional Arguments<a class="headerlink" href="#Positional Arguments_repeat4" title="Permalink to this heading">#</a></h6>
 <dl class="option-list">
 <dt><kbd>INPUT</kbd></dt>
 <dd><p>The input file path of a Flow YAML</p>
@@ -901,7 +895,7 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="Named Arguments_repeat4">
-<h6>Named Arguments<a class="headerlink" href="#Named Arguments_repeat4" title="Permalink to this headline">#</a></h6>
+<h6>Named Arguments<a class="headerlink" href="#Named Arguments_repeat4" title="Permalink to this heading">#</a></h6>
 <dl class="option-list">
 <dt><kbd>--k8s-namespace</kbd></dt>
 <dd><p>The name of the k8s namespace to set for the configurations. If None, the name of the Flow will be used.</p>
@@ -910,13 +904,13 @@ Python files, data files.</p>
 </section>
 </section>
 <section id="docker-compose">
-<h5>docker-compose<a class="headerlink" href="#docker-compose" title="Permalink to this headline">#</a></h5>
+<h5>docker-compose<a class="headerlink" href="#docker-compose" title="Permalink to this heading">#</a></h5>
 <p>Export a Flow YAML file to a Docker Compose YAML file</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jina</span> <span class="n">export</span> <span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">network_name</span><span class="p">]</span> <span class="n">INPUT</span> <span class="n">OUTPUT</span>
 </pre></div>
 </div>
 <section id="Positional Arguments_repeat5">
-<h6>Positional Arguments<a class="headerlink" href="#Positional Arguments_repeat5" title="Permalink to this headline">#</a></h6>
+<h6>Positional Arguments<a class="headerlink" href="#Positional Arguments_repeat5" title="Permalink to this heading">#</a></h6>
 <dl class="option-list">
 <dt><kbd>INPUT</kbd></dt>
 <dd><p>The input file path of a Flow YAML</p>
@@ -927,7 +921,7 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="Named Arguments_repeat5">
-<h6>Named Arguments<a class="headerlink" href="#Named Arguments_repeat5" title="Permalink to this headline">#</a></h6>
+<h6>Named Arguments<a class="headerlink" href="#Named Arguments_repeat5" title="Permalink to this heading">#</a></h6>
 <dl class="option-list">
 <dt><kbd>--network_name</kbd></dt>
 <dd><p>The name of the network that will be used by the deployment name.</p>
@@ -936,7 +930,7 @@ Python files, data files.</p>
 </section>
 </section>
 <section id="schema">
-<h5>schema<a class="headerlink" href="#schema" title="Permalink to this headline">#</a></h5>
+<h5>schema<a class="headerlink" href="#schema" title="Permalink to this heading">#</a></h5>
 <p>Export Jina Executor &amp; Flow API to JSONSchema files</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jina</span> <span class="n">export</span> <span class="n">schema</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">yaml</span><span class="o">-</span><span class="n">path</span> <span class="p">[</span><span class="n">PATH</span> <span class="p">[</span><span class="n">PATH</span> <span class="o">...</span><span class="p">]]]</span>
                    <span class="p">[</span><span class="o">--</span><span class="n">json</span><span class="o">-</span><span class="n">path</span> <span class="p">[</span><span class="n">PATH</span> <span class="p">[</span><span class="n">PATH</span> <span class="o">...</span><span class="p">]]]</span>
@@ -944,7 +938,7 @@ Python files, data files.</p>
 </pre></div>
 </div>
 <section id="Named Arguments_repeat6">
-<h6>Named Arguments<a class="headerlink" href="#Named Arguments_repeat6" title="Permalink to this headline">#</a></h6>
+<h6>Named Arguments<a class="headerlink" href="#Named Arguments_repeat6" title="Permalink to this heading">#</a></h6>
 <dl class="option-list">
 <dt><kbd>--yaml-path</kbd></dt>
 <dd><p>The YAML file path for storing the exported API</p>
@@ -961,13 +955,13 @@ Python files, data files.</p>
 </section>
 </section>
 <section id="new">
-<h3>new<a class="headerlink" href="#new" title="Permalink to this headline">#</a></h3>
+<h3>new<a class="headerlink" href="#new" title="Permalink to this heading">#</a></h3>
 <p>Create a new Jina toy project with the predefined template.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jina</span> <span class="n">new</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="n">name</span>
 </pre></div>
 </div>
 <section id="Positional Arguments_repeat6">
-<h4>Positional Arguments<a class="headerlink" href="#Positional Arguments_repeat6" title="Permalink to this headline">#</a></h4>
+<h4>Positional Arguments<a class="headerlink" href="#Positional Arguments_repeat6" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>name</kbd></dt>
 <dd><p>The name of the project</p>
@@ -977,7 +971,7 @@ Python files, data files.</p>
 </section>
 </section>
 <section id="gateway">
-<h3>gateway<a class="headerlink" href="#gateway" title="Permalink to this headline">#</a></h3>
+<h3>gateway<a class="headerlink" href="#gateway" title="Permalink to this heading">#</a></h3>
 <p>Start a Gateway that receives client Requests via gRPC/REST interface</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jina</span> <span class="n">gateway</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">name</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">workspace</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">config</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">quiet</span><span class="p">]</span>
              <span class="p">[</span><span class="o">--</span><span class="n">quiet</span><span class="o">-</span><span class="n">error</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">optout</span><span class="o">-</span><span class="n">telemetry</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">timeout</span><span class="o">-</span><span class="n">ctrl</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">polling</span><span class="p">]</span>
@@ -1002,7 +996,7 @@ Python files, data files.</p>
 </pre></div>
 </div>
 <section id="Named Arguments_repeat7">
-<h4>Named Arguments<a class="headerlink" href="#Named Arguments_repeat7" title="Permalink to this headline">#</a></h4>
+<h4>Named Arguments<a class="headerlink" href="#Named Arguments_repeat7" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--protocol</kbd></dt>
 <dd><p>Possible choices: GRPC, HTTP, WEBSOCKET</p>
@@ -1028,7 +1022,7 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="Essential arguments_repeat2">
-<h4>Essential arguments<a class="headerlink" href="#Essential arguments_repeat2" title="Permalink to this headline">#</a></h4>
+<h4>Essential arguments<a class="headerlink" href="#Essential arguments_repeat2" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--name</kbd></dt>
 <dd><blockquote>
@@ -1064,7 +1058,7 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="Base Deployment arguments_repeat1">
-<h4>Base Deployment arguments<a class="headerlink" href="#Base Deployment arguments_repeat1" title="Permalink to this headline">#</a></h4>
+<h4>Base Deployment arguments<a class="headerlink" href="#Base Deployment arguments_repeat1" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--timeout-ctrl</kbd></dt>
 <dd><p>The timeout in milliseconds of the control request, -1 for waiting forever</p>
@@ -1086,7 +1080,7 @@ JSON dict, {endpoint: PollingType}
 </dl>
 </section>
 <section id="WorkerRuntime arguments_repeat1">
-<h4>WorkerRuntime arguments<a class="headerlink" href="#WorkerRuntime arguments_repeat1" title="Permalink to this headline">#</a></h4>
+<h4>WorkerRuntime arguments<a class="headerlink" href="#WorkerRuntime arguments_repeat1" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--uses</kbd></dt>
 <dd><blockquote>
@@ -1126,7 +1120,7 @@ which should be structured as a python package. For more details, please see the
 </dd>
 <dt><kbd>--port-in</kbd></dt>
 <dd><p>The port for input data to bind to, default a random port between [49152, 65535]</p>
-<p>Default: 54753</p>
+<p>Default: 55170</p>
 </dd>
 <dt><kbd>--host-in</kbd></dt>
 <dd><p>The host address for binding to, by default it is 0.0.0.0</p>
@@ -1145,7 +1139,7 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </dl>
 </section>
 <section id="Prefetch arguments">
-<h4>Prefetch arguments<a class="headerlink" href="#Prefetch arguments" title="Permalink to this headline">#</a></h4>
+<h4>Prefetch arguments<a class="headerlink" href="#Prefetch arguments" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--prefetch</kbd></dt>
 <dd><blockquote>
@@ -1157,7 +1151,7 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </dl>
 </section>
 <section id="HTTP Gateway arguments">
-<h4>HTTP Gateway arguments<a class="headerlink" href="#HTTP Gateway arguments" title="Permalink to this headline">#</a></h4>
+<h4>HTTP Gateway arguments<a class="headerlink" href="#HTTP Gateway arguments" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--title</kbd></dt>
 <dd><p>The title of this HTTP server. It will be used in automatics docs such as Swagger UI.</p>
@@ -1209,7 +1203,7 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </dl>
 </section>
 <section id="GraphQL arguments">
-<h4>GraphQL arguments<a class="headerlink" href="#GraphQL arguments" title="Permalink to this headline">#</a></h4>
+<h4>GraphQL arguments<a class="headerlink" href="#GraphQL arguments" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--expose-graphql-endpoint</kbd></dt>
 <dd><p>If set, /graphql endpoint is added to HTTP interface.</p>
@@ -1218,7 +1212,7 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </dl>
 </section>
 <section id="Gateway arguments">
-<h4>Gateway arguments<a class="headerlink" href="#Gateway arguments" title="Permalink to this headline">#</a></h4>
+<h4>Gateway arguments<a class="headerlink" href="#Gateway arguments" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--host</kbd></dt>
 <dd><p>The host address of the runtime, by default it is 0.0.0.0.</p>
@@ -1230,7 +1224,7 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </dd>
 <dt><kbd>--port-expose</kbd></dt>
 <dd><p>The port that the gateway exposes for clients for GRPC connections.</p>
-<p>Default: 55110</p>
+<p>Default: 58083</p>
 </dd>
 <dt><kbd>--compression</kbd></dt>
 <dd><p>Possible choices: NoCompression, Deflate, Gzip</p>
@@ -1242,7 +1236,7 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </dl>
 </section>
 <section id="Pod arguments_repeat1">
-<h4>Pod arguments<a class="headerlink" href="#Pod arguments_repeat1" title="Permalink to this headline">#</a></h4>
+<h4>Pod arguments<a class="headerlink" href="#Pod arguments_repeat1" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--runtime-cls</kbd></dt>
 <dd><p>The runtime class to run inside the Pod</p>
@@ -1265,7 +1259,7 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </dd>
 <dt><kbd>--port</kbd></dt>
 <dd><p>The port for input data to bind to, default is a random port between [49152, 65535]</p>
-<p>Default: 49316</p>
+<p>Default: 60508</p>
 </dd>
 <dt><kbd>--monitoring</kbd></dt>
 <dd><p>If set, spawn an http server with a prometheus endpoint to expose metrics</p>
@@ -1273,7 +1267,7 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </dd>
 <dt><kbd>--port-monitoring</kbd></dt>
 <dd><p>The port on which the prometheus server is exposed, default is a random port between [49152, 65535]</p>
-<p>Default: 62448</p>
+<p>Default: 60062</p>
 </dd>
 <dt><kbd>--retries</kbd></dt>
 <dd><p>Number of retries per gRPC call. If &lt;0 it defaults to max(3, num_replicas)</p>
@@ -1287,13 +1281,13 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </section>
 </section>
 <section id="hub">
-<h3>hub<a class="headerlink" href="#hub" title="Permalink to this headline">#</a></h3>
+<h3>hub<a class="headerlink" href="#hub" title="Permalink to this heading">#</a></h3>
 <p>Push/Pull an Executor to/from Jina Hub</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jina</span> <span class="n">hub</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">{</span><span class="n">new</span><span class="p">,</span> <span class="n">push</span><span class="p">,</span> <span class="n">pull</span><span class="p">}</span> <span class="o">...</span>
 </pre></div>
 </div>
 <section id="subcommands_repeat1">
-<h4>subcommands<a class="headerlink" href="#subcommands_repeat1" title="Permalink to this headline">#</a></h4>
+<h4>subcommands<a class="headerlink" href="#subcommands_repeat1" title="Permalink to this heading">#</a></h4>
 <p>use <cite>%(prog)-8s [sub-command] –help</cite> to get detailed information about each sub-command</p>
 <dl class="option-list">
 <dt><kbd>hub</kbd></dt>
@@ -1302,16 +1296,16 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </dl>
 </section>
 <section id="Sub-commands:_repeat2">
-<h4>Sub-commands:<a class="headerlink" href="#Sub-commands:_repeat2" title="Permalink to this headline">#</a></h4>
+<h4>Sub-commands:<a class="headerlink" href="#Sub-commands:_repeat2" title="Permalink to this heading">#</a></h4>
 <section id="new_repeat1">
-<h5>new<a class="headerlink" href="#new_repeat1" title="Permalink to this headline">#</a></h5>
+<h5>new<a class="headerlink" href="#new_repeat1" title="Permalink to this heading">#</a></h5>
 <p>Create a new executor using the template</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jina</span> <span class="n">hub</span> <span class="n">new</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">name</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">path</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">advance</span><span class="o">-</span><span class="n">configuration</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">description</span><span class="p">]</span>
              <span class="p">[</span><span class="o">--</span><span class="n">keywords</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">url</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">add</span><span class="o">-</span><span class="n">dockerfile</span><span class="p">]</span>
 </pre></div>
 </div>
 <section id="Create Executor arguments">
-<h6>Create Executor arguments<a class="headerlink" href="#Create Executor arguments" title="Permalink to this headline">#</a></h6>
+<h6>Create Executor arguments<a class="headerlink" href="#Create Executor arguments" title="Permalink to this heading">#</a></h6>
 <dl class="option-list">
 <dt><kbd>--name</kbd></dt>
 <dd><p>the name of the Executor</p>
@@ -1340,7 +1334,7 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </section>
 </section>
 <section id="push">
-<h5>push<a class="headerlink" href="#push" title="Permalink to this headline">#</a></h5>
+<h5>push<a class="headerlink" href="#push" title="Permalink to this heading">#</a></h5>
 <p>Push an executor package to Jina hub</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jina</span> <span class="n">hub</span> <span class="n">push</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">usage</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">verbose</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">f</span> <span class="n">DOCKERFILE</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">t</span><span class="p">]</span>
               <span class="p">[</span><span class="o">--</span><span class="n">protected</span><span class="o">-</span><span class="n">tag</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">force</span><span class="o">-</span><span class="n">update</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">build</span><span class="o">-</span><span class="n">env</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">secret</span><span class="p">]</span>
@@ -1349,7 +1343,7 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </pre></div>
 </div>
 <section id="Named Arguments_repeat8">
-<h6>Named Arguments<a class="headerlink" href="#Named Arguments_repeat8" title="Permalink to this headline">#</a></h6>
+<h6>Named Arguments<a class="headerlink" href="#Named Arguments_repeat8" title="Permalink to this heading">#</a></h6>
 <dl class="option-list">
 <dt><kbd>--no-usage</kbd></dt>
 <dd><p>If set, Hub executor usage will not be printed.</p>
@@ -1362,7 +1356,7 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </dl>
 </section>
 <section id="Push arguments">
-<h6>Push arguments<a class="headerlink" href="#Push arguments" title="Permalink to this headline">#</a></h6>
+<h6>Push arguments<a class="headerlink" href="#Push arguments" title="Permalink to this heading">#</a></h6>
 <dl class="option-list">
 <dt><kbd>path</kbd></dt>
 <dd><p>The Executor folder to be pushed to Jina Hub</p>
@@ -1393,7 +1387,7 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </dl>
 </section>
 <section id="Visibility arguments">
-<h6>Visibility arguments<a class="headerlink" href="#Visibility arguments" title="Permalink to this headline">#</a></h6>
+<h6>Visibility arguments<a class="headerlink" href="#Visibility arguments" title="Permalink to this heading">#</a></h6>
 <dl class="option-list">
 <dt><kbd>--public</kbd></dt>
 <dd><p>If set, the pushed executor is visible to public</p>
@@ -1405,13 +1399,13 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </section>
 </section>
 <section id="pull">
-<h5>pull<a class="headerlink" href="#pull" title="Permalink to this headline">#</a></h5>
+<h5>pull<a class="headerlink" href="#pull" title="Permalink to this heading">#</a></h5>
 <p>Download an executor image/package from Jina hub</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jina</span> <span class="n">hub</span> <span class="n">pull</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">usage</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">install</span><span class="o">-</span><span class="n">requirements</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">force</span><span class="o">-</span><span class="n">update</span><span class="p">]</span> <span class="n">uri</span>
 </pre></div>
 </div>
 <section id="Positional Arguments_repeat7">
-<h6>Positional Arguments<a class="headerlink" href="#Positional Arguments_repeat7" title="Permalink to this headline">#</a></h6>
+<h6>Positional Arguments<a class="headerlink" href="#Positional Arguments_repeat7" title="Permalink to this heading">#</a></h6>
 <dl class="option-list">
 <dt><kbd>uri</kbd></dt>
 <dd><p>The URI of the executor to pull (e.g., jinahub[+docker]://NAME)</p>
@@ -1419,7 +1413,7 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </dl>
 </section>
 <section id="Named Arguments_repeat9">
-<h6>Named Arguments<a class="headerlink" href="#Named Arguments_repeat9" title="Permalink to this headline">#</a></h6>
+<h6>Named Arguments<a class="headerlink" href="#Named Arguments_repeat9" title="Permalink to this heading">#</a></h6>
 <dl class="option-list">
 <dt><kbd>--no-usage</kbd></dt>
 <dd><p>If set, Hub executor usage will not be printed.</p>
@@ -1428,7 +1422,7 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </dl>
 </section>
 <section id="Pull arguments_repeat1">
-<h6>Pull arguments<a class="headerlink" href="#Pull arguments_repeat1" title="Permalink to this headline">#</a></h6>
+<h6>Pull arguments<a class="headerlink" href="#Pull arguments_repeat1" title="Permalink to this heading">#</a></h6>
 <dl class="option-list">
 <dt><kbd>--install-requirements</kbd></dt>
 <dd><p>If set, install <cite>requirements.txt</cite> in the Hub Executor bundle to local</p>
@@ -1444,13 +1438,13 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </section>
 </section>
 <section id="help">
-<h3>help<a class="headerlink" href="#help" title="Permalink to this headline">#</a></h3>
+<h3>help<a class="headerlink" href="#help" title="Permalink to this heading">#</a></h3>
 <p>Show help text of a CLI argument</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jina</span> <span class="n">help</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="n">query</span>
 </pre></div>
 </div>
 <section id="Positional Arguments_repeat8">
-<h4>Positional Arguments<a class="headerlink" href="#Positional Arguments_repeat8" title="Permalink to this headline">#</a></h4>
+<h4>Positional Arguments<a class="headerlink" href="#Positional Arguments_repeat8" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>query</kbd></dt>
 <dd><p>Lookup the usage &amp; mention of the argument name in Jina API. The name can be fuzzy</p>
@@ -1459,7 +1453,7 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </section>
 </section>
 <section id="pod">
-<h3>pod<a class="headerlink" href="#pod" title="Permalink to this headline">#</a></h3>
+<h3>pod<a class="headerlink" href="#pod" title="Permalink to this heading">#</a></h3>
 <p>Start a Pod. You should rarely use this directly unless you are doing low-level orchestration</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jina</span> <span class="n">pod</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">name</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">workspace</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">config</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">quiet</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">quiet</span><span class="o">-</span><span class="n">error</span><span class="p">]</span>
          <span class="p">[</span><span class="o">--</span><span class="n">optout</span><span class="o">-</span><span class="n">telemetry</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">timeout</span><span class="o">-</span><span class="n">ctrl</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">polling</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">uses</span><span class="p">]</span>
@@ -1481,7 +1475,7 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </pre></div>
 </div>
 <section id="Essential arguments_repeat3">
-<h4>Essential arguments<a class="headerlink" href="#Essential arguments_repeat3" title="Permalink to this headline">#</a></h4>
+<h4>Essential arguments<a class="headerlink" href="#Essential arguments_repeat3" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--name</kbd></dt>
 <dd><blockquote>
@@ -1516,7 +1510,7 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </dl>
 </section>
 <section id="Base Deployment arguments_repeat2">
-<h4>Base Deployment arguments<a class="headerlink" href="#Base Deployment arguments_repeat2" title="Permalink to this headline">#</a></h4>
+<h4>Base Deployment arguments<a class="headerlink" href="#Base Deployment arguments_repeat2" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--timeout-ctrl</kbd></dt>
 <dd><p>The timeout in milliseconds of the control request, -1 for waiting forever</p>
@@ -1538,7 +1532,7 @@ JSON dict, {endpoint: PollingType}
 </dl>
 </section>
 <section id="WorkerRuntime arguments_repeat2">
-<h4>WorkerRuntime arguments<a class="headerlink" href="#WorkerRuntime arguments_repeat2" title="Permalink to this headline">#</a></h4>
+<h4>WorkerRuntime arguments<a class="headerlink" href="#WorkerRuntime arguments_repeat2" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--uses</kbd></dt>
 <dd><blockquote>
@@ -1578,7 +1572,7 @@ which should be structured as a python package. For more details, please see the
 </dd>
 <dt><kbd>--port-in</kbd></dt>
 <dd><p>The port for input data to bind to, default a random port between [49152, 65535]</p>
-<p>Default: 50171</p>
+<p>Default: 60411</p>
 </dd>
 <dt><kbd>--host-in</kbd></dt>
 <dd><p>The host address for binding to, by default it is 0.0.0.0</p>
@@ -1597,7 +1591,7 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </dl>
 </section>
 <section id="ContainerRuntime arguments_repeat1">
-<h4>ContainerRuntime arguments<a class="headerlink" href="#ContainerRuntime arguments_repeat1" title="Permalink to this headline">#</a></h4>
+<h4>ContainerRuntime arguments<a class="headerlink" href="#ContainerRuntime arguments_repeat1" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--entrypoint</kbd></dt>
 <dd><p>The entrypoint command overrides the ENTRYPOINT in Docker image. when not set then the Docker image ENTRYPOINT takes effective.</p>
@@ -1632,7 +1626,7 @@ container.</p>
 </dl>
 </section>
 <section id="RemoteRuntime arguments_repeat1">
-<h4>RemoteRuntime arguments<a class="headerlink" href="#RemoteRuntime arguments_repeat1" title="Permalink to this headline">#</a></h4>
+<h4>RemoteRuntime arguments<a class="headerlink" href="#RemoteRuntime arguments_repeat1" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--host</kbd></dt>
 <dd><p>The host address of the runtime, by default it is 0.0.0.0.</p>
@@ -1641,7 +1635,7 @@ container.</p>
 </dl>
 </section>
 <section id="Distributed arguments_repeat1">
-<h4>Distributed arguments<a class="headerlink" href="#Distributed arguments_repeat1" title="Permalink to this headline">#</a></h4>
+<h4>Distributed arguments<a class="headerlink" href="#Distributed arguments_repeat1" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--quiet-remote-logs</kbd></dt>
 <dd><p>Do not display the streaming of remote logs on local console</p>
@@ -1660,7 +1654,7 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="Pod arguments_repeat2">
-<h4>Pod arguments<a class="headerlink" href="#Pod arguments_repeat2" title="Permalink to this headline">#</a></h4>
+<h4>Pod arguments<a class="headerlink" href="#Pod arguments_repeat2" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--runtime-cls</kbd></dt>
 <dd><p>The runtime class to run inside the Pod</p>
@@ -1683,7 +1677,7 @@ Python files, data files.</p>
 </dd>
 <dt><kbd>--port</kbd></dt>
 <dd><p>The port for input data to bind to, default is a random port between [49152, 65535]</p>
-<p>Default: 52403</p>
+<p>Default: 62352</p>
 </dd>
 <dt><kbd>--monitoring</kbd></dt>
 <dd><p>If set, spawn an http server with a prometheus endpoint to expose metrics</p>
@@ -1691,7 +1685,7 @@ Python files, data files.</p>
 </dd>
 <dt><kbd>--port-monitoring</kbd></dt>
 <dd><p>The port on which the prometheus server is exposed, default is a random port between [49152, 65535]</p>
-<p>Default: 53188</p>
+<p>Default: 52229</p>
 </dd>
 <dt><kbd>--retries</kbd></dt>
 <dd><p>Number of retries per gRPC call. If &lt;0 it defaults to max(3, num_replicas)</p>
@@ -1704,7 +1698,7 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="Pull arguments_repeat2">
-<h4>Pull arguments<a class="headerlink" href="#Pull arguments_repeat2" title="Permalink to this headline">#</a></h4>
+<h4>Pull arguments<a class="headerlink" href="#Pull arguments_repeat2" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--install-requirements</kbd></dt>
 <dd><p>If set, install <cite>requirements.txt</cite> in the Hub Executor bundle to local</p>
@@ -1717,7 +1711,7 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="Head arguments_repeat1">
-<h4>Head arguments<a class="headerlink" href="#Head arguments_repeat1" title="Permalink to this headline">#</a></h4>
+<h4>Head arguments<a class="headerlink" href="#Head arguments_repeat1" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--compression</kbd></dt>
 <dd><p>Possible choices: NoCompression, Deflate, Gzip</p>
@@ -1743,7 +1737,7 @@ Python files, data files.</p>
 </section>
 </section>
 <section id="deployment">
-<h3>deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">#</a></h3>
+<h3>deployment<a class="headerlink" href="#deployment" title="Permalink to this heading">#</a></h3>
 <p>Start a Deployment. You should rarely use this directly unless you are doing low-level orchestration</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jina</span> <span class="n">deployment</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">name</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">workspace</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">log</span><span class="o">-</span><span class="n">config</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">quiet</span><span class="p">]</span>
                 <span class="p">[</span><span class="o">--</span><span class="n">quiet</span><span class="o">-</span><span class="n">error</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">optout</span><span class="o">-</span><span class="n">telemetry</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">timeout</span><span class="o">-</span><span class="n">ctrl</span><span class="p">]</span>
@@ -1769,7 +1763,7 @@ Python files, data files.</p>
 </pre></div>
 </div>
 <section id="Essential arguments_repeat4">
-<h4>Essential arguments<a class="headerlink" href="#Essential arguments_repeat4" title="Permalink to this headline">#</a></h4>
+<h4>Essential arguments<a class="headerlink" href="#Essential arguments_repeat4" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--name</kbd></dt>
 <dd><blockquote>
@@ -1804,7 +1798,7 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="Base Deployment arguments_repeat3">
-<h4>Base Deployment arguments<a class="headerlink" href="#Base Deployment arguments_repeat3" title="Permalink to this headline">#</a></h4>
+<h4>Base Deployment arguments<a class="headerlink" href="#Base Deployment arguments_repeat3" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--timeout-ctrl</kbd></dt>
 <dd><p>The timeout in milliseconds of the control request, -1 for waiting forever</p>
@@ -1826,7 +1820,7 @@ JSON dict, {endpoint: PollingType}
 </dl>
 </section>
 <section id="WorkerRuntime arguments_repeat3">
-<h4>WorkerRuntime arguments<a class="headerlink" href="#WorkerRuntime arguments_repeat3" title="Permalink to this headline">#</a></h4>
+<h4>WorkerRuntime arguments<a class="headerlink" href="#WorkerRuntime arguments_repeat3" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--uses</kbd></dt>
 <dd><blockquote>
@@ -1866,7 +1860,7 @@ which should be structured as a python package. For more details, please see the
 </dd>
 <dt><kbd>--port-in</kbd></dt>
 <dd><p>The port for input data to bind to, default a random port between [49152, 65535]</p>
-<p>Default: 63981</p>
+<p>Default: 59720</p>
 </dd>
 <dt><kbd>--host-in</kbd></dt>
 <dd><p>The host address for binding to, by default it is 0.0.0.0</p>
@@ -1885,7 +1879,7 @@ Defaults to retaining whatever type is returned by the Executor.</p>
 </dl>
 </section>
 <section id="ContainerRuntime arguments_repeat2">
-<h4>ContainerRuntime arguments<a class="headerlink" href="#ContainerRuntime arguments_repeat2" title="Permalink to this headline">#</a></h4>
+<h4>ContainerRuntime arguments<a class="headerlink" href="#ContainerRuntime arguments_repeat2" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--entrypoint</kbd></dt>
 <dd><p>The entrypoint command overrides the ENTRYPOINT in Docker image. when not set then the Docker image ENTRYPOINT takes effective.</p>
@@ -1920,7 +1914,7 @@ container.</p>
 </dl>
 </section>
 <section id="RemoteRuntime arguments_repeat2">
-<h4>RemoteRuntime arguments<a class="headerlink" href="#RemoteRuntime arguments_repeat2" title="Permalink to this headline">#</a></h4>
+<h4>RemoteRuntime arguments<a class="headerlink" href="#RemoteRuntime arguments_repeat2" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--host</kbd></dt>
 <dd><p>The host address of the runtime, by default it is 0.0.0.0.</p>
@@ -1929,7 +1923,7 @@ container.</p>
 </dl>
 </section>
 <section id="Distributed arguments_repeat2">
-<h4>Distributed arguments<a class="headerlink" href="#Distributed arguments_repeat2" title="Permalink to this headline">#</a></h4>
+<h4>Distributed arguments<a class="headerlink" href="#Distributed arguments_repeat2" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--quiet-remote-logs</kbd></dt>
 <dd><p>Do not display the streaming of remote logs on local console</p>
@@ -1948,7 +1942,7 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="Pod arguments_repeat3">
-<h4>Pod arguments<a class="headerlink" href="#Pod arguments_repeat3" title="Permalink to this headline">#</a></h4>
+<h4>Pod arguments<a class="headerlink" href="#Pod arguments_repeat3" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--runtime-cls</kbd></dt>
 <dd><p>The runtime class to run inside the Pod</p>
@@ -1971,7 +1965,7 @@ Python files, data files.</p>
 </dd>
 <dt><kbd>--port</kbd></dt>
 <dd><p>The port for input data to bind to, default is a random port between [49152, 65535]</p>
-<p>Default: 60373</p>
+<p>Default: 50002</p>
 </dd>
 <dt><kbd>--monitoring</kbd></dt>
 <dd><p>If set, spawn an http server with a prometheus endpoint to expose metrics</p>
@@ -1988,7 +1982,7 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="Pull arguments_repeat3">
-<h4>Pull arguments<a class="headerlink" href="#Pull arguments_repeat3" title="Permalink to this headline">#</a></h4>
+<h4>Pull arguments<a class="headerlink" href="#Pull arguments_repeat3" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--install-requirements</kbd></dt>
 <dd><p>If set, install <cite>requirements.txt</cite> in the Hub Executor bundle to local</p>
@@ -2001,7 +1995,7 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="Head arguments_repeat2">
-<h4>Head arguments<a class="headerlink" href="#Head arguments_repeat2" title="Permalink to this headline">#</a></h4>
+<h4>Head arguments<a class="headerlink" href="#Head arguments_repeat2" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--compression</kbd></dt>
 <dd><p>Possible choices: NoCompression, Deflate, Gzip</p>
@@ -2026,7 +2020,7 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="Deployment arguments">
-<h4>Deployment arguments<a class="headerlink" href="#Deployment arguments" title="Permalink to this headline">#</a></h4>
+<h4>Deployment arguments<a class="headerlink" href="#Deployment arguments" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--uses-before</kbd></dt>
 <dd><p>The executor attached before the Pods described by –uses, typically before sending to all shards, accepted type follows <cite>–uses</cite>. This argument only applies for sharded Deployments (shards &gt; 1).</p>
@@ -2047,20 +2041,20 @@ Python files, data files.</p>
 </dd>
 <dt><kbd>--port-monitoring</kbd></dt>
 <dd><p>The port on which the prometheus server is exposed, default is a random port between [49152, 65535]</p>
-<p>Default: “56210”</p>
+<p>Default: “59181”</p>
 </dd>
 </dl>
 </section>
 </section>
 <section id="client">
-<h3>client<a class="headerlink" href="#client" title="Permalink to this headline">#</a></h3>
+<h3>client<a class="headerlink" href="#client" title="Permalink to this heading">#</a></h3>
 <p>Start a Python client that connects to a Jina gateway</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jina</span> <span class="n">client</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">host</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">proxy</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">port</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">tls</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">asyncio</span><span class="p">]</span>
             <span class="p">[</span><span class="o">--</span><span class="k">return</span><span class="o">-</span><span class="n">responses</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">protocol</span> <span class="p">{</span><span class="n">GRPC</span><span class="p">,</span> <span class="n">HTTP</span><span class="p">,</span> <span class="n">WEBSOCKET</span><span class="p">}]</span>
 </pre></div>
 </div>
 <section id="Named Arguments_repeat10">
-<h4>Named Arguments<a class="headerlink" href="#Named Arguments_repeat10" title="Permalink to this headline">#</a></h4>
+<h4>Named Arguments<a class="headerlink" href="#Named Arguments_repeat10" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--asyncio</kbd></dt>
 <dd><p>If set, then the input and output of this Client work in an asynchronous manner.</p>
@@ -2078,7 +2072,7 @@ Python files, data files.</p>
 </dl>
 </section>
 <section id="ClientGateway arguments">
-<h4>ClientGateway arguments<a class="headerlink" href="#ClientGateway arguments" title="Permalink to this headline">#</a></h4>
+<h4>ClientGateway arguments<a class="headerlink" href="#ClientGateway arguments" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd>--host</kbd></dt>
 <dd><p>The host address of the runtime, by default it is 0.0.0.0.</p>
@@ -2136,7 +2130,7 @@ Python files, data files.</p>
                         <div class="copyright">
                             Copyright &#169; Jina AI Limited. All rights reserved.
                         </div><div class="last-updated">
-                            Last updated on Oct 26, 2022</div>
+                            Last updated on Dec 14, 2022</div>
                     </div>
                     <div class="right-details">
                         <div class="social-btns">
@@ -2329,7 +2323,9 @@ Python files, data files.</p>
      src="https://static.scarf.sh/a.png?x-pxid=2823e771-0e1e-4320-8fde-48bc48e53262"/><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/furo.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>

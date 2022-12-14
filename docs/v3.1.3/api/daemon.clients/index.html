@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="daemon.clients package" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/api/daemon.clients/" />
-  
 <meta property="og:site_name" content="Jina 3.1.3 Documentation" />
-  
-<meta property="og:description" content="Submodules: daemon.clients.base module, daemon.clients.deployments module, daemon.clients.flows module, daemon.clients.mixin module, daemon.clients.pods module, daemon.clients.workspaces module. Module contents:" />
-  
+<meta property="og:description" content="Submodules: daemon.clients.base module- AsyncBaseClient- AsyncBaseClient.alive(), AsyncBaseClient.status(), AsyncBaseClient.get(), AsyncBaseClient.list(), AsyncBaseClient.clear(), AsyncBaseClient.create(), AsyncBaseClient.update(), AsyncBaseClient.delete()., BaseClient., daemon.clients.deployment..." />
 <meta property="og:image" content="https://docs.jina.ai/_static/banner.png" />
-  
 <meta property="og:image:alt" content="Jina 3.1.3 Documentation" />
-  
+<meta name="description" content="Submodules: daemon.clients.base module- AsyncBaseClient- AsyncBaseClient.alive(), AsyncBaseClient.status(), AsyncBaseClient.get(), AsyncBaseClient.list(), AsyncBaseClient.clear(), AsyncBaseClient.create(), AsyncBaseClient.update(), AsyncBaseClient.delete()., BaseClient., daemon.clients.deployment..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -35,13 +28,14 @@
 </script>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="daemon.clients.base module" href="../daemon.clients.base/" /><link rel="prev" title="daemon.api.dependencies module" href="../daemon.api.dependencies/" />
+    
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="daemon.clients.base module" href="../daemon.clients.base/" /><link rel="prev" title="daemon.api.dependencies module" href="../daemon.api.dependencies/" />
         <link rel="canonical" href="https://docs.jina.ai/api/daemon.clients.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>daemon.clients package - Jina 3.1.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -238,7 +232,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -648,22 +642,96 @@
                     </label>
                 </div>
                 <section id="daemon-clients-package">
-<h1>daemon.clients package<a class="headerlink" href="#daemon-clients-package" title="Permalink to this headline">#</a></h1>
+<h1>daemon.clients package<a class="headerlink" href="#daemon-clients-package" title="Permalink to this heading">#</a></h1>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../daemon.clients.base/">daemon.clients.base module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../daemon.clients.deployments/">daemon.clients.deployments module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../daemon.clients.flows/">daemon.clients.flows module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../daemon.clients.mixin/">daemon.clients.mixin module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../daemon.clients.pods/">daemon.clients.pods module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../daemon.clients.workspaces/">daemon.clients.workspaces module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../daemon.clients.base/">daemon.clients.base module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../daemon.clients.base/#daemon.clients.base.AsyncBaseClient"><code class="docutils literal notranslate"><span class="pre">AsyncBaseClient</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.base/#daemon.clients.base.AsyncBaseClient.alive"><code class="docutils literal notranslate"><span class="pre">AsyncBaseClient.alive()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.base/#daemon.clients.base.AsyncBaseClient.status"><code class="docutils literal notranslate"><span class="pre">AsyncBaseClient.status()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.base/#daemon.clients.base.AsyncBaseClient.get"><code class="docutils literal notranslate"><span class="pre">AsyncBaseClient.get()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.base/#daemon.clients.base.AsyncBaseClient.list"><code class="docutils literal notranslate"><span class="pre">AsyncBaseClient.list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.base/#daemon.clients.base.AsyncBaseClient.clear"><code class="docutils literal notranslate"><span class="pre">AsyncBaseClient.clear()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.base/#daemon.clients.base.AsyncBaseClient.create"><code class="docutils literal notranslate"><span class="pre">AsyncBaseClient.create()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.base/#daemon.clients.base.AsyncBaseClient.update"><code class="docutils literal notranslate"><span class="pre">AsyncBaseClient.update()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.base/#daemon.clients.base.AsyncBaseClient.delete"><code class="docutils literal notranslate"><span class="pre">AsyncBaseClient.delete()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../daemon.clients.base/#daemon.clients.base.BaseClient"><code class="docutils literal notranslate"><span class="pre">BaseClient</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../daemon.clients.deployments/">daemon.clients.deployments module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../daemon.clients.deployments/#daemon.clients.deployments.AsyncDeploymentClient"><code class="docutils literal notranslate"><span class="pre">AsyncDeploymentClient</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.deployments/#daemon.clients.deployments.AsyncDeploymentClient.rolling_update"><code class="docutils literal notranslate"><span class="pre">AsyncDeploymentClient.rolling_update()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.deployments/#daemon.clients.deployments.AsyncDeploymentClient.scale"><code class="docutils literal notranslate"><span class="pre">AsyncDeploymentClient.scale()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../daemon.clients.deployments/#daemon.clients.deployments.DeploymentClient"><code class="docutils literal notranslate"><span class="pre">DeploymentClient</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../daemon.clients.flows/">daemon.clients.flows module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../daemon.clients.flows/#daemon.clients.flows.AsyncFlowClient"><code class="docutils literal notranslate"><span class="pre">AsyncFlowClient</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.flows/#daemon.clients.flows.AsyncFlowClient.arguments"><code class="docutils literal notranslate"><span class="pre">AsyncFlowClient.arguments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.flows/#daemon.clients.flows.AsyncFlowClient.create"><code class="docutils literal notranslate"><span class="pre">AsyncFlowClient.create()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.flows/#daemon.clients.flows.AsyncFlowClient.rolling_update"><code class="docutils literal notranslate"><span class="pre">AsyncFlowClient.rolling_update()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.flows/#daemon.clients.flows.AsyncFlowClient.scale"><code class="docutils literal notranslate"><span class="pre">AsyncFlowClient.scale()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.flows/#daemon.clients.flows.AsyncFlowClient.delete"><code class="docutils literal notranslate"><span class="pre">AsyncFlowClient.delete()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../daemon.clients.flows/#daemon.clients.flows.FlowClient"><code class="docutils literal notranslate"><span class="pre">FlowClient</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../daemon.clients.mixin/">daemon.clients.mixin module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../daemon.clients.mixin/#daemon.clients.mixin.AsyncToSyncMixin"><code class="docutils literal notranslate"><span class="pre">AsyncToSyncMixin</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.mixin/#daemon.clients.mixin.AsyncToSyncMixin.func"><code class="docutils literal notranslate"><span class="pre">AsyncToSyncMixin.func()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.mixin/#daemon.clients.mixin.AsyncToSyncMixin.alive"><code class="docutils literal notranslate"><span class="pre">AsyncToSyncMixin.alive()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.mixin/#daemon.clients.mixin.AsyncToSyncMixin.status"><code class="docutils literal notranslate"><span class="pre">AsyncToSyncMixin.status()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.mixin/#daemon.clients.mixin.AsyncToSyncMixin.get"><code class="docutils literal notranslate"><span class="pre">AsyncToSyncMixin.get()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.mixin/#daemon.clients.mixin.AsyncToSyncMixin.list"><code class="docutils literal notranslate"><span class="pre">AsyncToSyncMixin.list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.mixin/#daemon.clients.mixin.AsyncToSyncMixin.arguments"><code class="docutils literal notranslate"><span class="pre">AsyncToSyncMixin.arguments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.mixin/#daemon.clients.mixin.AsyncToSyncMixin.create"><code class="docutils literal notranslate"><span class="pre">AsyncToSyncMixin.create()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.mixin/#daemon.clients.mixin.AsyncToSyncMixin.update"><code class="docutils literal notranslate"><span class="pre">AsyncToSyncMixin.update()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.mixin/#daemon.clients.mixin.AsyncToSyncMixin.rolling_update"><code class="docutils literal notranslate"><span class="pre">AsyncToSyncMixin.rolling_update()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.mixin/#daemon.clients.mixin.AsyncToSyncMixin.scale"><code class="docutils literal notranslate"><span class="pre">AsyncToSyncMixin.scale()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.mixin/#daemon.clients.mixin.AsyncToSyncMixin.delete"><code class="docutils literal notranslate"><span class="pre">AsyncToSyncMixin.delete()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../daemon.clients.pods/">daemon.clients.pods module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../daemon.clients.pods/#daemon.clients.pods.AsyncPodClient"><code class="docutils literal notranslate"><span class="pre">AsyncPodClient</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.pods/#daemon.clients.pods.AsyncPodClient.arguments"><code class="docutils literal notranslate"><span class="pre">AsyncPodClient.arguments()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.pods/#daemon.clients.pods.AsyncPodClient.create"><code class="docutils literal notranslate"><span class="pre">AsyncPodClient.create()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.pods/#daemon.clients.pods.AsyncPodClient.delete"><code class="docutils literal notranslate"><span class="pre">AsyncPodClient.delete()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../daemon.clients.pods/#daemon.clients.pods.PodClient"><code class="docutils literal notranslate"><span class="pre">PodClient</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../daemon.clients.workspaces/">daemon.clients.workspaces module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../daemon.clients.workspaces/#daemon.clients.workspaces.FormData"><code class="docutils literal notranslate"><span class="pre">FormData</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.workspaces/#daemon.clients.workspaces.FormData.add"><code class="docutils literal notranslate"><span class="pre">FormData.add()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.workspaces/#daemon.clients.workspaces.FormData.fields"><code class="docutils literal notranslate"><span class="pre">FormData.fields</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.workspaces/#daemon.clients.workspaces.FormData.filenames"><code class="docutils literal notranslate"><span class="pre">FormData.filenames</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../daemon.clients.workspaces/#daemon.clients.workspaces.AsyncWorkspaceClient"><code class="docutils literal notranslate"><span class="pre">AsyncWorkspaceClient</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.workspaces/#daemon.clients.workspaces.AsyncWorkspaceClient.create"><code class="docutils literal notranslate"><span class="pre">AsyncWorkspaceClient.create()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.workspaces/#daemon.clients.workspaces.AsyncWorkspaceClient.wait"><code class="docutils literal notranslate"><span class="pre">AsyncWorkspaceClient.wait()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.workspaces/#daemon.clients.workspaces.AsyncWorkspaceClient.update"><code class="docutils literal notranslate"><span class="pre">AsyncWorkspaceClient.update()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../daemon.clients.workspaces/#daemon.clients.workspaces.AsyncWorkspaceClient.delete"><code class="docutils literal notranslate"><span class="pre">AsyncWorkspaceClient.delete()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../daemon.clients.workspaces/#daemon.clients.workspaces.WorkspaceClient"><code class="docutils literal notranslate"><span class="pre">WorkspaceClient</span></code></a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
 <section id="module-daemon.clients">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-daemon.clients" title="Permalink to this headline">#</a></h2>
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-daemon.clients" title="Permalink to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="daemon.clients.JinaDClient">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">daemon.clients.</span></span><span class="sig-name descname"><span class="pre">JinaDClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/daemon/clients/#JinaDClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#daemon.clients.JinaDClient" title="Permalink to this definition">#</a></dt>
@@ -691,7 +759,7 @@
 
 <dl class="py property">
 <dt class="sig sig-object py" id="daemon.clients.JinaDClient.deployments">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">deployments</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../daemon.clients.deployments/#daemon.clients.deployments.DeploymentClient" title="daemon.clients.deployments.DeploymentClient"><span class="pre">daemon.clients.deployments.DeploymentClient</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../daemon.clients.deployments/#daemon.clients.deployments.AsyncDeploymentClient" title="daemon.clients.deployments.AsyncDeploymentClient"><span class="pre">daemon.clients.deployments.AsyncDeploymentClient</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#daemon.clients.JinaDClient.deployments" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">deployments</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../daemon.clients.deployments/#daemon.clients.deployments.DeploymentClient" title="daemon.clients.deployments.DeploymentClient"><span class="pre">DeploymentClient</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../daemon.clients.deployments/#daemon.clients.deployments.AsyncDeploymentClient" title="daemon.clients.deployments.AsyncDeploymentClient"><span class="pre">AsyncDeploymentClient</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#daemon.clients.JinaDClient.deployments" title="Permalink to this definition">#</a></dt>
 <dd><p>Deployment Client</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -705,7 +773,7 @@
 
 <dl class="py property">
 <dt class="sig sig-object py" id="daemon.clients.JinaDClient.flows">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flows</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../daemon.clients.flows/#daemon.clients.flows.FlowClient" title="daemon.clients.flows.FlowClient"><span class="pre">daemon.clients.flows.FlowClient</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../daemon.clients.flows/#daemon.clients.flows.AsyncFlowClient" title="daemon.clients.flows.AsyncFlowClient"><span class="pre">daemon.clients.flows.AsyncFlowClient</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#daemon.clients.JinaDClient.flows" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">flows</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../daemon.clients.flows/#daemon.clients.flows.FlowClient" title="daemon.clients.flows.FlowClient"><span class="pre">FlowClient</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../daemon.clients.flows/#daemon.clients.flows.AsyncFlowClient" title="daemon.clients.flows.AsyncFlowClient"><span class="pre">AsyncFlowClient</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#daemon.clients.JinaDClient.flows" title="Permalink to this definition">#</a></dt>
 <dd><p>Flow Client</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -719,7 +787,7 @@
 
 <dl class="py property">
 <dt class="sig sig-object py" id="daemon.clients.JinaDClient.workspaces">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">workspaces</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../daemon.clients.workspaces/#daemon.clients.workspaces.WorkspaceClient" title="daemon.clients.workspaces.WorkspaceClient"><span class="pre">daemon.clients.workspaces.WorkspaceClient</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../daemon.clients.workspaces/#daemon.clients.workspaces.AsyncWorkspaceClient" title="daemon.clients.workspaces.AsyncWorkspaceClient"><span class="pre">daemon.clients.workspaces.AsyncWorkspaceClient</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#daemon.clients.JinaDClient.workspaces" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">workspaces</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../daemon.clients.workspaces/#daemon.clients.workspaces.WorkspaceClient" title="daemon.clients.workspaces.WorkspaceClient"><span class="pre">WorkspaceClient</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../daemon.clients.workspaces/#daemon.clients.workspaces.AsyncWorkspaceClient" title="daemon.clients.workspaces.AsyncWorkspaceClient"><span class="pre">AsyncWorkspaceClient</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#daemon.clients.JinaDClient.workspaces" title="Permalink to this definition">#</a></dt>
 <dd><p>Workspace Client</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -764,7 +832,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="daemon.clients.AsyncJinaDClient">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">daemon.clients.</span></span><span class="sig-name descname"><span class="pre">AsyncJinaDClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/daemon/clients/#AsyncJinaDClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#daemon.clients.AsyncJinaDClient" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#daemon.clients.JinaDClient" title="daemon.clients.JinaDClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">daemon.clients.JinaDClient</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#daemon.clients.JinaDClient" title="daemon.clients.JinaDClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">JinaDClient</span></code></a></p>
 <p>Async JinaD Client</p>
 </dd></dl>
 
@@ -803,7 +871,7 @@
 
                 <div class="related-information sd-d-inline-flex">
                     <a href="https://jina.ai">Copyright &#169; Jina AI Limited. All rights reserved.</a>
-                    Last updated on Oct 26, 2022.
+                    Last updated on Dec 14, 2022.
                     <div class="social-btns">
                     <a class='social-btn' href="https://github.com/jina-ai/jina/" aria-label="GitHub" target="_blank" rel="noreferrer"> <i class="fab fa-github"></i></a>
                     <a class='social-btn' href="https://slack.jina.ai" aria-label="Slack" target="_blank" rel="noreferrer"> <i class="fab fa-slack"></i></a>
@@ -830,7 +898,19 @@
                         <ul>
 <li><a class="reference internal" href="#">daemon.clients package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-daemon.clients">Module contents</a></li>
+<li><a class="reference internal" href="#module-daemon.clients">Module contents</a><ul>
+<li><a class="reference internal" href="#daemon.clients.JinaDClient"><code class="docutils literal notranslate"><span class="pre">JinaDClient</span></code></a><ul>
+<li><a class="reference internal" href="#daemon.clients.JinaDClient.pods"><code class="docutils literal notranslate"><span class="pre">JinaDClient.pods</span></code></a></li>
+<li><a class="reference internal" href="#daemon.clients.JinaDClient.deployments"><code class="docutils literal notranslate"><span class="pre">JinaDClient.deployments</span></code></a></li>
+<li><a class="reference internal" href="#daemon.clients.JinaDClient.flows"><code class="docutils literal notranslate"><span class="pre">JinaDClient.flows</span></code></a></li>
+<li><a class="reference internal" href="#daemon.clients.JinaDClient.workspaces"><code class="docutils literal notranslate"><span class="pre">JinaDClient.workspaces</span></code></a></li>
+<li><a class="reference internal" href="#daemon.clients.JinaDClient.alive"><code class="docutils literal notranslate"><span class="pre">JinaDClient.alive</span></code></a></li>
+<li><a class="reference internal" href="#daemon.clients.JinaDClient.status"><code class="docutils literal notranslate"><span class="pre">JinaDClient.status</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#daemon.clients.AsyncJinaDClient"><code class="docutils literal notranslate"><span class="pre">AsyncJinaDClient</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -859,7 +939,9 @@
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>

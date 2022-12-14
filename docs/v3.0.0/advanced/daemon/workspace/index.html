@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Workspace" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/advanced/daemon/workspace/" />
-  
 <meta property="og:site_name" content="Jina 3.0.0 Documentation" />
-  
 <meta property="og:description" content="Workspace is the entrypoint for all objects in JinaD. It primarily represents 4 pieces. Docker Image All objects created by JinaD are containerized. Workspace is responsible for building the base image. You can customize each image with the help of a.jinad file and a requirements.txt file., Docke..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_static/banner.png" />
-  
 <meta property="og:image:alt" content="Jina 3.0.0 Documentation" />
-  
+<meta name="description" content="Workspace is the entrypoint for all objects in JinaD. It primarily represents 4 pieces. Docker Image All objects created by JinaD are containerized. Workspace is responsible for building the base image. You can customize each image with the help of a.jinad file and a requirements.txt file., Docke..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -36,13 +29,14 @@
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script async defer src="https://cdn.jsdelivr.net/npm/qabot@0.3"></script>
-    <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" />
+    
+<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" />
         <link rel="canonical" href="https://docs.jina.ai/advanced/daemon/workspace.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Workspace - Jina 3.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -239,7 +233,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -646,7 +640,7 @@
                     </label>
                 </div>
                 <section class="tex2jax_ignore mathjax_ignore" id="workspace">
-<h1>Workspace<a class="headerlink" href="#workspace" title="Permalink to this headline">#</a></h1>
+<h1>Workspace<a class="headerlink" href="#workspace" title="Permalink to this heading">#</a></h1>
 <p>Workspace is the entrypoint for all objects in JinaD. It primarily represents 4 pieces.</p>
 <ol>
 <li><p><strong>Docker Image</strong></p>
@@ -695,7 +689,7 @@ tensorflow
 </li>
 </ol>
 <section id="create-a-workspace-redoc">
-<h2>Create a workspace (<a class="reference external" href="https://api.jina.ai/daemon/#operation/_create_workspaces_post">redoc</a>)<a class="headerlink" href="#create-a-workspace-redoc" title="Permalink to this headline">#</a></h2>
+<h2>Create a workspace (<a class="reference external" href="https://api.jina.ai/daemon/#operation/_create_workspaces_post">redoc</a>)<a class="headerlink" href="#create-a-workspace-redoc" title="Permalink to this heading">#</a></h2>
 <p>Create a directory (say <code class="docutils literal notranslate"><span class="pre">awesome_project</span></code>) on local which has all your files (<code class="docutils literal notranslate"><span class="pre">yaml</span></code>, <code class="docutils literal notranslate"><span class="pre">py_modules</span></code>, <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>
 , <code class="docutils literal notranslate"><span class="pre">.jinad</span></code> etc.)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">daemon.clients</span> <span class="kn">import</span> <span class="n">JinaDClient</span>
@@ -749,7 +743,7 @@ tensorflow
 </div>
 </section>
 <section id="get-details-of-a-workspace-redoc">
-<h2>Get details of a workspace (<a class="reference external" href="https://api.jina.ai/daemon/#operation/_list_workspaces__id__get">redoc</a>)<a class="headerlink" href="#get-details-of-a-workspace-redoc" title="Permalink to this headline">#</a></h2>
+<h2>Get details of a workspace (<a class="reference external" href="https://api.jina.ai/daemon/#operation/_list_workspaces__id__get">redoc</a>)<a class="headerlink" href="#get-details-of-a-workspace-redoc" title="Permalink to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">daemon.clients</span> <span class="kn">import</span> <span class="n">JinaDClient</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">JinaDClient</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">HOST</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">PORT</span><span class="p">)</span>
@@ -780,7 +774,7 @@ tensorflow
 </div>
 </section>
 <section id="list-all-workspaces-redoc">
-<h2>List all workspaces (<a class="reference external" href="https://api.jina.ai/daemon/#operation/_get_items_workspaces_get">redoc</a>)<a class="headerlink" href="#list-all-workspaces-redoc" title="Permalink to this headline">#</a></h2>
+<h2>List all workspaces (<a class="reference external" href="https://api.jina.ai/daemon/#operation/_get_items_workspaces_get">redoc</a>)<a class="headerlink" href="#list-all-workspaces-redoc" title="Permalink to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">client</span><span class="o">.</span><span class="n">workspaces</span><span class="o">.</span><span class="n">list</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -808,7 +802,7 @@ tensorflow
 </div>
 </section>
 <section id="delete-a-workspace-redoc">
-<h2>Delete a workspace (<a class="reference external" href="https://api.jina.ai/daemon/#operation/_delete_workspaces__id__delete">redoc</a>)<a class="headerlink" href="#delete-a-workspace-redoc" title="Permalink to this headline">#</a></h2>
+<h2>Delete a workspace (<a class="reference external" href="https://api.jina.ai/daemon/#operation/_delete_workspaces__id__delete">redoc</a>)<a class="headerlink" href="#delete-a-workspace-redoc" title="Permalink to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">success_deleted</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">workspaces</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">workspace_id</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">success_deleted</span>
 </pre></div>
@@ -826,7 +820,7 @@ tensorflow
 
                 <div class="related-information sd-d-inline-flex">
                     <a href="https://jina.ai">Copyright &#169; Jina AI Limited. All rights reserved.</a>
-                    Last updated on Oct 26, 2022.
+                    Last updated on Dec 14, 2022.
                     <div class="social-btns">
                     <a class='social-btn' href="https://github.com/jina-ai/jina/" aria-label="GitHub" target="_blank" rel="noreferrer"> <i class="fab fa-github"></i></a>
                     <a class='social-btn' href="https://slack.jina.ai" aria-label="Slack" target="_blank" rel="noreferrer"> <i class="fab fa-slack"></i></a>
@@ -882,7 +876,9 @@ tensorflow
 </div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>

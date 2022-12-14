@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Fuzzy String Matching in 30 Lines" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/tutorials/fuzzy-grep/" />
-  
 <meta property="og:site_name" content="Jina 3.0.0 Documentation" />
-  
 <meta property="og:description" content="Now that you understand all fundamental concepts, let’s practice the learnings and build a simple end-to-end demo. We will use Jina to implement a fuzzy search solution on source code: given a snippet source code and a query, find all lines that are similar to the query. It is like grep but in fu..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_static/banner.png" />
-  
 <meta property="og:image:alt" content="Jina 3.0.0 Documentation" />
-  
+<meta name="description" content="Now that you understand all fundamental concepts, let’s practice the learnings and build a simple end-to-end demo. We will use Jina to implement a fuzzy search solution on source code: given a snippet source code and a query, find all lines that are similar to the query. It is like grep but in fu..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -36,13 +29,14 @@
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script async defer src="https://cdn.jsdelivr.net/npm/qabot@0.3"></script>
-    <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" />
+    
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" />
         <link rel="canonical" href="https://docs.jina.ai/tutorials/fuzzy-grep.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Fuzzy String Matching in 30 Lines - Jina 3.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -239,7 +233,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -646,7 +640,7 @@
                     </label>
                 </div>
                 <section class="tex2jax_ignore mathjax_ignore" id="fuzzy-string-matching-in-30-lines">
-<h1>Fuzzy String Matching in 30 Lines<a class="headerlink" href="#fuzzy-string-matching-in-30-lines" title="Permalink to this headline">#</a></h1>
+<h1>Fuzzy String Matching in 30 Lines<a class="headerlink" href="#fuzzy-string-matching-in-30-lines" title="Permalink to this heading">#</a></h1>
 <div class="warning admonition">
 <p class="admonition-title">Different behavior on Jupyter Notebook</p>
 <p>Be aware of the following when running this tutorial in jupyter notebook. Some python built-in attributes such as <code class="docutils literal notranslate"><span class="pre">__file__</span></code> do not exist. You can change <code class="docutils literal notranslate"><span class="pre">__file__</span></code> for any other file path existing in your system.</p>
@@ -663,14 +657,14 @@ similar to the query. It is like <code class="docutils literal notranslate"><spa
 </ul>
 </div>
 <section id="client-server-architecture">
-<h2>Client-Server architecture<a class="headerlink" href="#client-server-architecture" title="Permalink to this headline">#</a></h2>
+<h2>Client-Server architecture<a class="headerlink" href="#client-server-architecture" title="Permalink to this heading">#</a></h2>
 <figure class="align-center">
 <img alt="../../_images/simple-arch.svg" src="../../_images/simple-arch.svg" /></figure>
 </section>
 <section id="server">
-<h2>Server<a class="headerlink" href="#server" title="Permalink to this headline">#</a></h2>
+<h2>Server<a class="headerlink" href="#server" title="Permalink to this heading">#</a></h2>
 <section id="character-embedding">
-<h3>Character embedding<a class="headerlink" href="#character-embedding" title="Permalink to this headline">#</a></h3>
+<h3>Character embedding<a class="headerlink" href="#character-embedding" title="Permalink to this heading">#</a></h3>
 <p>Let’s first build a simple Executor for character embedding:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">jina</span> <span class="kn">import</span> <span class="n">DocumentArray</span><span class="p">,</span> <span class="n">Executor</span><span class="p">,</span> <span class="n">requests</span>
@@ -693,7 +687,7 @@ similar to the query. It is like <code class="docutils literal notranslate"><spa
 </div>
 </section>
 <section id="indexer-with-euclidean-distance">
-<h3>Indexer with Euclidean distance<a class="headerlink" href="#indexer-with-euclidean-distance" title="Permalink to this headline">#</a></h3>
+<h3>Indexer with Euclidean distance<a class="headerlink" href="#indexer-with-euclidean-distance" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jina</span> <span class="kn">import</span> <span class="n">DocumentArray</span><span class="p">,</span> <span class="n">Executor</span><span class="p">,</span> <span class="n">requests</span>
 
 
@@ -711,7 +705,7 @@ similar to the query. It is like <code class="docutils literal notranslate"><spa
 </div>
 </section>
 <section id="put-it-together-in-a-flow">
-<h3>Put it together in a Flow<a class="headerlink" href="#put-it-together-in-a-flow" title="Permalink to this headline">#</a></h3>
+<h3>Put it together in a Flow<a class="headerlink" href="#put-it-together-in-a-flow" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jina</span> <span class="kn">import</span> <span class="n">Flow</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="p">(</span>
@@ -723,7 +717,7 @@ similar to the query. It is like <code class="docutils literal notranslate"><spa
 </div>
 </section>
 <section id="start-the-flow-and-index-data">
-<h3>Start the Flow and index data<a class="headerlink" href="#start-the-flow-and-index-data" title="Permalink to this headline">#</a></h3>
+<h3>Start the Flow and index data<a class="headerlink" href="#start-the-flow-and-index-data" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jina</span> <span class="kn">import</span> <span class="n">Document</span>
 
 <span class="k">with</span> <span class="n">f</span><span class="p">:</span>
@@ -741,7 +735,7 @@ and Google Colab, <code class="docutils literal notranslate"><span class="pre">_
 </section>
 </section>
 <section id="query-via-swaggerui">
-<h2>Query via SwaggerUI<a class="headerlink" href="#query-via-swaggerui" title="Permalink to this headline">#</a></h2>
+<h2>Query via SwaggerUI<a class="headerlink" href="#query-via-swaggerui" title="Permalink to this heading">#</a></h2>
 <p>Open <code class="docutils literal notranslate"><span class="pre">http://localhost:12345/docs</span></code> (an extended Swagger UI) in your browser, click <kbd>/search</kbd> tab and input:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
@@ -759,7 +753,7 @@ click <kbd>Execute</kbd> button!</p>
 </figure>
 </section>
 <section id="query-from-python">
-<h2>Query from Python<a class="headerlink" href="#query-from-python" title="Permalink to this headline">#</a></h2>
+<h2>Query from Python<a class="headerlink" href="#query-from-python" title="Permalink to this heading">#</a></h2>
 <p>Let’s do it in Python then! Keep the above server running and start a simple client:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jina</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">Document</span>
 <span class="kn">from</span> <span class="nn">jina.types.request</span> <span class="kn">import</span> <span class="n">Response</span>
@@ -794,7 +788,7 @@ click <kbd>Execute</kbd> button!</p>
 
                 <div class="related-information sd-d-inline-flex">
                     <a href="https://jina.ai">Copyright &#169; Jina AI Limited. All rights reserved.</a>
-                    Last updated on Oct 26, 2022.
+                    Last updated on Dec 14, 2022.
                     <div class="social-btns">
                     <a class='social-btn' href="https://github.com/jina-ai/jina/" aria-label="GitHub" target="_blank" rel="noreferrer"> <i class="fab fa-github"></i></a>
                     <a class='social-btn' href="https://slack.jina.ai" aria-label="Slack" target="_blank" rel="noreferrer"> <i class="fab fa-slack"></i></a>
@@ -856,7 +850,9 @@ click <kbd>Execute</kbd> button!</p>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>

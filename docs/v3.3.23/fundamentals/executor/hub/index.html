@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Share Executors via Jina Hub" />
-  
 <meta property="og:type" content="website" />
-  
-<meta property="og:url" content="https://docs.jina.ai/fundamentals/executor/hub/index/" />
-  
+<meta property="og:url" content="https://docs.jina.ai/fundamentals/executor/hub/" />
 <meta property="og:site_name" content="Jina 3.3.23 Documentation" />
-  
 <meta property="og:description" content="Now that you understand that Executor is a building block in Jina, the following questions may arise: Can I reuse my Executor in another project?, Can I share my Executor with my colleagues?, Can I just use someone else’s Executor instead of building it myself?. Basically, something like the foll..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_static/banner.png" />
-  
 <meta property="og:image:alt" content="Jina 3.3.23 Documentation" />
-  
+<meta name="description" content="Now that you understand that Executor is a building block in Jina, the following questions may arise: Can I reuse my Executor in another project?, Can I share my Executor with my colleagues?, Can I just use someone else’s Executor instead of building it myself?. Basically, something like the foll..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -35,13 +28,14 @@
 </script>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Hub Portal" href="hub-portal/" /><link rel="prev" title="Executor File Structure" href="../repository-structure/" />
+    
+<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Hub Portal" href="hub-portal/" /><link rel="prev" title="Executor File Structure" href="../repository-structure/" />
         <link rel="canonical" href="https://docs.jina.ai/fundamentals/executor/hub/index.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Share Executors via Jina Hub - Jina 3.3.23 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -244,7 +238,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -608,7 +602,7 @@
                     </label>
                 </div>
                 <section class="tex2jax_ignore mathjax_ignore" id="share-executors-via-jina-hub">
-<span id="jina-hub"></span><h1>Share Executors via Jina Hub<a class="headerlink" href="#share-executors-via-jina-hub" title="Permalink to this headline">#</a></h1>
+<span id="jina-hub"></span><h1>Share Executors via Jina Hub<a class="headerlink" href="#share-executors-via-jina-hub" title="Permalink to this heading">#</a></h1>
 <p>Now that you understand that Executor is a building block in Jina, the following questions may arise:</p>
 <ul class="simple">
 <li><p>Can I reuse my Executor in another project?</p></li>
@@ -631,16 +625,16 @@ Executors to share privately or publicly.</p>
 </pre></div>
 </div>
 <section id="hub-architecture">
-<h2>Hub architecture<a class="headerlink" href="#hub-architecture" title="Permalink to this headline">#</a></h2>
+<h2>Hub architecture<a class="headerlink" href="#hub-architecture" title="Permalink to this heading">#</a></h2>
 <p>The Hub architecture looks like the following:</p>
 <figure class="align-center">
 <img alt="../../../_images/hub-system.svg" src="../../../_images/hub-system.svg" /></figure>
 </section>
 <section id="environment-variables">
-<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">#</a></h2>
+<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this heading">#</a></h2>
 <p>A list of environment variables which takes effects during Jina Hub operations. e.g. <code class="docutils literal notranslate"><span class="pre">jina</span> <span class="pre">hub</span> <span class="pre">push</span></code></p>
 <section id="jina-hub-root">
-<h3><code class="docutils literal notranslate"><span class="pre">JINA_HUB_ROOT</span></code><a class="headerlink" href="#jina-hub-root" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">JINA_HUB_ROOT</span></code><a class="headerlink" href="#jina-hub-root" title="Permalink to this heading">#</a></h3>
 <p><strong>Define the place where the Executor package cache lives.</strong> Default value is <code class="docutils literal notranslate"><span class="pre">Path.home().joinpath('.jina',</span> <span class="pre">'hub-packages')</span></code></p>
 <div class="hint admonition">
 <p class="admonition-title">Hint</p>
@@ -648,7 +642,7 @@ Executors to share privately or publicly.</p>
 </div>
 </section>
 <section id="jina-hub-cache-dir">
-<h3><code class="docutils literal notranslate"><span class="pre">JINA_HUB_CACHE_DIR</span></code><a class="headerlink" href="#jina-hub-cache-dir" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">JINA_HUB_CACHE_DIR</span></code><a class="headerlink" href="#jina-hub-cache-dir" title="Permalink to this heading">#</a></h3>
 <p><strong>Define the place where the cache is stored during the downloading.</strong> The cache will be deleted after finishing the download. Default value is <code class="docutils literal notranslate"><span class="pre">Path(os.environ.get('JINA_HUB_ROOT')).joinpath('.cache')</span></code>. By default, it will be a subfolder of <code class="docutils literal notranslate"><span class="pre">JINA_HUB_ROOT</span></code>. You can specify its value separately if you want.</p>
 <div class="toctree-wrapper compound">
 </div>
@@ -688,7 +682,7 @@ Executors to share privately or publicly.</p>
 
                 <div class="related-information sd-d-inline-flex">
                     <a href="https://jina.ai">Copyright &#169; Jina AI Limited. All rights reserved.</a>
-                    Last updated on Oct 26, 2022.
+                    Last updated on Dec 14, 2022.
                     <div class="social-btns">
                     <a class='social-btn' href="https://github.com/jina-ai/jina/" aria-label="GitHub" target="_blank" rel="noreferrer"> <i class="fab fa-github"></i></a>
                     <a class='social-btn' href="https://slack.jina.ai" aria-label="Slack" target="_blank" rel="noreferrer"> <i class="fab fa-slack"></i></a>
@@ -749,7 +743,9 @@ Executors to share privately or publicly.</p>
 <img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=1b470c1d-3b55-4d38-baa8-989bfba2a218" /><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>

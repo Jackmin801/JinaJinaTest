@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Use monitoring with Jina in Kubernetes" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/how-to/monitoring/" />
-  
 <meta property="og:site_name" content="Jina 3.6.15 Documentation" />
-  
 <meta property="og:description" content="First, let’s have some context on the monitoring stack that we will be using during this guide. To leverage the metrics that Jina exposes, we recommend using the Prometheus/Grafana stack. In this setup, Jina will expose different metrics endpoint, and Prometheus will then be in charge of scraping..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_images/kubectl_pods.png" />
-  
 <meta property="og:image:alt" content="Jina 3.6.15 Documentation" />
-  
+<meta name="description" content="First, let’s have some context on the monitoring stack that we will be using during this guide. To leverage the metrics that Jina exposes, we recommend using the Prometheus/Grafana stack. In this setup, Jina will expose different metrics endpoint, and Prometheus will then be in charge of scraping..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -35,13 +28,14 @@
 </script>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Python API" href="../../api-rst/" /><link rel="prev" title="Deploy with Kubernetes" href="../kubernetes/" />
+    
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Python API" href="../../api-rst/" /><link rel="prev" title="Deploy with Kubernetes" href="../kubernetes/" />
         <link rel="canonical" href="https://docs.jina.ai/how-to/monitoring.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Use monitoring with Jina in Kubernetes - Jina 3.6.15 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -249,7 +243,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -411,7 +405,7 @@
                 </div>
                 <article role="main">
                     <section class="tex2jax_ignore mathjax_ignore" id="use-monitoring-with-jina-in-kubernetes">
-<span id="monitoring"></span><h1>Use monitoring with Jina in Kubernetes<a class="headerlink" href="#use-monitoring-with-jina-in-kubernetes" title="Permalink to this headline">#</a></h1>
+<span id="monitoring"></span><h1>Use monitoring with Jina in Kubernetes<a class="headerlink" href="#use-monitoring-with-jina-in-kubernetes" title="Permalink to this heading">#</a></h1>
 <p>First, let’s have some context on the monitoring stack that we will be using during this guide.
 To leverage the <a class="reference internal" href="../../fundamentals/flow/monitoring-flow/#monitoring-flow"><span class="std std-ref">metrics</span></a> that Jina exposes, we recommend using the Prometheus/Grafana stack. In this setup, Jina will expose different <a class="reference internal" href="../../fundamentals/flow/monitoring-flow/#monitoring-flow"><span class="std std-ref">metrics endpoint</span></a>, and Prometheus will then be in charge of scraping these endpoints, as well as
 collecting, aggregating, and storing the different metrics. Prometheus will then allow external entities (like Grafana) to access these aggregated metrics via the query language <a class="reference external" href="https://prometheus.io/docs/prometheus/latest/querying/basics/">PromQL</a>.
@@ -422,9 +416,9 @@ Then the role of Grafana here will be to allow users to visualize these metrics 
 </div>
 <p>We will show you in this guide how to easily deploy the Prometheus/Grafana stack and used them to monitor a Flow.</p>
 <section id="deploying-the-flow-and-the-monitoring-stack">
-<h2>Deploying the Flow and the monitoring stack<a class="headerlink" href="#deploying-the-flow-and-the-monitoring-stack" title="Permalink to this headline">#</a></h2>
+<h2>Deploying the Flow and the monitoring stack<a class="headerlink" href="#deploying-the-flow-and-the-monitoring-stack" title="Permalink to this heading">#</a></h2>
 <section id="deploying-on-kubernetes">
-<h3>Deploying on Kubernetes<a class="headerlink" href="#deploying-on-kubernetes" title="Permalink to this headline">#</a></h3>
+<h3>Deploying on Kubernetes<a class="headerlink" href="#deploying-on-kubernetes" title="Permalink to this heading">#</a></h3>
 <p>One of the challenges of monitoring a <a class="reference internal" href="../../api/jina/#jina.Flow" title="jina.Flow"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flow</span></code></a> is communicating its different metrics endpoints to Prometheus.
 Fortunately, the <a class="reference external" href="https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/getting-started.md">Prometheus operator for Kubernetes</a> makes the process fairly easy, because it can automatically discover new metrics endpoints to scrape.</p>
 <p>Deploying your Jina Flow on Kubernetes is the recommended way to leverage the full potential of the monitoring feature because:</p>
@@ -501,7 +495,7 @@ Fortunately, the <a class="reference external" href="https://github.com/promethe
 <p>You should see the Grafana home page.</p>
 </section>
 <section id="deploying-locally">
-<h3>Deploying locally<a class="headerlink" href="#deploying-locally" title="Permalink to this headline">#</a></h3>
+<h3>Deploying locally<a class="headerlink" href="#deploying-locally" title="Permalink to this heading">#</a></h3>
 <p>Let’s first deploy the Flow that we want to monitor:</p>
 <div class="tab-set docutils">
 <input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">via Python code</label><div class="tab-content docutils">
@@ -548,7 +542,7 @@ ports by modifying this <a class="reference external" href="https://github.com/j
 </section>
 </section>
 <section id="using-grafana-to-visualize-metrics">
-<h2>Using Grafana to visualize metrics<a class="headerlink" href="#using-grafana-to-visualize-metrics" title="Permalink to this headline">#</a></h2>
+<h2>Using Grafana to visualize metrics<a class="headerlink" href="#using-grafana-to-visualize-metrics" title="Permalink to this heading">#</a></h2>
 <p>Once you can access the Grafana homepage then go to <code class="docutils literal notranslate"><span class="pre">Browse</span></code> then <code class="docutils literal notranslate"><span class="pre">import</span></code> and copy and paste the <a class="reference external" href="https://github.com/jina-ai/example-grafana-prometheus/blob/main/grafana-dashboards/flow.json">JSON file</a></p>
 <p>You should see the following dashboard:</p>
 <figure class="align-center">
@@ -568,7 +562,7 @@ ports by modifying this <a class="reference external" href="https://github.com/j
 </div>
 </section>
 <section id="see-further">
-<h2>See further<a class="headerlink" href="#see-further" title="Permalink to this headline">#</a></h2>
+<h2>See further<a class="headerlink" href="#see-further" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../../fundamentals/flow/monitoring-flow/#monitoring-flow"><span class="std std-ref">List of available metrics</span></a></p></li>
 <li><p><a class="reference external" href="https://grafana.com/docs/grafana/latest/getting-started/getting-started-prometheus/">Using Grafana to visualize Prometheus metrics</a></p></li>
@@ -612,7 +606,7 @@ ports by modifying this <a class="reference external" href="https://github.com/j
                         <div class="copyright">
                             Copyright &#169; Jina AI Limited. All rights reserved.
                         </div><div class="last-updated">
-                            Last updated on Oct 26, 2022</div>
+                            Last updated on Dec 14, 2022</div>
                     </div>
                     <div class="right-details">
                         <div class="social-btns">
@@ -681,7 +675,9 @@ ports by modifying this <a class="reference external" href="https://github.com/j
      src="https://static.scarf.sh/a.png?x-pxid=2823e771-0e1e-4320-8fde-48bc48e53262"/><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>

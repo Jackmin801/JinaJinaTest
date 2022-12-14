@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../../genindex/" /><link rel="search" title="Search" href="../../../../search/" />
         <link rel="canonical" href="https://docs.jina.ai/_modules/docarray/array/document.html" />
 
-    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>docarray.array.document - Jina 3.4.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -205,7 +205,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -578,12 +578,13 @@
                     </label>
                 </div>
                 <h1>Source code for docarray.array.document</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">overload</span><span class="p">,</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Union</span>
+<span></span><span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">ExitStack</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">overload</span><span class="p">,</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Union</span>
 
 <span class="kn">from</span> <span class="nn">docarray.array.base</span> <span class="kn">import</span> <span class="n">BaseDocumentArray</span>
 <span class="kn">from</span> <span class="nn">docarray.array.mixins</span> <span class="kn">import</span> <span class="n">AllMixins</span>
 
-<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
     <span class="kn">from</span> <span class="nn">docarray.typing</span> <span class="kn">import</span> <span class="n">DocumentArraySourceType</span>
     <span class="kn">from</span> <span class="nn">docarray.array.memory</span> <span class="kn">import</span> <span class="n">DocumentArrayInMemory</span>
     <span class="kn">from</span> <span class="nn">docarray.array.sqlite</span> <span class="kn">import</span> <span class="n">DocumentArraySqlite</span>
@@ -591,11 +592,13 @@
     <span class="kn">from</span> <span class="nn">docarray.array.weaviate</span> <span class="kn">import</span> <span class="n">DocumentArrayWeaviate</span>
     <span class="kn">from</span> <span class="nn">docarray.array.elastic</span> <span class="kn">import</span> <span class="n">DocumentArrayElastic</span>
     <span class="kn">from</span> <span class="nn">docarray.array.redis</span> <span class="kn">import</span> <span class="n">DocumentArrayRedis</span>
+    <span class="kn">from</span> <span class="nn">docarray.array.milvus</span> <span class="kn">import</span> <span class="n">DocumentArrayMilvus</span>
     <span class="kn">from</span> <span class="nn">docarray.array.storage.sqlite</span> <span class="kn">import</span> <span class="n">SqliteConfig</span>
     <span class="kn">from</span> <span class="nn">docarray.array.storage.annlite</span> <span class="kn">import</span> <span class="n">AnnliteConfig</span>
     <span class="kn">from</span> <span class="nn">docarray.array.storage.weaviate</span> <span class="kn">import</span> <span class="n">WeaviateConfig</span>
     <span class="kn">from</span> <span class="nn">docarray.array.storage.elastic</span> <span class="kn">import</span> <span class="n">ElasticConfig</span>
     <span class="kn">from</span> <span class="nn">docarray.array.storage.redis</span> <span class="kn">import</span> <span class="n">RedisConfig</span>
+    <span class="kn">from</span> <span class="nn">docarray.array.storage.milvus</span> <span class="kn">import</span> <span class="n">MilvusConfig</span>
 
 
 <div class="viewcode-block" id="DocumentArray"><a class="viewcode-back" href="../../../../api/jina/#jina.DocumentArray">[docs]</a><span class="k">class</span> <span class="nc">DocumentArray</span><span class="p">(</span><span class="n">AllMixins</span><span class="p">,</span> <span class="n">BaseDocumentArray</span><span class="p">):</span>
@@ -719,14 +722,29 @@
         <span class="sd">&quot;&quot;&quot;Create a Redis-powered DocumentArray object.&quot;&quot;&quot;</span>
         <span class="o">...</span>
 
+    <span class="nd">@overload</span>
+    <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">_docs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s1">&#39;DocumentArraySourceType&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">storage</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;milvus&#39;</span><span class="p">,</span>
+        <span class="n">config</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="s1">&#39;MilvusConfig&#39;</span><span class="p">,</span> <span class="n">Dict</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;DocumentArrayMilvus&#39;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Create a Milvus-powered DocumentArray object.&quot;&quot;&quot;</span>
+        <span class="o">...</span>
+
     <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_exit_stack</span> <span class="o">=</span> <span class="n">ExitStack</span><span class="p">()</span>
+        <span class="c1"># Ensure that we sync the data to the storage backend when exiting the context manager</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_exit_stack</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sync</span><span class="p">)</span>
+        <span class="c1"># Enter (and then exit) context of all subindices</span>
+        <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;_subindices&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">selector</span><span class="p">,</span> <span class="n">da</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_subindices</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_exit_stack</span><span class="o">.</span><span class="n">enter_context</span><span class="p">(</span><span class="n">da</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span>
 
     <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Ensures that we sync the data to the storage backend when exiting the context manager</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sync</span><span class="p">()</span>
+        <span class="c1"># Trigger all __exit__()s and callbacks added in self.__enter__()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_exit_stack</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
     <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">storage</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;memory&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="n">DocumentArray</span><span class="p">:</span>
@@ -758,6 +776,10 @@
                 <span class="kn">from</span> <span class="nn">.redis</span> <span class="kn">import</span> <span class="n">DocumentArrayRedis</span>
 
                 <span class="n">instance</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="n">DocumentArrayRedis</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">storage</span> <span class="o">==</span> <span class="s1">&#39;milvus&#39;</span><span class="p">:</span>
+                <span class="kn">from</span> <span class="nn">.milvus</span> <span class="kn">import</span> <span class="n">DocumentArrayMilvus</span>
+
+                <span class="n">instance</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="n">DocumentArrayMilvus</span><span class="p">)</span>
 
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;storage=`</span><span class="si">{</span><span class="n">storage</span><span class="si">}</span><span class="s1">` is not supported.&#39;</span><span class="p">)</span>
@@ -775,7 +797,7 @@
 
                 <div class="related-information sd-d-inline-flex">
                     <a href="https://jina.ai">Copyright &#169; Jina AI Limited. All rights reserved.</a>
-                    Last updated on Oct 26, 2022.
+                    Last updated on Dec 14, 2022.
                     <div class="social-btns">
                     <a class='social-btn' href="https://github.com/jina-ai/jina/" aria-label="GitHub" target="_blank" rel="noreferrer"> <i class="fab fa-github"></i></a>
                     <a class='social-btn' href="https://slack.jina.ai" aria-label="Slack" target="_blank" rel="noreferrer"> <i class="fab fa-slack"></i></a>
@@ -816,7 +838,9 @@
 <img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=1b470c1d-3b55-4d38-baa8-989bfba2a218" /><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../_static/scripts/furo.js"></script>
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>

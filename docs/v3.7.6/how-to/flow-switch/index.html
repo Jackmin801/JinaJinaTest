@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Add selection control to a Flow" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/how-to/flow-switch/" />
-  
 <meta property="og:site_name" content="Jina 3.7.6 Documentation" />
-  
 <meta property="og:description" content="In this tutorial you will gain a deeper insight into the Flow ‘s filter condition feature. In a nutshell, this feature allows every Executor in a Flow do define a filter that can only be passed by Documents that fulfill a specified condition. Here you will learn where and how to use this feature,..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_static/banner.png" />
-  
 <meta property="og:image:alt" content="Jina 3.7.6 Documentation" />
-  
+<meta name="description" content="In this tutorial you will gain a deeper insight into the Flow ‘s filter condition feature. In a nutshell, this feature allows every Executor in a Flow do define a filter that can only be passed by Documents that fulfill a specified condition. Here you will learn where and how to use this feature,..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -35,13 +28,14 @@
 </script>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Deploy with Docker Compose" href="../docker-compose/" /><link rel="prev" title="Use external Executors" href="../external-executor/" />
+    
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Deploy with Docker Compose" href="../docker-compose/" /><link rel="prev" title="Use external Executors" href="../external-executor/" />
         <link rel="canonical" href="https://docs.jina.ai/how-to/flow-switch.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Add selection control to a Flow - Jina 3.7.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -243,7 +237,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -408,7 +402,7 @@
                 </div>
                 <article role="main">
                     <section class="tex2jax_ignore mathjax_ignore" id="add-selection-control-to-a-flow">
-<span id="flow-switch"></span><h1>Add selection control to a Flow<a class="headerlink" href="#add-selection-control-to-a-flow" title="Permalink to this headline">#</a></h1>
+<span id="flow-switch"></span><h1>Add selection control to a Flow<a class="headerlink" href="#add-selection-control-to-a-flow" title="Permalink to this heading">#</a></h1>
 <div class="hint admonition">
 <p class="admonition-title">Requirements</p>
 <p>To follow along with this How-To, you need Jina 3.2.2 or higher.</p>
@@ -423,7 +417,7 @@ fulfill a specified <code class="docutils literal notranslate"><span class="pre"
 </div>
 <p>Here you will learn where and how to use this feature, and how you can build <em>selection control</em> into your Flow.</p>
 <section id="why-do-you-need-a-selection-control">
-<h2>Why do you need a selection control?<a class="headerlink" href="#why-do-you-need-a-selection-control" title="Permalink to this headline">#</a></h2>
+<h2>Why do you need a selection control?<a class="headerlink" href="#why-do-you-need-a-selection-control" title="Permalink to this heading">#</a></h2>
 <p><a class="reference internal" href="../../fundamentals/flow/topologies/#flow-complex-topologies"><span class="std std-ref">As you know</span></a>, Jina Flows can define complex topologies that include multiple Executors,
 both in sequence and on parallel branches.</p>
 <p>A simple Flow with parallel branches could be defined like so:</p>
@@ -519,7 +513,7 @@ Sometimes you can’t easily control the endpoints of all Executors, for example
 <p>To solve that problem, you can leverage filter condition to easily add selection control into your Flow.</p>
 </section>
 <section id="define-the-filter-conditions">
-<h2>Define the filter conditions<a class="headerlink" href="#define-the-filter-conditions" title="Permalink to this headline">#</a></h2>
+<h2>Define the filter conditions<a class="headerlink" href="#define-the-filter-conditions" title="Permalink to this heading">#</a></h2>
 <p>In a Jina Flow, you can use the <a class="reference external" href="https://docarray.jina.ai/fundamentals/documentarray/find/#query-by-conditions">DocArray query language</a> to specify a filter condition for every
 Executor.</p>
 <p>To do this, you pass a condition to the <code class="docutils literal notranslate"><span class="pre">when</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">flow.add()</span></code>:</p>
@@ -543,7 +537,7 @@ a condition accordingly.</p>
 </div>
 <p>These conditions specify that only Documents that hold data of a specific modality can pass the filter.</p>
 <section id="try-the-filters-outside-the-flow">
-<h3>Try the filters outside the Flow<a class="headerlink" href="#try-the-filters-outside-the-flow" title="Permalink to this headline">#</a></h3>
+<h3>Try the filters outside the Flow<a class="headerlink" href="#try-the-filters-outside-the-flow" title="Permalink to this heading">#</a></h3>
 <p>You can try the conditions directly on your data, outside the Flow:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filtered_text_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">text_condition</span><span class="p">)</span>
 <span class="n">filtered_image_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">tensor_condition</span><span class="p">)</span>
@@ -567,7 +561,7 @@ That’s exactly what you want for your filter!</p>
 </section>
 </section>
 <section id="build-the-flow">
-<h2>Build the Flow<a class="headerlink" href="#build-the-flow" title="Permalink to this headline">#</a></h2>
+<h2>Build the Flow<a class="headerlink" href="#build-the-flow" title="Permalink to this heading">#</a></h2>
 <p>Finally, you can assemble your Flow using these conditions and the Indexers from above.
 This time there is no need to choose different Executor endpoints for the Indexers, since the filters take care of the
 selection control logic.</p>
@@ -623,7 +617,7 @@ selection control logic.</p>
 Text and image data should be treated separately.</p>
 </section>
 <section id="index-the-data">
-<h2>Index the data<a class="headerlink" href="#index-the-data" title="Permalink to this headline">#</a></h2>
+<h2>Index the data<a class="headerlink" href="#index-the-data" title="Permalink to this heading">#</a></h2>
 <p>If you now send your data to the Flow, you expect that only your image data will be sent to <code class="docutils literal notranslate"><span class="pre">ImageIndexer</span></code>, and only your
 text data will be sent to <code class="docutils literal notranslate"><span class="pre">TextIndexer</span></code>.</p>
 <p>Let’s take a look:</p>
@@ -648,14 +642,14 @@ text data will be sent to <code class="docutils literal notranslate"><span class
 And remember, with this solution the Documents don’t even get <em>sent</em> to the incorrect Executor.</p>
 </section>
 <section id="what-s-next">
-<h2>What’s next<a class="headerlink" href="#what-s-next" title="Permalink to this headline">#</a></h2>
+<h2>What’s next<a class="headerlink" href="#what-s-next" title="Permalink to this heading">#</a></h2>
 <p>Now that you know how to use filter conditions to add selection control, you can leverage this feature to build all kinds of business logic.</p>
 <p>You could differentiate between more than just two different data modalities, you could direct requests based on the Client they come from,
 ignore Documents that don’t meet certain quality criteria, or route data to specialized Executors based on what the data
 itself looks like. Your imagination is the limit!</p>
 </section>
 <section id="see-also">
-<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this headline">#</a></h2>
+<h2>See also<a class="headerlink" href="#see-also" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../docker-compose/#docker-compose"><span class="std std-ref">How to run your Flow with Docker Compose</span></a></p></li>
 <li><p><a class="reference internal" href="../kubernetes/#kubernetes"><span class="std std-ref">How to deploy your Flow on Kubernetes</span></a></p></li>
@@ -699,7 +693,7 @@ itself looks like. Your imagination is the limit!</p>
                         <div class="copyright">
                             Copyright &#169; Jina AI Limited. All rights reserved.
                         </div><div class="last-updated">
-                            Last updated on Oct 26, 2022</div>
+                            Last updated on Dec 14, 2022</div>
                     </div>
                     <div class="right-details">
                         <div class="social-btns">
@@ -770,7 +764,9 @@ itself looks like. Your imagination is the limit!</p>
      src="https://static.scarf.sh/a.png?x-pxid=2823e771-0e1e-4320-8fde-48bc48e53262"/><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>

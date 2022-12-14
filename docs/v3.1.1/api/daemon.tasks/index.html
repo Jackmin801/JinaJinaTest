@@ -3,19 +3,12 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="daemon.tasks module" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/api/daemon.tasks/" />
-  
 <meta property="og:site_name" content="Jina 3.1.1 Documentation" />
-  
 <meta property="og:image" content="https://docs.jina.ai/_static/banner.png" />
-  
 <meta property="og:image:alt" content="Jina 3.1.1 Documentation" />
-  
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -34,13 +27,14 @@
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script async defer src="https://cdn.jsdelivr.net/npm/qabot@0.4"></script>
-    <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="cli package" href="../cli/" /><link rel="prev" title="daemon.parser module" href="../daemon.parser/" />
+    
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="cli package" href="../cli/" /><link rel="prev" title="daemon.parser module" href="../daemon.parser/" />
         <link rel="canonical" href="https://docs.jina.ai/api/daemon.tasks.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>daemon.tasks module - Jina 3.1.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -191,7 +185,7 @@
                     </svg>
                 </button>
             </div>
-            <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+            <label class="toc-overlay-icon toc-header-icon" for="__toc">
                 <div class="visually-hidden">Toggle table of contents sidebar</div>
                 <i class="icon">
                     <svg>
@@ -243,7 +237,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -653,11 +647,11 @@
                     </label>
                 </div>
                 <section id="module-daemon.tasks">
-<span id="daemon-tasks-module"></span><h1>daemon.tasks module<a class="headerlink" href="#module-daemon.tasks" title="Permalink to this headline">#</a></h1>
+<span id="daemon-tasks-module"></span><h1>daemon.tasks module<a class="headerlink" href="#module-daemon.tasks" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="daemon.tasks.DaemonWorker">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">daemon.tasks.</span></span><span class="sig-name descname"><span class="pre">DaemonWorker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/daemon/tasks/#DaemonWorker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#daemon.tasks.DaemonWorker" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Thread</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Thread</span></code></p>
 <p>Worker Thread for JinaD</p>
 <p>This constructor should always be called with keyword arguments. Arguments are:</p>
 <p><em>group</em> should be None; reserved for future extension when a ThreadGroup
@@ -748,7 +742,7 @@ During update:
 <dl class="py class">
 <dt class="sig sig-object py" id="daemon.tasks.ConsumerThread">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">daemon.tasks.</span></span><span class="sig-name descname"><span class="pre">ConsumerThread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/daemon/tasks/#ConsumerThread"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#daemon.tasks.ConsumerThread" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">threading.Thread</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Thread</span></code></p>
 <p>Consumer Thread for JinaD</p>
 <p>This constructor should always be called with keyword arguments. Arguments are:</p>
 <p><em>group</em> should be None; reserved for future extension when a ThreadGroup
@@ -812,7 +806,7 @@ and starts a <cite>DaemonWorker</cite> for each message.</p>
 
                 <div class="related-information sd-d-inline-flex">
                     <a href="https://jina.ai">Copyright &#169; Jina AI Limited. All rights reserved.</a>
-                    Last updated on Oct 26, 2022.
+                    Last updated on Dec 14, 2022.
                     <div class="social-btns">
                     <a class='social-btn' href="https://github.com/jina-ai/jina/" aria-label="GitHub" target="_blank" rel="noreferrer"> <i class="fab fa-github"></i></a>
                     <a class='social-btn' href="https://slack.jina.ai" aria-label="Slack" target="_blank" rel="noreferrer"> <i class="fab fa-slack"></i></a>
@@ -828,6 +822,37 @@ and starts a <cite>DaemonWorker</cite> for each message.</p>
             
 
             <div class="toc-sticky toc-scroll">
+                
+                <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+                </div>
+                <div class="toc-tree-container">
+                    <div class="toc-tree">
+                        <ul>
+<li><a class="reference internal" href="#">daemon.tasks module</a><ul>
+<li><a class="reference internal" href="#daemon.tasks.DaemonWorker"><code class="docutils literal notranslate"><span class="pre">DaemonWorker</span></code></a><ul>
+<li><a class="reference internal" href="#daemon.tasks.DaemonWorker.arguments"><code class="docutils literal notranslate"><span class="pre">DaemonWorker.arguments</span></code></a></li>
+<li><a class="reference internal" href="#daemon.tasks.DaemonWorker.metadata"><code class="docutils literal notranslate"><span class="pre">DaemonWorker.metadata</span></code></a></li>
+<li><a class="reference internal" href="#daemon.tasks.DaemonWorker.workdir"><code class="docutils literal notranslate"><span class="pre">DaemonWorker.workdir</span></code></a></li>
+<li><a class="reference internal" href="#daemon.tasks.DaemonWorker.daemon_file"><code class="docutils literal notranslate"><span class="pre">DaemonWorker.daemon_file</span></code></a></li>
+<li><a class="reference internal" href="#daemon.tasks.DaemonWorker.network_id"><code class="docutils literal notranslate"><span class="pre">DaemonWorker.network_id</span></code></a></li>
+<li><a class="reference internal" href="#daemon.tasks.DaemonWorker.generate_image"><code class="docutils literal notranslate"><span class="pre">DaemonWorker.generate_image()</span></code></a></li>
+<li><a class="reference internal" href="#daemon.tasks.DaemonWorker.container_id"><code class="docutils literal notranslate"><span class="pre">DaemonWorker.container_id</span></code></a></li>
+<li><a class="reference internal" href="#daemon.tasks.DaemonWorker.run"><code class="docutils literal notranslate"><span class="pre">DaemonWorker.run()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#daemon.tasks.ConsumerThread"><code class="docutils literal notranslate"><span class="pre">ConsumerThread</span></code></a><ul>
+<li><a class="reference internal" href="#daemon.tasks.ConsumerThread.run"><code class="docutils literal notranslate"><span class="pre">ConsumerThread.run()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                    </div>
+                </div>
                 
                 <qa-bot
                     theme="auto"
@@ -850,7 +875,9 @@ and starts a <cite>DaemonWorker</cite> for each message.</p>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>

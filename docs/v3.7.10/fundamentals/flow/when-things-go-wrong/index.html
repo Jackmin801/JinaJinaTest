@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Handle exceptions" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/fundamentals/flow/when-things-go-wrong/" />
-  
 <meta property="og:site_name" content="Jina 3.7.10 Documentation" />
-  
 <meta property="og:description" content="When building a complex solution, unfortunately things go wrong sometimes. Jina does its best to recover from failures, handle them gracefully, and report useful failure information to the user. The following outlines a number of (more or less) common failure cases, and explains how Jina responds..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_static/banner.png" />
-  
 <meta property="og:image:alt" content="Jina 3.7.10 Documentation" />
-  
+<meta name="description" content="When building a complex solution, unfortunately things go wrong sometimes. Jina does its best to recover from failures, handle them gracefully, and report useful failure information to the user. The following outlines a number of (more or less) common failure cases, and explains how Jina responds..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -35,13 +28,14 @@
 </script>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="YAML specification" href="../yaml-spec/" /><link rel="prev" title="Readiness &amp; health check" href="../health-check/" />
+    
+<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="YAML specification" href="../yaml-spec/" /><link rel="prev" title="Readiness &amp; health check" href="../health-check/" />
         <link rel="canonical" href="https://docs.jina.ai/fundamentals/flow/when-things-go-wrong.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Handle exceptions - Jina 3.7.10 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -249,7 +243,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -414,12 +408,12 @@
                 </div>
                 <article role="main">
                     <section class="tex2jax_ignore mathjax_ignore" id="handle-exceptions">
-<span id="flow-error-handling"></span><h1>Handle exceptions<a class="headerlink" href="#handle-exceptions" title="Permalink to this headline">#</a></h1>
+<span id="flow-error-handling"></span><h1>Handle exceptions<a class="headerlink" href="#handle-exceptions" title="Permalink to this heading">#</a></h1>
 <p>When building a complex solution, unfortunately things go wrong sometimes.
 Jina does its best to recover from failures, handle them gracefully, and report useful failure information to the user.</p>
 <p>The following outlines a number of (more or less) common failure cases, and explains how Jina responds to each one of them.</p>
 <section id="executor-errors">
-<h2>Executor errors<a class="headerlink" href="#executor-errors" title="Permalink to this headline">#</a></h2>
+<h2>Executor errors<a class="headerlink" href="#executor-errors" title="Permalink to this heading">#</a></h2>
 <p>In general there are two places where an Executor level error can be introduced.</p>
 <p>If an <a class="reference internal" href="../../../api/jina/#jina.Executor" title="jina.Executor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Executor</span></code></a>’s <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method raises and Exception, the <a class="reference internal" href="../../../api/jina/#jina.Flow" title="jina.Flow"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flow</span></code></a> cannot start.
 In this case this Exception is gets raised by the Executor runtime, and the Flow throws a <code class="docutils literal notranslate"><span class="pre">RuntimeFailToStart</span></code> Exception.</p>
@@ -429,7 +423,7 @@ If the gRPC or WebSocket protocols are used, the networking stream is not interr
 <p>In all cases, the <a class="reference internal" href="../../client/client/#client"><span class="std std-ref">Jina Client</span></a> will raise an Exception.</p>
 </section>
 <section id="network-errors">
-<h2>Network errors<a class="headerlink" href="#network-errors" title="Permalink to this headline">#</a></h2>
+<h2>Network errors<a class="headerlink" href="#network-errors" title="Permalink to this heading">#</a></h2>
 <p>When an <a class="reference internal" href="../../architecture-overview/#architecture-overview"><span class="std std-ref">Executor or Head</span></a> can’t be reached by the <a class="reference internal" href="../../../api/jina/#jina.Flow" title="jina.Flow"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flow</span></code></a>’s gateway, it attempts to re-connect
 to the faulty deployment according to a retry policy.
 The same applies to calls to Executors that time out.
@@ -450,7 +444,7 @@ YAML <code class="docutils literal notranslate"><span class="pre">with</span></c
 <p>If, during the complete execution of this policy, no successful call to any Executor replica could be made, the request is aborted
 and the failure is <a class="reference internal" href="#failure-reporting"><span class="std std-ref">reported to the client</span></a>.</p>
 <section id="request-retries-local-deployment">
-<h3>Request retries: Local deployment<a class="headerlink" href="#request-retries-local-deployment" title="Permalink to this headline">#</a></h3>
+<h3>Request retries: Local deployment<a class="headerlink" href="#request-retries-local-deployment" title="Permalink to this heading">#</a></h3>
 <p>If a Flow is deployed locally (with or without <a class="reference internal" href="../../executor/containerize-executor/#dockerize-exec"><span class="std std-ref">containerized Executors</span></a>), the following policy
 for failed requests applies on a per-Executor basis:</p>
 <ul class="simple">
@@ -459,7 +453,7 @@ for failed requests applies on a per-Executor basis:</p>
 </ul>
 </section>
 <section id="request-retries-deployment-with-kubernetes">
-<h3>Request retries: Deployment with Kubernetes<a class="headerlink" href="#request-retries-deployment-with-kubernetes" title="Permalink to this headline">#</a></h3>
+<h3>Request retries: Deployment with Kubernetes<a class="headerlink" href="#request-retries-deployment-with-kubernetes" title="Permalink to this heading">#</a></h3>
 <p>If a Flow is <a class="reference internal" href="../../../how-to/kubernetes/#kubernetes"><span class="std std-ref">deployed in Kubernetes</span></a> without a service mesh, retries cannot be distributed to different replicas of the same Executor.</p>
 <div class="seealso admonition">
 <p class="admonition-title">See Also</p>
@@ -473,7 +467,7 @@ If you want to learn more about this limitation, see <a class="reference externa
 </ul>
 </section>
 <section id="request-retries-deployment-with-kubernetes-and-service-mesh">
-<h3>Request retries: Deployment with Kubernetes and service mesh<a class="headerlink" href="#request-retries-deployment-with-kubernetes-and-service-mesh" title="Permalink to this headline">#</a></h3>
+<h3>Request retries: Deployment with Kubernetes and service mesh<a class="headerlink" href="#request-retries-deployment-with-kubernetes-and-service-mesh" title="Permalink to this heading">#</a></h3>
 <p>A Kubernetes service mesh can enable load balancing, and thus retries, between replicas of an Executor.</p>
 <div class="hint admonition">
 <p class="admonition-title">Hint</p>
@@ -494,7 +488,7 @@ YAML <code class="docutils literal notranslate"><span class="pre">with</span></c
 </div>
 </section>
 <section id="failure-reporting">
-<span id="id1"></span><h3>Failure reporting<a class="headerlink" href="#failure-reporting" title="Permalink to this headline">#</a></h3>
+<span id="id1"></span><h3>Failure reporting<a class="headerlink" href="#failure-reporting" title="Permalink to this heading">#</a></h3>
 <p>If the retry policy is exhausted for a given request, the error is reported back to the corresponding client.</p>
 <p>The resulting error message will contain the <em>network address</em> of the failing Executor.
 If multiple replicas are present, all addresses will be reported - unless the Flow is deployed using Kubernetes, in which
@@ -516,7 +510,7 @@ case the replicas are managed by k8s and only a single address is available.</p>
 </section>
 </section>
 <section id="debug-via-breakpoint">
-<h2>Debug via breakpoint<a class="headerlink" href="#debug-via-breakpoint" title="Permalink to this headline">#</a></h2>
+<h2>Debug via breakpoint<a class="headerlink" href="#debug-via-breakpoint" title="Permalink to this heading">#</a></h2>
 <p>Standard Python breakpoints will not work inside <code class="docutils literal notranslate"><span class="pre">Executor</span></code> methods when called inside a Flow context manager. Nevertheless, <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">epdb;</span> <span class="pre">epdb.set_trace()</span></code> will work just as a native python breakpoint. Note that you need to <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">epdb</span></code> to have access to this type of breakpoints.</p>
 <div class="tab-set docutils">
 <input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">✅ Do</label><div class="tab-content docutils">
@@ -598,7 +592,7 @@ case the replicas are managed by k8s and only a single address is available.</p>
                         <div class="copyright">
                             Copyright &#169; Jina AI Limited. All rights reserved.
                         </div><div class="last-updated">
-                            Last updated on Oct 26, 2022</div>
+                            Last updated on Dec 14, 2022</div>
                     </div>
                     <div class="right-details">
                         <div class="social-btns">
@@ -669,7 +663,9 @@ case the replicas are managed by k8s and only a single address is available.</p>
      src="https://static.scarf.sh/a.png?x-pxid=2823e771-0e1e-4320-8fde-48bc48e53262"/><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>

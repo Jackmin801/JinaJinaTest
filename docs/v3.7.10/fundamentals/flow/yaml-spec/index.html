@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="YAML specification" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/fundamentals/flow/yaml-spec/" />
-  
 <meta property="og:site_name" content="Jina 3.7.10 Documentation" />
-  
 <meta property="og:description" content="This page outlines the specification for valid Executor YAML files. Such YAML configurations can be used to generate a Executor object via load_config(). To generate a YAML configuration from a Flow Python object, use save_config(). YAML completion in IDE: We provide a JSON Schema for your IDE to..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_static/banner.png" />
-  
 <meta property="og:image:alt" content="Jina 3.7.10 Documentation" />
-  
+<meta name="description" content="This page outlines the specification for valid Executor YAML files. Such YAML configurations can be used to generate a Executor object via load_config(). To generate a YAML configuration from a Flow Python object, use save_config(). YAML completion in IDE: We provide a JSON Schema for your IDE to..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -35,13 +28,14 @@
 </script>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Gateway" href="../../gateway/" /><link rel="prev" title="Handle exceptions" href="../when-things-go-wrong/" />
+    
+<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Gateway" href="../../gateway/" /><link rel="prev" title="Handle exceptions" href="../when-things-go-wrong/" />
         <link rel="canonical" href="https://docs.jina.ai/fundamentals/flow/yaml-spec.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>YAML specification - Jina 3.7.10 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -249,7 +243,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -414,16 +408,16 @@
                 </div>
                 <article role="main">
                     <section class="tex2jax_ignore mathjax_ignore" id="yaml-specification">
-<span id="flow-yaml-spec"></span><h1>YAML specification<a class="headerlink" href="#yaml-specification" title="Permalink to this headline">#</a></h1>
+<span id="flow-yaml-spec"></span><h1>YAML specification<a class="headerlink" href="#yaml-specification" title="Permalink to this heading">#</a></h1>
 <p>This page outlines the specification for valid <a class="reference internal" href="../../../api/jina/#jina.Executor" title="jina.Executor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Executor</span></code></a> YAML files.</p>
 <p>Such YAML configurations can be used to generate a <a class="reference internal" href="../../../api/jina/#jina.Executor" title="jina.Executor"><code class="xref py py-class docutils literal notranslate"><span class="pre">Executor</span></code></a> object via <a class="reference internal" href="../../../api/jina.jaml/#jina.jaml.JAMLCompatible.load_config" title="jina.jaml.JAMLCompatible.load_config"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load_config()</span></code></a>.</p>
 <p>To generate a YAML configuration from a <a class="reference internal" href="../../../api/jina/#jina.Flow" title="jina.Flow"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flow</span></code></a> Python object, use <a class="reference internal" href="../../../api/jina.jaml/#jina.jaml.JAMLCompatible.save_config" title="jina.jaml.JAMLCompatible.save_config"><code class="xref py py-meth docutils literal notranslate"><span class="pre">save_config()</span></code></a>.</p>
 <section id="yaml-completion-in-ide">
-<h2>YAML completion in IDE<a class="headerlink" href="#yaml-completion-in-ide" title="Permalink to this headline">#</a></h2>
+<h2>YAML completion in IDE<a class="headerlink" href="#yaml-completion-in-ide" title="Permalink to this heading">#</a></h2>
 <p>We provide a <a class="reference external" href="https://json-schema.org/">JSON Schema</a> for your IDE to enable code completion, syntax validation, members listing and displaying help text. Here is a <a class="reference external" href="https://youtu.be/qOD-6mihUzQ">video tutorial</a> to walk you through the setup.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qOD-6mihUzQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <section id="pycharm-users">
-<h3>PyCharm users<a class="headerlink" href="#pycharm-users" title="Permalink to this headline">#</a></h3>
+<h3>PyCharm users<a class="headerlink" href="#pycharm-users" title="Permalink to this heading">#</a></h3>
 <ol class="simple">
 <li><p>Click menu <code class="docutils literal notranslate"><span class="pre">Preferences</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">JSON</span> <span class="pre">Schema</span> <span class="pre">mappings</span></code>;</p></li>
 <li><p>Add a new schema, in the <code class="docutils literal notranslate"><span class="pre">Schema</span> <span class="pre">File</span> <span class="pre">or</span> <span class="pre">URL</span></code> write <code class="docutils literal notranslate"><span class="pre">https://api.jina.ai/schemas/latest.json</span></code>; select <code class="docutils literal notranslate"><span class="pre">JSON</span> <span class="pre">Schema</span> <span class="pre">Version</span> <span class="pre">7</span></code>;</p></li>
@@ -431,7 +425,7 @@
 </ol>
 </section>
 <section id="vscode-users">
-<h3>VSCode users<a class="headerlink" href="#vscode-users" title="Permalink to this headline">#</a></h3>
+<h3>VSCode users<a class="headerlink" href="#vscode-users" title="Permalink to this heading">#</a></h3>
 <ol class="simple">
 <li><p>Install the extension: <code class="docutils literal notranslate"><span class="pre">YAML</span> <span class="pre">Language</span> <span class="pre">Support</span> <span class="pre">by</span> <span class="pre">Red</span> <span class="pre">Hat</span></code>;</p></li>
 <li><p>In IDE-level <code class="docutils literal notranslate"><span class="pre">settings.json</span></code> add:</p></li>
@@ -445,7 +439,7 @@
 </section>
 </section>
 <section id="example-yaml">
-<h2>Example YAML<a class="headerlink" href="#example-yaml" title="Permalink to this headline">#</a></h2>
+<h2>Example YAML<a class="headerlink" href="#example-yaml" title="Permalink to this heading">#</a></h2>
 <p>The following constitutes an example Flow YAML:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">jtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Flow</span><span class="w"></span>
 <span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;1&#39;</span><span class="w"></span>
@@ -469,20 +463,20 @@
 </div>
 </section>
 <section id="fields">
-<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this headline">#</a></h2>
+<h2>Fields<a class="headerlink" href="#fields" title="Permalink to this heading">#</a></h2>
 <section id="jtype">
-<h3><code class="docutils literal notranslate"><span class="pre">jtype</span></code><a class="headerlink" href="#jtype" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">jtype</span></code><a class="headerlink" href="#jtype" title="Permalink to this heading">#</a></h3>
 <p>String that is always set to “Flow”, indicating the corresponding Python class.</p>
 </section>
 <section id="version">
-<h3><code class="docutils literal notranslate"><span class="pre">version</span></code><a class="headerlink" href="#version" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">version</span></code><a class="headerlink" href="#version" title="Permalink to this heading">#</a></h3>
 <p>String indicating the version of the Flow.</p>
 </section>
 <section id="with">
-<h3><code class="docutils literal notranslate"><span class="pre">with</span></code><a class="headerlink" href="#with" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">with</span></code><a class="headerlink" href="#with" title="Permalink to this heading">#</a></h3>
 <p>Keyword arguments passed to Flow <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> method. You can set Flow-specific arguments and Gateway-specific arguments here:</p>
 <section id="flow-arguments">
-<h4>Flow arguments<a class="headerlink" href="#flow-arguments" title="Permalink to this headline">#</a></h4>
+<h4>Flow arguments<a class="headerlink" href="#flow-arguments" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="colwidths-auto docutils align-default">
 <thead>
@@ -543,7 +537,7 @@
 </div>
 </section>
 <section id="gateway-arguments">
-<h4>Gateway arguments<a class="headerlink" href="#gateway-arguments" title="Permalink to this headline">#</a></h4>
+<h4>Gateway arguments<a class="headerlink" href="#gateway-arguments" title="Permalink to this heading">#</a></h4>
 <div class="table-wrapper colwidths-auto docutils container">
 <table class="colwidths-auto docutils align-default">
 <thead>
@@ -795,7 +789,7 @@
 </section>
 </section>
 <section id="executors">
-<h3><code class="docutils literal notranslate"><span class="pre">executors</span></code><a class="headerlink" href="#executors" title="Permalink to this headline">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">executors</span></code><a class="headerlink" href="#executors" title="Permalink to this heading">#</a></h3>
 <p>Collection of Executors used in the Flow.
 Each item in the collection corresponds to on <a class="reference internal" href="../../../api/jina/#jina.Flow.add" title="jina.Flow.add"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add()</span></code></a> call and specifies one Executor.</p>
 <p>All keyword arguments passed to the Flow <a class="reference internal" href="../../../api/jina/#jina.Flow.add" title="jina.Flow.add"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add()</span></code></a> method can be used here.</p>
@@ -1025,20 +1019,20 @@ Each item in the collection corresponds to on <a class="reference internal" href
 </section>
 </section>
 <section id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h2>
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h2>
 <p>Jina Flow YAMLs support variables and variable substitution according to the <a class="reference external" href="https://docs.github.com/en/actions/learn-github-actions/environment-variables">Github Actions syntax</a>.</p>
 <p>This means that the following variable substitutions are supported:</p>
 <section id="environment-variables">
-<h3>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">#</a></h3>
+<h3>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this heading">#</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">${{</span> <span class="pre">ENV.VAR</span> <span class="pre">}}</span></code> to refer to the environment variable <code class="docutils literal notranslate"><span class="pre">VAR</span></code>. You can find all <a class="reference internal" href="../../../envs/#jina-env-vars"><span class="std std-ref">Jina environment variables here</span></a>.</p>
 </section>
 <section id="context-variables">
-<h3>Context variables<a class="headerlink" href="#context-variables" title="Permalink to this headline">#</a></h3>
+<h3>Context variables<a class="headerlink" href="#context-variables" title="Permalink to this heading">#</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">${{</span> <span class="pre">CONTEXT.VAR</span> <span class="pre">}}</span></code> to refer to the context variable <code class="docutils literal notranslate"><span class="pre">VAR</span></code>.
 Context variables can be passed to <code class="docutils literal notranslate"><span class="pre">f.load_config(...,</span> <span class="pre">context=...)</span></code> in the form of a Python dictionary.</p>
 </section>
 <section id="relative-paths">
-<h3>Relative paths<a class="headerlink" href="#relative-paths" title="Permalink to this headline">#</a></h3>
+<h3>Relative paths<a class="headerlink" href="#relative-paths" title="Permalink to this heading">#</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">${{root.path.to.var}}</span></code> to refer to the variable <code class="docutils literal notranslate"><span class="pre">var</span></code> within the same YAML file, found at the provided path in the file’s structure.
 Note that the only difference between environment variable syntax and relative path syntax is the omission of spaces in the latter.</p>
 </section>
@@ -1080,7 +1074,7 @@ Note that the only difference between environment variable syntax and relative p
                         <div class="copyright">
                             Copyright &#169; Jina AI Limited. All rights reserved.
                         </div><div class="last-updated">
-                            Last updated on Oct 26, 2022</div>
+                            Last updated on Dec 14, 2022</div>
                     </div>
                     <div class="right-details">
                         <div class="social-btns">
@@ -1165,7 +1159,9 @@ Note that the only difference between environment variable syntax and relative p
      src="https://static.scarf.sh/a.png?x-pxid=2823e771-0e1e-4320-8fde-48bc48e53262"/><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>

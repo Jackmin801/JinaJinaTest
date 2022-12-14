@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Building Executors" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/datatype/image/small-images-inside-big-images/building-executors/" />
-  
 <meta property="og:site_name" content="Jina 3.0.0 Documentation" />
-  
 <meta property="og:description" content="In this section, we will start developing the necessary executors, for both query and index flows. CLIPImageEncoder: This encoder encodes an image into embeddings using the CLIP model. We want an executor that loads the CLIP model and encodes it during the query and index flows. Our executor shou..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_static/banner.png" />
-  
 <meta property="og:image:alt" content="Jina 3.0.0 Documentation" />
-  
+<meta name="description" content="In this section, we will start developing the necessary executors, for both query and index flows. CLIPImageEncoder: This encoder encodes an image into embeddings using the CLIP model. We want an executor that loads the CLIP model and encodes it during the query and index flows. Our executor shou..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -36,13 +29,14 @@
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script async defer src="https://cdn.jsdelivr.net/npm/qabot@0.3"></script>
-    <link rel="index" title="Index" href="../../../../genindex/" /><link rel="search" title="Search" href="../../../../search/" />
+    
+<link rel="index" title="Index" href="../../../../genindex/" /><link rel="search" title="Search" href="../../../../search/" />
         <link rel="canonical" href="https://docs.jina.ai/datatype/image/small-images-inside-big-images/building-executors.html" />
 
-    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Building Executors - Jina 3.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -239,7 +233,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -646,10 +640,10 @@
                     </label>
                 </div>
                 <section id="building-executors">
-<h1>Building Executors<a class="headerlink" href="#building-executors" title="Permalink to this headline">#</a></h1>
+<h1>Building Executors<a class="headerlink" href="#building-executors" title="Permalink to this heading">#</a></h1>
 <p>In this section, we will start developing the necessary executors, for both query and index flows.</p>
 <section id="clipimageencoder">
-<h2><strong>CLIPImageEncoder</strong><a class="headerlink" href="#clipimageencoder" title="Permalink to this headline">#</a></h2>
+<h2><strong>CLIPImageEncoder</strong><a class="headerlink" href="#clipimageencoder" title="Permalink to this heading">#</a></h2>
 <p>This encoder encodes an image into embeddings using the CLIP model.
 We want an executor that loads the CLIP model and encodes it during the query and index flows.</p>
 <p>Our executor should:</p>
@@ -730,7 +724,7 @@ achieved with <code class="docutils literal notranslate"><span class="pre">trave
 </div>
 </section>
 <section id="yolov5segmenter">
-<h2><strong>YoloV5Segmenter</strong><a class="headerlink" href="#yolov5segmenter" title="Permalink to this headline">#</a></h2>
+<h2><strong>YoloV5Segmenter</strong><a class="headerlink" href="#yolov5segmenter" title="Permalink to this heading">#</a></h2>
 <p>Since we want to retrieve small images in bigger images, the technique that we will heavily rely on is segmenting.
 Basically, we want to do object detection on the indexed images. This will generate bounding boxes around objects
 detected inside the images. The detected objects will be extracted and added as chunks to the original documents.
@@ -846,7 +840,7 @@ LMDBStorage which offers 2 functionalities: indexing documents and retrieving do
 </ol>
 </section>
 <section id="simpleindexer">
-<h2><strong>SimpleIndexer</strong><a class="headerlink" href="#simpleindexer" title="Permalink to this headline">#</a></h2>
+<h2><strong>SimpleIndexer</strong><a class="headerlink" href="#simpleindexer" title="Permalink to this heading">#</a></h2>
 <p>To implement SimpleIndexer, we can leverage Jina’s <code class="docutils literal notranslate"><span class="pre">DocumentArrayMemmap</span></code>. You can read about this data type
 <a class="reference external" href="https://docs.jina.ai/fundamentals/document/documentarraymemmap-api/">here</a>.</p>
 <p>Our indexer will create an instance of <code class="docutils literal notranslate"><span class="pre">DocumentArrayMemmap</span></code> when it’s initialized. We want to store indexed documents
@@ -901,7 +895,7 @@ against the chunks of the right side docs (indexed docs), we can specify that <c
 </div>
 </section>
 <section id="lmdbstorage">
-<h2><strong>LMDBStorage</strong><a class="headerlink" href="#lmdbstorage" title="Permalink to this headline">#</a></h2>
+<h2><strong>LMDBStorage</strong><a class="headerlink" href="#lmdbstorage" title="Permalink to this heading">#</a></h2>
 <p>In order to implement the LMDBStorage, we need the following parts:</p>
 <p><strong>I. Handler</strong></p>
 <p>This will be a context manager that we will use when we access our LMDB database. We will create it as a standalone
@@ -1018,7 +1012,7 @@ use the results to fill our documents.</p>
 </div>
 </section>
 <section id="simpleranker">
-<h2><strong>SimpleRanker</strong><a class="headerlink" href="#simpleranker" title="Permalink to this headline">#</a></h2>
+<h2><strong>SimpleRanker</strong><a class="headerlink" href="#simpleranker" title="Permalink to this heading">#</a></h2>
 <p>You might think why do we need a ranker at all ?</p>
 <p>Actually, a ranker is needed because we will be matching small query images against chunks of parent documents. But how
 can we get back to parent documents (aka full images) given the chunks ? And what if 2 chunks belonging to the same
@@ -1091,7 +1085,7 @@ retrieve parent documents by IDs and fill them with data.</p>
 
                 <div class="related-information sd-d-inline-flex">
                     <a href="https://jina.ai">Copyright &#169; Jina AI Limited. All rights reserved.</a>
-                    Last updated on Oct 26, 2022.
+                    Last updated on Dec 14, 2022.
                     <div class="social-btns">
                     <a class='social-btn' href="https://github.com/jina-ai/jina/" aria-label="GitHub" target="_blank" rel="noreferrer"> <i class="fab fa-github"></i></a>
                     <a class='social-btn' href="https://slack.jina.ai" aria-label="Slack" target="_blank" rel="noreferrer"> <i class="fab fa-slack"></i></a>
@@ -1148,7 +1142,9 @@ retrieve parent documents by IDs and fill them with data.</p>
 </div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../_static/scripts/furo.js"></script>
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>

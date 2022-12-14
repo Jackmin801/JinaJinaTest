@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Search Image from Text via CLIP model" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/datatype/image/text2image/" />
-  
 <meta property="og:site_name" content="Jina 3.0.0 Documentation" />
-  
 <meta property="og:description" content="In this tutorial, we will create an image search system that retrieves images based on short text descriptions as query. The interest behind this is that in regular search, image description or meta data describing the content of the image needs to be indexed first before retrieving the images vi..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_static/banner.png" />
-  
 <meta property="og:image:alt" content="Jina 3.0.0 Documentation" />
-  
+<meta name="description" content="In this tutorial, we will create an image search system that retrieves images based on short text descriptions as query. The interest behind this is that in regular search, image description or meta data describing the content of the image needs to be indexed first before retrieving the images vi..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -36,13 +29,14 @@
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script async defer src="https://cdn.jsdelivr.net/npm/qabot@0.3"></script>
-    <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" />
+    
+<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" />
         <link rel="canonical" href="https://docs.jina.ai/datatype/image/text2image.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Search Image from Text via CLIP model - Jina 3.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -239,7 +233,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -646,7 +640,7 @@
                     </label>
                 </div>
                 <section class="tex2jax_ignore mathjax_ignore" id="search-image-from-text-via-clip-model">
-<h1>Search Image from Text via CLIP model<a class="headerlink" href="#search-image-from-text-via-clip-model" title="Permalink to this headline">#</a></h1>
+<h1>Search Image from Text via CLIP model<a class="headerlink" href="#search-image-from-text-via-clip-model" title="Permalink to this heading">#</a></h1>
 <p>In this tutorial, we will create an image search system that retrieves images based on short text descriptions as query.</p>
 <p>The interest behind this is that in regular search, image description or meta data describing the content of the image needs to be indexed first before retrieving the images via text query. This can be expensive because you need a person to write that description and also information about image content is not always available.</p>
 <p>We need to look for another solution! What if we can directly compare text with images?</p>
@@ -677,7 +671,7 @@
 <p>If we had to build this from scratch, it would take a long time to build these Flows. Luckily we can leverage Jina’s tools such as Executors, Documents and Flows
 and build such a system easily.</p>
 <section id="pre-requisites">
-<h2>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline">#</a></h2>
+<h2>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this heading">#</a></h2>
 <p>Before we begin building our Flow we need to do a few things.</p>
 <ul class="simple">
 <li><p>Install the following dependencies.</p></li>
@@ -700,7 +694,7 @@ unzip data.zip
 </ul>
 </section>
 <section id="building-executors">
-<h2>Building Executors<a class="headerlink" href="#building-executors" title="Permalink to this headline">#</a></h2>
+<h2>Building Executors<a class="headerlink" href="#building-executors" title="Permalink to this heading">#</a></h2>
 <p>In this section, we will start developing the necessary Executors, for both query and index Flows.</p>
 <p>To encode images and query text into the same space, we choose the pre-trained <a class="reference external" href="https://github.com/openai/CLIP">CLIP model</a> from OpenAI.</p>
 <div class="info admonition">
@@ -714,7 +708,7 @@ unzip data.zip
 We can further find the distance between the text vector and the vectors of the dog image is smaller than that between the same text and an image of a cat.</p>
 </div>
 <section id="clipimageencoder">
-<h3><strong>CLIPImageEncoder</strong><a class="headerlink" href="#clipimageencoder" title="Permalink to this headline">#</a></h3>
+<h3><strong>CLIPImageEncoder</strong><a class="headerlink" href="#clipimageencoder" title="Permalink to this heading">#</a></h3>
 <p>This encoder encodes an image into embeddings using the CLIP model.
 We want an Executor that loads the CLIP model and encodes images during the index Flow.</p>
 <p>Our Executor should:</p>
@@ -804,7 +798,7 @@ parameter <code class="docutils literal notranslate"><span class="pre">batch_siz
 </div>
 </section>
 <section id="cliptextencoder">
-<h3><strong>CLIPTextEncoder</strong><a class="headerlink" href="#cliptextencoder" title="Permalink to this headline">#</a></h3>
+<h3><strong>CLIPTextEncoder</strong><a class="headerlink" href="#cliptextencoder" title="Permalink to this heading">#</a></h3>
 <p>This encoder encodes a text into embeddings using the CLIP model.
 We want an Executor that loads the CLIP model and encodes it during the query Flow.</p>
 <p>Our Executor should:</p>
@@ -874,7 +868,7 @@ parameter <code class="docutils literal notranslate"><span class="pre">batch_siz
 </div>
 </section>
 <section id="simpleindexer">
-<h3><strong>SimpleIndexer</strong><a class="headerlink" href="#simpleindexer" title="Permalink to this headline">#</a></h3>
+<h3><strong>SimpleIndexer</strong><a class="headerlink" href="#simpleindexer" title="Permalink to this heading">#</a></h3>
 <p>To implement SimpleIndexer, we can leverage Jina’s <code class="docutils literal notranslate"><span class="pre">DocumentArrayMemmap</span></code>. You can read about this data type
 <a class="reference external" href="https://docs.jina.ai/fundamentals/document/documentarraymemmap-api/">here</a>.</p>
 <p>Our indexer will create an instance of <code class="docutils literal notranslate"><span class="pre">DocumentArrayMemmap</span></code> when it’s initialized. We want to store indexed Documents
@@ -960,12 +954,12 @@ Read more about <code class="docutils literal notranslate"><span class="pre">mat
 </section>
 </section>
 <section id="building-flows">
-<h2>Building Flows<a class="headerlink" href="#building-flows" title="Permalink to this headline">#</a></h2>
+<h2>Building Flows<a class="headerlink" href="#building-flows" title="Permalink to this heading">#</a></h2>
 <section id="indexing">
-<h3>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">#</a></h3>
+<h3>Indexing<a class="headerlink" href="#indexing" title="Permalink to this heading">#</a></h3>
 <p>Now, after creating Executors, it’s time to use them in order to build an index Flow and index our data.</p>
 <section id="building-the-index-flow">
-<h4>Building the index Flow<a class="headerlink" href="#building-the-index-flow" title="Permalink to this headline">#</a></h4>
+<h4>Building the index Flow<a class="headerlink" href="#building-the-index-flow" title="Permalink to this heading">#</a></h4>
 <p>We create a Flow object and add Executors one after the other with the right parameters:</p>
 <ol class="simple">
 <li><p>CLIPImageEncoder: We specify the device.</p></li>
@@ -1007,7 +1001,7 @@ This helper function will convert the image files into Documents, create a gener
 </section>
 </section>
 <section id="searching">
-<h3>Searching<a class="headerlink" href="#searching" title="Permalink to this headline">#</a></h3>
+<h3>Searching<a class="headerlink" href="#searching" title="Permalink to this heading">#</a></h3>
 <p>Now, let’s build the search Flow and use it to search with sample query images.</p>
 <p>Our Flow contains the following Executors:</p>
 <ol class="simple">
@@ -1105,7 +1099,7 @@ Results:
 
                 <div class="related-information sd-d-inline-flex">
                     <a href="https://jina.ai">Copyright &#169; Jina AI Limited. All rights reserved.</a>
-                    Last updated on Oct 26, 2022.
+                    Last updated on Dec 14, 2022.
                     <div class="social-btns">
                     <a class='social-btn' href="https://github.com/jina-ai/jina/" aria-label="GitHub" target="_blank" rel="noreferrer"> <i class="fab fa-github"></i></a>
                     <a class='social-btn' href="https://slack.jina.ai" aria-label="Slack" target="_blank" rel="noreferrer"> <i class="fab fa-slack"></i></a>
@@ -1172,7 +1166,9 @@ Results:
 </div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>

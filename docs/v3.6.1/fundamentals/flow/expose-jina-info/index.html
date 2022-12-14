@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Expose Information on microservices" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/fundamentals/flow/expose-jina-info/" />
-  
 <meta property="og:site_name" content="Jina 3.6.1 Documentation" />
-  
 <meta property="og:description" content="Every Jina Flow consists of a number of microservices, each of which may live in different environments, and even run different Jina versions. Each Flow microservice provides an endpoint that exposes relevant information about the environment where it runs. This information exposes information in..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_static/banner.png" />
-  
 <meta property="og:image:alt" content="Jina 3.6.1 Documentation" />
-  
+<meta name="description" content="Every Jina Flow consists of a number of microservices, each of which may live in different environments, and even run different Jina versions. Each Flow microservice provides an endpoint that exposes relevant information about the environment where it runs. This information exposes information in..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -35,13 +28,14 @@
 </script>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Handle exceptions" href="../when-things-go-wrong/" /><link rel="prev" title="Readiness &amp; health check" href="../health-check/" />
+    
+<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Handle exceptions" href="../when-things-go-wrong/" /><link rel="prev" title="Readiness &amp; health check" href="../health-check/" />
         <link rel="canonical" href="https://docs.jina.ai/fundamentals/flow/expose-jina-info.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Expose Information on microservices - Jina 3.6.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -243,7 +237,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -599,7 +593,7 @@
                 </div>
                 <article role="main">
                     <section class="tex2jax_ignore mathjax_ignore" id="expose-information-on-microservices">
-<h1>Expose Information on microservices<a class="headerlink" href="#expose-information-on-microservices" title="Permalink to this headline">#</a></h1>
+<h1>Expose Information on microservices<a class="headerlink" href="#expose-information-on-microservices" title="Permalink to this heading">#</a></h1>
 <p>Every Jina Flow consists of a <a class="reference internal" href="../../architecture-overview/#architecture-overview"><span class="std std-ref">number of microservices</span></a>,
 each of which may live in different environments, and even run different Jina versions.</p>
 <div class="admonition warning">
@@ -614,7 +608,7 @@ Even though you can theoretically run Executors and Gateways in different Jina v
 <li><p>envs: A dictionary containing all the values if set of the <a class="reference internal" href="../../../envs/#jina-env-vars"><span class="std std-ref">environment variables used in Jina</span></a></p></li>
 </ul>
 <section id="access-information-of-grpc-based-microservices">
-<h2>Access Information of GRPC-based microservices<a class="headerlink" href="#access-information-of-grpc-based-microservices" title="Permalink to this headline">#</a></h2>
+<h2>Access Information of GRPC-based microservices<a class="headerlink" href="#access-information-of-grpc-based-microservices" title="Permalink to this heading">#</a></h2>
 <p>To access this information for any of the GRPC-based microservices of Jina (Executors or Gateway using grpc protocol) you can use any grpc client.</p>
 <p>To see how this works, first instantiate a Flow with an Executor exposed to an specific port and block it for serving:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jina</span> <span class="kn">import</span> <span class="n">Flow</span>
@@ -682,7 +676,7 @@ docker run --network<span class="o">=</span><span class="s1">&#39;host&#39;</spa
 </div>
 </section>
 <section id="access-information-of-gateway-using-http-websocket-protocol">
-<h2>Access Information of Gateway using HTTP/Websocket protocol<a class="headerlink" href="#access-information-of-gateway-using-http-websocket-protocol" title="Permalink to this headline">#</a></h2>
+<h2>Access Information of Gateway using HTTP/Websocket protocol<a class="headerlink" href="#access-information-of-gateway-using-http-websocket-protocol" title="Permalink to this heading">#</a></h2>
 <p>When using HTTP or Websocket as the Gateway protocol, you can use curl to target the <code class="docutils literal notranslate"><span class="pre">/status</span></code> endpoint and get the Jina info.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>curl http://localhost:12345/status
 </pre></div>
@@ -728,7 +722,7 @@ docker run --network<span class="o">=</span><span class="s1">&#39;host&#39;</spa
                         <div class="copyright">
                             Copyright &#169; Jina AI Limited. All rights reserved.
                         </div><div class="last-updated">
-                            Last updated on Oct 26, 2022</div>
+                            Last updated on Dec 14, 2022</div>
                     </div>
                     <div class="right-details">
                         <div class="social-btns">
@@ -792,7 +786,9 @@ docker run --network<span class="o">=</span><span class="s1">&#39;host&#39;</spa
      src="https://static.scarf.sh/a.png?x-pxid=2823e771-0e1e-4320-8fde-48bc48e53262"/><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>

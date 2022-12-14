@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Flow API" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/fundamentals/flow/flow-api/" />
-  
 <meta property="og:site_name" content="Jina 3.0.2 Documentation" />
-  
 <meta property="og:description" content="Flow ties Executors together into a processing pipeline, provides scalability and facilitates deployments in the cloud. Every Flow provides an API to receive requests over the network. Supported protocols are gRPC, HTTP and websockets. gRPC HTTP WebSocket Configure the API: The Flow API can expos..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_images/hide-crud-debug-endpoints.png" />
-  
 <meta property="og:image:alt" content="Jina 3.0.2 Documentation" />
-  
+<meta name="description" content="Flow ties Executors together into a processing pipeline, provides scalability and facilitates deployments in the cloud. Every Flow provides an API to receive requests over the network. Supported protocols are gRPC, HTTP and websockets. gRPC HTTP WebSocket Configure the API: The Flow API can expos..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -36,13 +29,14 @@
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script async defer src="https://cdn.jsdelivr.net/npm/qabot@0.3"></script>
-    <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Client API" href="../client/" /><link rel="prev" title="Create a Flow" href="../create-flow/" />
+    
+<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Client API" href="../client/" /><link rel="prev" title="Create a Flow" href="../create-flow/" />
         <link rel="canonical" href="https://docs.jina.ai/fundamentals/flow/flow-api.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Flow API - Jina 3.0.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -239,7 +233,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -646,7 +640,7 @@
                     </label>
                 </div>
                 <section class="tex2jax_ignore mathjax_ignore" id="flow-api">
-<span id="flow"></span><h1>Flow API<a class="headerlink" href="#flow-api" title="Permalink to this headline">#</a></h1>
+<span id="flow"></span><h1>Flow API<a class="headerlink" href="#flow-api" title="Permalink to this heading">#</a></h1>
 <p><strong>Flow</strong> ties Executors together into a processing pipeline, provides scalability and facilitates deployments in the cloud.
 Every <code class="docutils literal notranslate"><span class="pre">Flow</span></code> provides an API to receive requests over the network. Supported protocols are gRPC, HTTP and websockets.</p>
 <div class="seealso admonition">
@@ -718,7 +712,7 @@ For more proper use of the Client, and more information about the Client itself,
 </div>
 </div>
 <section id="configure-the-api">
-<h2>Configure the API<a class="headerlink" href="#configure-the-api" title="Permalink to this headline">#</a></h2>
+<h2>Configure the API<a class="headerlink" href="#configure-the-api" title="Permalink to this heading">#</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">Flow</span></code> API can expose different endpoints depending on the configured Executors. Endpoints are defined by the Executor methods annotated with the <code class="docutils literal notranslate"><span class="pre">&#64;requests(on='/endpoint_path')</span></code> decorator.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">docarray</span> <span class="kn">import</span> <span class="n">Document</span><span class="p">,</span> <span class="n">DocumentArray</span>
 <span class="kn">from</span> <span class="nn">jina</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">Executor</span><span class="p">,</span> <span class="n">Flow</span><span class="p">,</span> <span class="n">requests</span>
@@ -751,7 +745,7 @@ For more proper use of the Client, and more information about the Client itself,
 <p>The <code class="docutils literal notranslate"><span class="pre">Client</span></code> also offers the convenience functions <code class="docutils literal notranslate"><span class="pre">.search()</span></code> and  <code class="docutils literal notranslate"><span class="pre">.index()</span></code>, which are just shortcuts for <code class="docutils literal notranslate"><span class="pre">.post(on='/search')</span></code> and <code class="docutils literal notranslate"><span class="pre">.post(on='/index')</span></code>.</p>
 </section>
 <section id="limiting-outstanding-requests">
-<h2>Limiting outstanding requests<a class="headerlink" href="#limiting-outstanding-requests" title="Permalink to this headline">#</a></h2>
+<h2>Limiting outstanding requests<a class="headerlink" href="#limiting-outstanding-requests" title="Permalink to this heading">#</a></h2>
 <p>By default, a Client will just send requests as fast as possible without any throttling. This can potentially put a lot of load on the <code class="docutils literal notranslate"><span class="pre">Flow</span></code> if the Client can send requests faster than they are processed in the <code class="docutils literal notranslate"><span class="pre">Flow</span></code>. Typically, this is most likely to happen for expensive index Flows.</p>
 <p>You can control the number of in flight requests per Client with the <code class="docutils literal notranslate"><span class="pre">prefetch</span></code> argument, e.g. setting <code class="docutils literal notranslate"><span class="pre">prefetch=2</span></code> lets the API accept only 2 requests per client in parallel, hence limiting the load. By default, prefetch is disabled (set to 0).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">requests_generator</span><span class="p">():</span>
@@ -774,7 +768,7 @@ For more proper use of the Client, and more information about the Client itself,
 </div>
 </section>
 <section id="extend-http-interface">
-<h2>Extend HTTP Interface<a class="headerlink" href="#extend-http-interface" title="Permalink to this headline">#</a></h2>
+<h2>Extend HTTP Interface<a class="headerlink" href="#extend-http-interface" title="Permalink to this heading">#</a></h2>
 <p>By default the following endpoints are exposed to the public by the API:</p>
 <table border="1" class="docutils">
 <thead>
@@ -811,7 +805,7 @@ For more proper use of the Client, and more information about the Client itself,
 </tbody>
 </table>
 <section id="hide-crud-and-debug-endpoints-from-http-interface">
-<h3>Hide CRUD and debug endpoints from HTTP interface<a class="headerlink" href="#hide-crud-and-debug-endpoints-from-http-interface" title="Permalink to this headline">#</a></h3>
+<h3>Hide CRUD and debug endpoints from HTTP interface<a class="headerlink" href="#hide-crud-and-debug-endpoints-from-http-interface" title="Permalink to this heading">#</a></h3>
 <p>It is possible to hide CRUD and debug endpoints in production. This might be useful when the context is not applicable. For example, in the code snippet below, we didn’t implement any CRUD endpoints for the executor, hence it does not make sense to expose them to public.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jina</span> <span class="kn">import</span> <span class="n">Flow</span>
 
@@ -823,7 +817,7 @@ For more proper use of the Client, and more information about the Client itself,
 </figure>
 </section>
 <section id="expose-customized-endpoints-to-http-interface">
-<h3>Expose customized endpoints to HTTP interface<a class="headerlink" href="#expose-customized-endpoints-to-http-interface" title="Permalink to this headline">#</a></h3>
+<h3>Expose customized endpoints to HTTP interface<a class="headerlink" href="#expose-customized-endpoints-to-http-interface" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">Flow.expose_endpoint</span></code> can be used to expose executor’s endpoint to HTTP interface, e.g.</p>
 <figure class="align-center">
 <img alt="../../../_images/expose-endpoints.svg" src="../../../_images/expose-endpoints.svg" /></figure>
@@ -873,7 +867,7 @@ For more proper use of the Client, and more information about the Client itself,
 </section>
 </section>
 <section id="deployment">
-<h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">#</a></h2>
+<h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this heading">#</a></h2>
 <p>To deploy a <code class="docutils literal notranslate"><span class="pre">Flow</span></code> you will need to deploy the Executors it is composed of.
 The <code class="docutils literal notranslate"><span class="pre">Flow</span></code> is offering convenience functions to generate the necessary configuration files for some use cases.
 At the moment, <code class="docutils literal notranslate"><span class="pre">Docker-Compose</span></code> and <code class="docutils literal notranslate"><span class="pre">Kubernetes</span></code> are supported.</p>
@@ -936,7 +930,7 @@ The generated folder can be used directly with <code class="docutils literal not
 
                 <div class="related-information sd-d-inline-flex">
                     <a href="https://jina.ai">Copyright &#169; Jina AI Limited. All rights reserved.</a>
-                    Last updated on Oct 26, 2022.
+                    Last updated on Dec 14, 2022.
                     <div class="social-btns">
                     <a class='social-btn' href="https://github.com/jina-ai/jina/" aria-label="GitHub" target="_blank" rel="noreferrer"> <i class="fab fa-github"></i></a>
                     <a class='social-btn' href="https://slack.jina.ai" aria-label="Slack" target="_blank" rel="noreferrer"> <i class="fab fa-slack"></i></a>
@@ -996,7 +990,9 @@ The generated folder can be used directly with <code class="docutils literal not
 </div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>

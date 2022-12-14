@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Monitor Executor with Custom Metrics" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/fundamentals/executor/monitoring-executor/" />
-  
 <meta property="og:site_name" content="Jina 3.4.2 Documentation" />
-  
 <meta property="og:description" content="Jina allows you to monitor every part of a Flow, including Executor, with the Grafana/Prometheus. This section documents the ability to add custom monitoring to the Executor. Custom metrics are useful when you want to monitor each subpart of your Executors. Jina allows you to leverage the full po..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_static/banner.png" />
-  
 <meta property="og:image:alt" content="Jina 3.4.2 Documentation" />
-  
+<meta name="description" content="Jina allows you to monitor every part of a Flow, including Executor, with the Grafana/Prometheus. This section documents the ability to add custom monitoring to the Executor. Custom metrics are useful when you want to monitor each subpart of your Executors. Jina allows you to leverage the full po..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -35,13 +28,14 @@
 </script>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Flow" href="../../flow/" /><link rel="prev" title="Dockerize your Executor" href="../containerize-executor/" />
+    
+<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="Flow" href="../../flow/" /><link rel="prev" title="Dockerize your Executor" href="../containerize-executor/" />
         <link rel="canonical" href="https://docs.jina.ai/fundamentals/executor/monitoring-executor.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Monitor Executor with Custom Metrics - Jina 3.4.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -238,7 +232,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -609,7 +603,7 @@
                     </label>
                 </div>
                 <section class="tex2jax_ignore mathjax_ignore" id="monitor-executor-with-custom-metrics">
-<span id="monitoring-executor"></span><h1>Monitor Executor with Custom Metrics<a class="headerlink" href="#monitor-executor-with-custom-metrics" title="Permalink to this headline">#</a></h1>
+<span id="monitoring-executor"></span><h1>Monitor Executor with Custom Metrics<a class="headerlink" href="#monitor-executor-with-custom-metrics" title="Permalink to this heading">#</a></h1>
 <p>Jina allows you to monitor every part of a Flow, including Executor, with the Grafana/Prometheus.
 This section documents the ability to add custom monitoring to the Executor.</p>
 <p>Custom metrics are useful when you want to monitor each subpart of your Executors. Jina allows you to leverage
@@ -627,14 +621,14 @@ own metrics. This means that in practice each of the Executors will expose a Pro
 <a class="reference external" href="https://prometheus.io/docs/concepts/metric_types/#summary">Prometheus Summary</a> which will keep track of the time of
 the execution of the method.</p>
 <section id="define-custom-metrics">
-<h2>Define custom metrics<a class="headerlink" href="#define-custom-metrics" title="Permalink to this headline">#</a></h2>
+<h2>Define custom metrics<a class="headerlink" href="#define-custom-metrics" title="Permalink to this heading">#</a></h2>
 <p>Sometimes monitoring the <code class="docutils literal notranslate"><span class="pre">encoding</span></code> method is not enough, you need to break it up into multiple parts that you want to
 monitor one by one.</p>
 <p>It could be useful if your encoding phase is composed of two tasks: image processing and
 image embedding. By using custom metrics on these two tasks you can identify potential bottlenecks.</p>
 <p>Overall the ability to add custom metrics allows you to have the full flexibility on the monitoring of your Executor.</p>
 <section id="defining-custom-metrics-with-monitor">
-<h3>Defining custom metrics with <code class="docutils literal notranslate"><span class="pre">&#64;monitor</span></code><a class="headerlink" href="#defining-custom-metrics-with-monitor" title="Permalink to this headline">#</a></h3>
+<h3>Defining custom metrics with <code class="docutils literal notranslate"><span class="pre">&#64;monitor</span></code><a class="headerlink" href="#defining-custom-metrics-with-monitor" title="Permalink to this heading">#</a></h3>
 <div class="hint admonition">
 <p class="admonition-title">Using &#64;monitor</p>
 <p>Adding the custom monitoring on a method is as straightforward as decorating the method with <code class="docutils literal notranslate"><span class="pre">&#64;monitor</span></code></p>
@@ -668,7 +662,7 @@ your metrics name should finish with <code class="docutils literal notranslate">
 </section>
 </section>
 <section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
 <p>Let’s take an example to illustrate custom metrics:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">jina</span> <span class="kn">import</span> <span class="n">requests</span><span class="p">,</span> <span class="n">Executor</span>
 <span class="kn">from</span> <span class="nn">docarray</span> <span class="kn">import</span> <span class="n">DocumentArray</span>
@@ -713,7 +707,7 @@ your metrics name should finish with <code class="docutils literal notranslate">
 </pre></div>
 </div>
 <section id="defining-custom-metrics-directly-with-the-prometheus-client">
-<h3>Defining custom metrics directly with the Prometheus client<a class="headerlink" href="#defining-custom-metrics-directly-with-the-prometheus-client" title="Permalink to this headline">#</a></h3>
+<h3>Defining custom metrics directly with the Prometheus client<a class="headerlink" href="#defining-custom-metrics-directly-with-the-prometheus-client" title="Permalink to this heading">#</a></h3>
 <p>Under the hood, the monitoring feature of the Executor is handled by the
 Python <a class="reference external" href="https://github.com/prometheus/client_python">Prometheus-client</a>. The <code class="docutils literal notranslate"><span class="pre">&#64;monitor</span></code> decorator is a convenient tool
 to monitor sub-methods of an Executor, but you might need more flexibility and that is why you can access the Prometheus
@@ -747,7 +741,7 @@ client directly from the Executor to define every kind of metric supported by Pr
 </section>
 </section>
 <section id="see-further">
-<h2>See further<a class="headerlink" href="#see-further" title="Permalink to this headline">#</a></h2>
+<h2>See further<a class="headerlink" href="#see-further" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../../flow/monitoring-flow/#monitoring-flow"><span class="std std-ref">List of available metrics</span></a></p></li>
 <li><p><a class="reference internal" href="../../../how-to/monitoring/#monitoring"><span class="std std-ref">How to deploy and use the monitoring with Jina</span></a></p></li>
@@ -787,7 +781,7 @@ client directly from the Executor to define every kind of metric supported by Pr
 
                 <div class="related-information sd-d-inline-flex">
                     <a href="https://jina.ai">Copyright &#169; Jina AI Limited. All rights reserved.</a>
-                    Last updated on Oct 26, 2022.
+                    Last updated on Dec 14, 2022.
                     <div class="social-btns">
                     <a class='social-btn' href="https://github.com/jina-ai/jina/" aria-label="GitHub" target="_blank" rel="noreferrer"> <i class="fab fa-github"></i></a>
                     <a class='social-btn' href="https://slack.jina.ai" aria-label="Slack" target="_blank" rel="noreferrer"> <i class="fab fa-slack"></i></a>
@@ -851,7 +845,9 @@ client directly from the Executor to define every kind of metric supported by Pr
 <img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=1b470c1d-3b55-4d38-baa8-989bfba2a218" /><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>

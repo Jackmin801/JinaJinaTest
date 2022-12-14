@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Search in-Video Visual Content via Text" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/tutorials/video-search/" />
-  
 <meta property="og:site_name" content="Jina 3.0.0 Documentation" />
-  
 <meta property="og:description" content="Nan @ Jina AI Oct. 19, 2021 In this tutorial, we create a video search system that retrieves videos based on short text descriptions of their content. The main challenge is to let the user search videos without using any labels or text information about the videos. Build the Flow: Given that ther..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_images/nan.jpg" />
-  
 <meta property="og:image:alt" content="" />
-  
+<meta name="description" content="Nan @ Jina AI Oct. 19, 2021 In this tutorial, we create a video search system that retrieves videos based on short text descriptions of their content. The main challenge is to let the user search videos without using any labels or text information about the videos. Build the Flow: Given that ther..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -36,13 +29,14 @@
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script async defer src="https://cdn.jsdelivr.net/npm/qabot@0.3"></script>
-    <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" />
+    
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" />
         <link rel="canonical" href="https://docs.jina.ai/tutorials/video-search.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Search in-Video Visual Content via Text - Jina 3.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -239,7 +233,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -646,7 +640,7 @@
                     </label>
                 </div>
                 <section class="tex2jax_ignore mathjax_ignore" id="search-in-video-visual-content-via-text">
-<h1>Search in-Video Visual Content via Text<a class="headerlink" href="#search-in-video-visual-content-via-text" title="Permalink to this headline">#</a></h1>
+<h1>Search in-Video Visual Content via Text<a class="headerlink" href="#search-in-video-visual-content-via-text" title="Permalink to this heading">#</a></h1>
 <div class="sd-container-fluid sd-sphinx-override sd-p-0 sd-mt-2 sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-2 sd-gx-2 sd-gy-1 docutils">
 <div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
@@ -672,7 +666,7 @@
 <img alt="../../_images/tutorial-video-search.gif" src="../../_images/tutorial-video-search.gif" />
 </figure>
 <section id="build-the-flow">
-<h2>Build the Flow<a class="headerlink" href="#build-the-flow" title="Permalink to this headline">#</a></h2>
+<h2>Build the Flow<a class="headerlink" href="#build-the-flow" title="Permalink to this heading">#</a></h2>
 <p>Given that there is no text available, we cannot use the text information of the video to match the query text directly. Instead, we need to figure out another way to match videos and texts.
 One way to find such matches is to use the video frames because part of the information in the videos can be captured in the frames. To be more concrete, we can find related frames with similar semantics to the query texts and then return the videos containing these frames. This requires models to encode the video frames and the query texts into the same space. In this case, pre-trained cross-modal models can help us out.</p>
 <div class="tip admonition">
@@ -693,7 +687,7 @@ This information cannot be described by a single frame and the query needs furth
 the video. This is beyond the scope of this tutorial.</p>
 </div>
 <section id="choose-executors">
-<h3>Choose Executors<a class="headerlink" href="#choose-executors" title="Permalink to this headline">#</a></h3>
+<h3>Choose Executors<a class="headerlink" href="#choose-executors" title="Permalink to this heading">#</a></h3>
 <p>To encode video frames and query texts into the same space, we choose the pre-trained <a class="reference external" href="https://github.com/openai/CLIP">CLIP model</a> from OpenAI.</p>
 <div class="info admonition">
 <p class="admonition-title">What is CLIP?</p>
@@ -709,13 +703,13 @@ We can further find the distance between the text vector and the vectors of the 
 </section>
 </section>
 <section id="go-through-the-flow">
-<h2>Go through the Flow<a class="headerlink" href="#go-through-the-flow" title="Permalink to this headline">#</a></h2>
+<h2>Go through the Flow<a class="headerlink" href="#go-through-the-flow" title="Permalink to this heading">#</a></h2>
 <p>Although there is only one Flow defined in this example, it handles requests to <code class="docutils literal notranslate"><span class="pre">/index</span></code> and <code class="docutils literal notranslate"><span class="pre">/search</span></code> differently by setting the <code class="docutils literal notranslate"><span class="pre">requests</span></code> decorators for the Executors:</p>
 <figure class="align-center">
 <img alt="../../_images/tutorial-video-search.png" src="../../_images/tutorial-video-search.png" />
 </figure>
 <section id="index">
-<h3>Index<a class="headerlink" href="#index" title="Permalink to this headline">#</a></h3>
+<h3>Index<a class="headerlink" href="#index" title="Permalink to this heading">#</a></h3>
 <p>For requests to the <code class="docutils literal notranslate"><span class="pre">/index</span></code> endpoint, there are three Executors involved: <code class="docutils literal notranslate"><span class="pre">VideoLoader</span></code>, <code class="docutils literal notranslate"><span class="pre">CLIPImageEncoder</span></code> and <code class="docutils literal notranslate"><span class="pre">SimpleIndexer</span></code>. The inputs to the Flow are Documents with video URIs stored in the <code class="docutils literal notranslate"><span class="pre">uri</span></code> attribute. They are the file locations either remotely on the cloud or in your local filesystem.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">VideoLoader</span></code> extracts the frames from the video and stores them as image arrays in the <code class="docutils literal notranslate"><span class="pre">blob</span></code> attribute of the chunks.</p>
 <p>The Documents after <code class="docutils literal notranslate"><span class="pre">VideoLoader</span></code> have the following format:</p>
@@ -726,12 +720,12 @@ We can further find the distance between the text vector and the vectors of the 
 <p>Afterwards, <code class="docutils literal notranslate"><span class="pre">SimpleIndexer</span></code> stores all the Documents with a memory map.</p>
 </section>
 <section id="query">
-<h3>Query<a class="headerlink" href="#query" title="Permalink to this headline">#</a></h3>
+<h3>Query<a class="headerlink" href="#query" title="Permalink to this heading">#</a></h3>
 <p>When being posted to the <code class="docutils literal notranslate"><span class="pre">/search</span></code> endpoint, requests go through <code class="docutils literal notranslate"><span class="pre">CLIPTextEncoder</span></code>, <code class="docutils literal notranslate"><span class="pre">SimpleIndexer</span></code> and <code class="docutils literal notranslate"><span class="pre">SimpleRanker</span></code>.
 These requests have the text descriptions stored in the <code class="docutils literal notranslate"><span class="pre">text</span></code> attribute of the Documents. These texts are further encoded into vectors by <code class="docutils literal notranslate"><span class="pre">CLIPTextEncoder</span></code>. The vectors are stored in the <code class="docutils literal notranslate"><span class="pre">embedding</span></code> attribute and used to retrieve the related vectors of the video frames with the <code class="docutils literal notranslate"><span class="pre">SimpleRanker</span></code>. Last but not least, <code class="docutils literal notranslate"><span class="pre">SimpleRanker</span></code> finds the corresponding videos based on the retrieved frames.</p>
 </section>
 <section id="use-executors-from-jina-hub">
-<h3>Use Executors from Jina Hub<a class="headerlink" href="#use-executors-from-jina-hub" title="Permalink to this headline">#</a></h3>
+<h3>Use Executors from Jina Hub<a class="headerlink" href="#use-executors-from-jina-hub" title="Permalink to this heading">#</a></h3>
 <p>Except for <code class="docutils literal notranslate"><span class="pre">SimpleRanker</span></code>, all the other Executors used in this tutorial are available at <a class="reference external" href="https://hub.jina.ai/">hub.jina.ai</a>. We can use them off-the-shelf:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://hub.jina.ai/executor/i6gp4vwu"><code class="docutils literal notranslate"><span class="pre">VideoLoader</span></code></a></p></li>
@@ -751,7 +745,7 @@ These requests have the text descriptions stored in the <code class="docutils li
 </div>
 </section>
 <section id="override-requests-configuration">
-<h3>Override requests configuration<a class="headerlink" href="#override-requests-configuration" title="Permalink to this headline">#</a></h3>
+<h3>Override requests configuration<a class="headerlink" href="#override-requests-configuration" title="Permalink to this heading">#</a></h3>
 <p>Similar to overriding the <code class="docutils literal notranslate"><span class="pre">traversal_paths</span></code>, we need to configure the <code class="docutils literal notranslate"><span class="pre">&#64;requests</span></code> for the Executors to ensure the requests to <code class="docutils literal notranslate"><span class="pre">/index</span></code> and <code class="docutils literal notranslate"><span class="pre">/search</span></code> endpoints can be handled as expected. The <code class="docutils literal notranslate"><span class="pre">VideoLoader</span></code> and <code class="docutils literal notranslate"><span class="pre">CLIPImageEncoder</span></code> only process requests to the <code class="docutils literal notranslate"><span class="pre">/index</span></code> endpoint. In contrast, <code class="docutils literal notranslate"><span class="pre">CLIPTextEncoder</span></code> only handles requests to the <code class="docutils literal notranslate"><span class="pre">/search</span></code> endpoint.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">...</span><span class="w"></span>
 <span class="nt">executors</span><span class="p">:</span><span class="w"></span>
@@ -773,7 +767,7 @@ These requests have the text descriptions stored in the <code class="docutils li
 </section>
 </section>
 <section id="get-the-source-code">
-<h2>Get the Source Code<a class="headerlink" href="#get-the-source-code" title="Permalink to this headline">#</a></h2>
+<h2>Get the Source Code<a class="headerlink" href="#get-the-source-code" title="Permalink to this heading">#</a></h2>
 <p>You can find the code at <a class="reference external" href="https://github.com/jina-ai/example-video-search">example-video-search</a>.</p>
 </section>
 </section>
@@ -788,7 +782,7 @@ These requests have the text descriptions stored in the <code class="docutils li
 
                 <div class="related-information sd-d-inline-flex">
                     <a href="https://jina.ai">Copyright &#169; Jina AI Limited. All rights reserved.</a>
-                    Last updated on Oct 26, 2022.
+                    Last updated on Dec 14, 2022.
                     <div class="social-btns">
                     <a class='social-btn' href="https://github.com/jina-ai/jina/" aria-label="GitHub" target="_blank" rel="noreferrer"> <i class="fab fa-github"></i></a>
                     <a class='social-btn' href="https://slack.jina.ai" aria-label="Slack" target="_blank" rel="noreferrer"> <i class="fab fa-slack"></i></a>
@@ -852,7 +846,9 @@ These requests have the text descriptions stored in the <code class="docutils li
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>

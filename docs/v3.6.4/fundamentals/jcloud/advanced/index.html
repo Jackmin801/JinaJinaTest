@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Advanced" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/fundamentals/jcloud/advanced/" />
-  
 <meta property="og:site_name" content="Jina 3.6.4 Documentation" />
-  
 <meta property="og:description" content="Environment variables: A single YAML: A project folder: You can include your environment variables in the.env file in the local project and JCloud will take care of managing them., You can optionally pass a custom.env.. Fine-grained resources request: By default, jcloud allocates 100M of RAM to e..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_images/external-executor.png" />
-  
 <meta property="og:image:alt" content="Jina 3.6.4 Documentation" />
-  
+<meta name="description" content="Environment variables: A single YAML: A project folder: You can include your environment variables in the.env file in the local project and JCloud will take care of managing them., You can optionally pass a custom.env.. Fine-grained resources request: By default, jcloud allocates 100M of RAM to e..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -35,13 +28,14 @@
 </script>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="FAQ" href="../faq/" /><link rel="prev" title="Basic" href="../basic/" />
+    
+<link rel="index" title="Index" href="../../../genindex/" /><link rel="search" title="Search" href="../../../search/" /><link rel="next" title="FAQ" href="../faq/" /><link rel="prev" title="Basic" href="../basic/" />
         <link rel="canonical" href="https://docs.jina.ai/fundamentals/jcloud/advanced.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Advanced - Jina 3.6.4 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -249,7 +243,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -411,17 +405,17 @@
                 </div>
                 <article role="main">
                     <section class="tex2jax_ignore mathjax_ignore" id="advanced">
-<h1>Advanced<a class="headerlink" href="#advanced" title="Permalink to this headline">#</a></h1>
+<h1>Advanced<a class="headerlink" href="#advanced" title="Permalink to this heading">#</a></h1>
 <section id="environment-variables">
-<h2>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">#</a></h2>
+<h2>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this heading">#</a></h2>
 <section id="a-single-yaml">
-<h3>A single YAML<a class="headerlink" href="#a-single-yaml" title="Permalink to this headline">#</a></h3>
+<h3>A single YAML<a class="headerlink" href="#a-single-yaml" title="Permalink to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jc deploy flow.yml --env-file flow.env
 </pre></div>
 </div>
 </section>
 <section id="a-project-folder">
-<h3>A project folder<a class="headerlink" href="#a-project-folder" title="Permalink to this headline">#</a></h3>
+<h3>A project folder<a class="headerlink" href="#a-project-folder" title="Permalink to this heading">#</a></h3>
 <ul>
 <li><p>You can include your environment variables in the <code class="docutils literal notranslate"><span class="pre">.env</span></code> file in the local project and JCloud will take care of managing them.</p></li>
 <li><p>You can optionally pass a <code class="docutils literal notranslate"><span class="pre">custom.env</span></code>.</p>
@@ -433,7 +427,7 @@
 </section>
 </section>
 <section id="fine-grained-resources-request">
-<h2>Fine-grained <code class="docutils literal notranslate"><span class="pre">resources</span></code> request<a class="headerlink" href="#fine-grained-resources-request" title="Permalink to this headline">#</a></h2>
+<h2>Fine-grained <code class="docutils literal notranslate"><span class="pre">resources</span></code> request<a class="headerlink" href="#fine-grained-resources-request" title="Permalink to this heading">#</a></h2>
 <p>By default, <code class="docutils literal notranslate"><span class="pre">jcloud</span></code> allocates <code class="docutils literal notranslate"><span class="pre">100M</span></code> of RAM to each Executor. There might be cases where your Executor requires more memory. For example, DALLE-mini (generating image from text prompt) would need more than 100M to load the model. You can request higher memory for your Executor using <code class="docutils literal notranslate"><span class="pre">resources</span></code> arg while deploying the Flow (max 16G allowed per Executor).</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">jtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Flow</span><span class="w"></span>
 <span class="nt">executors</span><span class="p">:</span><span class="w"></span>
@@ -446,7 +440,7 @@
 </div>
 </section>
 <section id="spot-vs-on-demand-capacity">
-<h2><code class="docutils literal notranslate"><span class="pre">spot</span></code> vs <code class="docutils literal notranslate"><span class="pre">on-demand</span></code> capacity<a class="headerlink" href="#spot-vs-on-demand-capacity" title="Permalink to this headline">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">spot</span></code> vs <code class="docutils literal notranslate"><span class="pre">on-demand</span></code> capacity<a class="headerlink" href="#spot-vs-on-demand-capacity" title="Permalink to this heading">#</a></h2>
 <p>For cost optimization, <code class="docutils literal notranslate"><span class="pre">jcloud</span></code> tries to deploy all Executors on <code class="docutils literal notranslate"><span class="pre">spot</span></code> capacity. These are ideal for stateless Executors, which can withstand interruptions &amp; restarts. It is recommended to use <code class="docutils literal notranslate"><span class="pre">on-demand</span></code> capacity for stateful Executors (e.g.- indexers) though.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">jtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Flow</span><span class="w"></span>
 <span class="nt">executors</span><span class="p">:</span><span class="w"></span>
@@ -458,7 +452,7 @@
 </div>
 </section>
 <section id="deploy-external-executors">
-<h2>Deploy external executors<a class="headerlink" href="#deploy-external-executors" title="Permalink to this headline">#</a></h2>
+<h2>Deploy external executors<a class="headerlink" href="#deploy-external-executors" title="Permalink to this heading">#</a></h2>
 <p>You can also expose the Executors only by setting <code class="docutils literal notranslate"><span class="pre">expose_gateway</span></code> to <code class="docutils literal notranslate"><span class="pre">false</span></code>. Read more about <a class="reference external" href="https://docs.jina.ai/how-to/external-executor/">External Executors.</a></p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">jtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Flow</span><span class="w"></span>
 <span class="nt">jcloud</span><span class="p">:</span><span class="w"></span>
@@ -487,7 +481,7 @@
 </figure>
 </section>
 <section id="deploy-with-specific-jina-version">
-<h2>Deploy with specific <code class="docutils literal notranslate"><span class="pre">jina</span></code> version<a class="headerlink" href="#deploy-with-specific-jina-version" title="Permalink to this headline">#</a></h2>
+<h2>Deploy with specific <code class="docutils literal notranslate"><span class="pre">jina</span></code> version<a class="headerlink" href="#deploy-with-specific-jina-version" title="Permalink to this heading">#</a></h2>
 <p>To manage <code class="docutils literal notranslate"><span class="pre">jina</span></code> version while deploying a Flow to <code class="docutils literal notranslate"><span class="pre">jcloud</span></code>, you can pass <code class="docutils literal notranslate"><span class="pre">version</span></code> arg in the Flow yaml.</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">jtype</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Flow</span><span class="w"></span>
 <span class="nt">jcloud</span><span class="p">:</span><span class="w"></span>
@@ -535,7 +529,7 @@
                         <div class="copyright">
                             Copyright &#169; Jina AI Limited. All rights reserved.
                         </div><div class="last-updated">
-                            Last updated on Oct 26, 2022</div>
+                            Last updated on Dec 14, 2022</div>
                     </div>
                     <div class="right-details">
                         <div class="social-btns">
@@ -606,7 +600,9 @@
      src="https://static.scarf.sh/a.png?x-pxid=2823e771-0e1e-4320-8fde-48bc48e53262"/><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/scripts/furo.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>

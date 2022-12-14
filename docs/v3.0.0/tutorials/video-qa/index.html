@@ -3,21 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
 <meta property="og:title" content="Question-Answering on in-Video Content" />
-  
 <meta property="og:type" content="website" />
-  
 <meta property="og:url" content="https://docs.jina.ai/tutorials/video-qa/" />
-  
 <meta property="og:site_name" content="Jina 3.0.0 Documentation" />
-  
 <meta property="og:description" content="Nan @ Jina AI Oct. 24, 2021 Asking questions is a natural way to perform a search. When you want to know the definition of Document in Jina, you will naturally ask, “ What is the Document in Jina? ”. The expected answer can be found either from Jina’s docs or the introduction videos on Jina’s You..." />
-  
 <meta property="og:image" content="https://docs.jina.ai/_images/nan.jpg" />
-  
 <meta property="og:image:alt" content="" />
-  
+<meta name="description" content="Nan @ Jina AI Oct. 24, 2021 Asking questions is a natural way to perform a search. When you want to know the definition of Document in Jina, you will naturally ask, “ What is the Document in Jina? ”. The expected answer can be found either from Jina’s docs or the introduction videos on Jina’s You..." />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@JinaAI_">
 <meta name="twitter:creator" content="@JinaAI_">
@@ -36,13 +29,14 @@
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script async defer src="https://cdn.jsdelivr.net/npm/qabot@0.3"></script>
-    <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" />
+    
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" />
         <link rel="canonical" href="https://docs.jina.ai/tutorials/video-qa.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.5.0, furo 2022.09.29"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
         <title>Question-Answering on in-Video Content - Jina 3.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
@@ -239,7 +233,7 @@
     <option value="/">latest</option>
   </select>
 </div><form class="sidebar-search-container" method="get" action="../../search/" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
@@ -646,7 +640,7 @@
                     </label>
                 </div>
                 <section class="tex2jax_ignore mathjax_ignore" id="question-answering-on-in-video-content">
-<h1>Question-Answering on in-Video Content<a class="headerlink" href="#question-answering-on-in-video-content" title="Permalink to this headline">#</a></h1>
+<h1>Question-Answering on in-Video Content<a class="headerlink" href="#question-answering-on-in-video-content" title="Permalink to this heading">#</a></h1>
 <div class="sd-container-fluid sd-sphinx-override sd-p-0 sd-mt-2 sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-2 sd-gx-2 sd-gy-1 docutils">
 <div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
@@ -674,7 +668,7 @@ Instead of just finding related videos and having the user skim through the whol
 <img alt="../../_images/tutorial-video-qa.gif" src="../../_images/tutorial-video-qa.gif" />
 </figure>
 <section id="build-the-flow">
-<h2>Build the Flow<a class="headerlink" href="#build-the-flow" title="Permalink to this headline">#</a></h2>
+<h2>Build the Flow<a class="headerlink" href="#build-the-flow" title="Permalink to this heading">#</a></h2>
 <p>To convert speech information from the videos into text, we can rely on STT algorithms. Fortunately, for most
 videos on <a class="reference external" href="https://support.google.com/youtube/answer/6373554?hl=en">YouTube</a>, you can download the subtitles that are generated automatically via STT. In this example, we assume
 the video files already have subtitles embedded. By loading these subtitles, we can get the text of the speech together
@@ -700,7 +694,7 @@ the question and the context. The context denotes the candidate texts that conta
 <p>With traditional methods, retrieval can also be done using BM25, Tf-idf, etc.</p>
 </div>
 <section id="choose-executors">
-<h3>Choose Executors<a class="headerlink" href="#choose-executors" title="Permalink to this headline">#</a></h3>
+<h3>Choose Executors<a class="headerlink" href="#choose-executors" title="Permalink to this heading">#</a></h3>
 <p>We use <code class="docutils literal notranslate"><span class="pre">VideoLoader</span></code> to extract subtitles from the videos. It uses <a class="reference external" href="https://www.ffmpeg.org/"><code class="docutils literal notranslate"><span class="pre">ffmpeg</span></code></a> to extract subtitles
 and then generates chunks based on the subtitles using <a class="reference external" href="https://github.com/glut23/webvtt-py"><code class="docutils literal notranslate"><span class="pre">webvtt-py</span></code></a>. The subtitles are stored in the <code class="docutils literal notranslate"><span class="pre">chunks</span></code>
 together with other meta-information in the <code class="docutils literal notranslate"><span class="pre">tags</span></code>, including timestamp and video information. Extracted subtitles have the following attributes:</p>
@@ -751,10 +745,10 @@ together with other meta-information in the <code class="docutils literal notran
 </section>
 </section>
 <section id="go-through-the-flow">
-<h2>Go through the Flow<a class="headerlink" href="#go-through-the-flow" title="Permalink to this headline">#</a></h2>
+<h2>Go through the Flow<a class="headerlink" href="#go-through-the-flow" title="Permalink to this heading">#</a></h2>
 <p>Because the indexing and querying Flows have only one shared Executor, we create separate Flows for each task.</p>
 <section id="index">
-<h3>Index<a class="headerlink" href="#index" title="Permalink to this headline">#</a></h3>
+<h3>Index<a class="headerlink" href="#index" title="Permalink to this heading">#</a></h3>
 <p>The index request contains Documents that have the path information of the video files stored in their <code class="docutils literal notranslate"><span class="pre">uri</span></code> attribute.</p>
 <p>There are three Executors in the index Flow:</p>
 <ul class="simple">
@@ -767,7 +761,7 @@ together with other meta-information in the <code class="docutils literal notran
 </figure>
 </section>
 <section id="query">
-<h3>Query<a class="headerlink" href="#query" title="Permalink to this headline">#</a></h3>
+<h3>Query<a class="headerlink" href="#query" title="Permalink to this heading">#</a></h3>
 <p>There are four Executors in the query Flow:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">DPRTextEncoder</span></code> takes the question stored in the <code class="docutils literal notranslate"><span class="pre">text</span></code> attribute of the query Document and encodes it into a vector.</p></li>
@@ -781,7 +775,7 @@ together with other meta-information in the <code class="docutils literal notran
 </figure>
 </section>
 <section id="use-dprtextencoder-differently-in-two-flows">
-<h3>Use <code class="docutils literal notranslate"><span class="pre">DPRTextEncoder</span></code> differently in two Flows<a class="headerlink" href="#use-dprtextencoder-differently-in-two-flows" title="Permalink to this headline">#</a></h3>
+<h3>Use <code class="docutils literal notranslate"><span class="pre">DPRTextEncoder</span></code> differently in two Flows<a class="headerlink" href="#use-dprtextencoder-differently-in-two-flows" title="Permalink to this heading">#</a></h3>
 <p>You might note that <code class="docutils literal notranslate"><span class="pre">DPRTextEncoder</span></code> is used in both the index and query Flows:</p>
 <ul class="simple">
 <li><p>In the index Flow it encodes subtitle text</p></li>
@@ -814,7 +808,7 @@ together with other meta-information in the <code class="docutils literal notran
 </section>
 </section>
 <section id="get-the-source-code">
-<h2>Get the Source Code<a class="headerlink" href="#get-the-source-code" title="Permalink to this headline">#</a></h2>
+<h2>Get the Source Code<a class="headerlink" href="#get-the-source-code" title="Permalink to this heading">#</a></h2>
 <p>You can find the code at <a class="reference external" href="https://github.com/jina-ai/example-video-qa">example-video-qa</a>.</p>
 <p>Most of the Executors used in this tutorial are available on Jina Hub:</p>
 <ul class="simple">
@@ -825,7 +819,7 @@ together with other meta-information in the <code class="docutils literal notran
 </ul>
 </section>
 <section id="next-steps">
-<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">#</a></h2>
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">#</a></h2>
 <p>In this example, we rely on subtitles embedded in the video. For videos without subtitles, we need to build Executors using STT models to extract speech information. If the video contains other sounds, you can resort to <a class="reference external" href="https://hub.jina.ai/executor/9sohw4wi">VADSpeechSegmenter</a> for separating speech beforehand.</p>
 <p>Another direction to extend this example is to consider the videos’ other text information. While subtitles contain rich information about the video, not all text information is included in subtitles. A lot of videos have text information embedded in images. In such cases, we need to rely on OCR models to extract text information from the video frames.</p>
 <p>Overall, searching in-video content is a complex task and Jina makes it a lot easier.</p>
@@ -842,7 +836,7 @@ together with other meta-information in the <code class="docutils literal notran
 
                 <div class="related-information sd-d-inline-flex">
                     <a href="https://jina.ai">Copyright &#169; Jina AI Limited. All rights reserved.</a>
-                    Last updated on Oct 26, 2022.
+                    Last updated on Dec 14, 2022.
                     <div class="social-btns">
                     <a class='social-btn' href="https://github.com/jina-ai/jina/" aria-label="GitHub" target="_blank" rel="noreferrer"> <i class="fab fa-github"></i></a>
                     <a class='social-btn' href="https://slack.jina.ai" aria-label="Slack" target="_blank" rel="noreferrer"> <i class="fab fa-slack"></i></a>
@@ -906,7 +900,9 @@ together with other meta-information in the <code class="docutils literal notran
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
